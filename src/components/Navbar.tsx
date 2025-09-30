@@ -1,87 +1,175 @@
 import { useState } from 'react'
-import MassaLogo from './MassaLogo'
-
-type NavItem = {
-  label: string
-  href: string
-}
-
-const navItems: NavItem[] = [
-  { label: 'Solutions', href: '#solutions' },
-  { label: 'Build', href: '#build' },
-  { label: 'Explore', href: '#explore' },
-  { label: 'Community', href: '#community' },
-  { label: 'About', href: '#about' },
-]
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-      <div className="flex items-center justify-between max-w-7xl mx-auto px-5 py-4">
-        <a href="/" className="inline-flex items-center gap-2 font-bold tracking-wide" aria-label="Massa home">
-          <MassaLogo className="h-6 w-auto text-black" />
+    <div data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb285" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" className="uui-navbar07_component w-nav">
+      <div className="uui-navbar07_container">
+        <a href="/" aria-current="page" className="uui-navbar07_logo-link w-nav-brand w--current">
+          <div className="uui-logo_component"><img width="120" loading="lazy" alt="" src="/images/LOGO.svg" /></div>
         </a>
-
-        <nav className="hidden lg:inline-flex gap-8" aria-label="Primary">
-          {navItems.map((item) => (
-            <a key={item.label} href={item.href} className="text-black hover:text-gray-600 transition-colors flex items-center gap-1">
-              {item.label}
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+        <nav role="navigation" className="uui-navbar07_menu w-nav-menu">
+          <div className="uui-navbar07_menu-left">
+            <div data-hover="true" data-delay="300" data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb28c" className="uui-navbar07_menu-dropdown w-dropdown">
+              <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div className="text-block-5"><strong className="bold-text">Solutions</strong></div>
+              </div>
+              <nav data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb292" style={{opacity:0, transform:"translate3d(0, -2rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"}} className="uui-navbar07_dropdown-list w-dropdown-list">
+                <div className="uui-navbar07_dropdown-link-list">
+                  <a href="/deweb" className="uui-navbar07_dropdown-link w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/deweb.svg" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">DeWeb</div>
+                      <div className="uui-text-size-small">The web as you know, 100% decentralized</div>
+                    </div>
+                  </a>
+                  <a href="/asc" className="uui-navbar07_dropdown-link w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/ASC.svg" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">ASC</div>
+                      <div className="uui-text-size-small">Autonomous Smart Contracts</div>
+                    </div>
+                  </a>
+                  <a href="/technology" className="uui-navbar07_dropdown-link w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/Technology.svg" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">Technology</div>
+                      <div className="uui-text-size-small">Our unique tech built for freedom</div>
+                    </div>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            <div data-hover="true" data-delay="300" data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2ac" className="uui-navbar07_menu-dropdown w-dropdown">
+              <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div className="text-block-5"><strong className="bold-text">Build</strong></div>
+              </div>
+              <nav data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2b2" style={{opacity:0, transform:"translate3d(0, -2rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"}} className="uui-navbar07_dropdown-list w-dropdown-list">
+                <div className="uui-navbar07_dropdown-link-list">
+                  <a href="https://docs.massa.net/" target="_blank" className="uui-navbar07_dropdown-link w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/Docs.svg" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">Docs</div>
+                      <div className="uui-text-size-small">Learn the basic concepts of the Massa blockchain</div>
+                    </div>
+                  </a>
+                  <a href="/grants-bounty" className="uui-navbar07_dropdown-link w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/Bounties.svg" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">Grants & Bounties</div>
+                      <div className="uui-text-size-small">For promising ideas that need help or funding</div>
+                    </div>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            <div data-hover="true" data-delay="300" data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2c4" className="uui-navbar07_menu-dropdown w-dropdown">
+              <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div className="text-block-5"><strong className="bold-text">Explore</strong></div>
+              </div>
+              <nav data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2ca" style={{opacity:0, transform:"translate3d(0, -2rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"}} className="uui-navbar07_dropdown-list w-dropdown-list">
+                <div className="uui-navbar07_dropdown-link-list">
+                  <a href="/ecosystem" className="uui-navbar07_dropdown-link-copy-copy w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/Ecosystem.svg" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">Ecosystem</div>
+                      <div className="uui-text-size-small">Explore the Massa ecosystem</div>
+                    </div>
+                  </a>
+                  <a href="/get-mas" className="uui-navbar07_dropdown-link-copy-copy w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/Ecosystem.svg" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">Buy $MAS</div>
+                      <div className="uui-text-size-small">Available options to get $MAS</div>
+                    </div>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            <div data-hover="true" data-delay="300" data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2d4" className="uui-navbar07_menu-dropdown w-dropdown">
+              <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div className="text-block-5"><strong className="bold-text">Community</strong></div>
+              </div>
+              <nav data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2da" style={{opacity:0, transform:"translate3d(0, -2rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"}} className="uui-navbar07_dropdown-list w-dropdown-list">
+                <div className="uui-navbar07_dropdown-link-list">
+                  <a href="https://forum.massa.community/" target="_blank" className="uui-navbar07_dropdown-link w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img src="/images/Forum.svg" loading="lazy" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">Forum</div>
+                      <div className="uui-text-size-small">Community Forum for constructive discussions</div>
+                    </div>
+                  </a>
+                  <a href="#" className="uui-navbar07_dropdown-link w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img src="/images/Ambassador.svg" loading="lazy" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">Ambassador</div>
+                      <div className="uui-text-size-small">Coming soon</div>
+                    </div>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            <div data-hover="true" data-delay="300" data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2ec" className="uui-navbar07_menu-dropdown w-dropdown">
+              <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div className="text-block-5"><strong className="bold-text">About</strong></div>
+              </div>
+              <nav data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2f2" style={{opacity:0, transform:"translate3d(0, -2rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"}} className="uui-navbar07_dropdown-list w-dropdown-list">
+                <div className="uui-navbar07_dropdown-link-list">
+                  <a href="/team" className="uui-navbar07_dropdown-link w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img src="/images/Team.svg" loading="lazy" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">Team</div>
+                      <div className="uui-text-size-small">Meet the team behind innovation</div>
+                    </div>
+                  </a>
+                  <a href="/blog" className="uui-navbar07_dropdown-link w-inline-block">
+                    <div className="uui-navbar07_icon-wrapper"><img src="/images/Blog.svg" loading="lazy" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">Blog</div>
+                      <div className="uui-text-size-small">Read the latest news about the ecosystem</div>
+                    </div>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div className="uui-navbar07_menu-right">
+            <a href="/start" className="link-block-7 w-inline-block">
+              <div className="textlink">Get started</div>
             </a>
-          ))}
+            <div className="div-block-25">
+              <a href="https://discord.com/invite/massa" className="link-block w-inline-block"><img src="/images/Discord.svg" loading="lazy" alt="" /></a>
+              <a href="https://x.com/massachain" className="link-block-2 w-inline-block"><img src="/images/X.svg" loading="lazy" alt="" /></a>
+            </div>
+          </div>
         </nav>
-
-        <div className="flex items-center gap-4">
-          <a href="#get-started" className="text-black hover:text-gray-600 transition-colors">
-            Get started
-          </a>
-          <a href="https://discord.com/invite/massa" className="text-black hover:text-gray-600 transition-colors">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-            </svg>
-          </a>
-          <a href="https://x.com/massachain" className="text-black hover:text-gray-600 transition-colors">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
-          <button
-            className="w-10 h-10 inline-flex flex-col items-center justify-center gap-1 bg-transparent border border-gray-300 rounded-lg lg:hidden"
-            aria-label="Toggle menu"
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span className="w-4 h-0.5 bg-current" />
-            <span className="w-4 h-0.5 bg-current" />
-            <span className="w-4 h-0.5 bg-current" />
-          </button>
+        <div className="uui-navbar07_menu-button w-nav-button" onClick={() => setOpen(!open)}>
+          <div className="menu-icon_component">
+            <div className="menu-icon_line-top"></div>
+            <div className="menu-icon_line-middle">
+              <div className="menu-icon_line-middle-inner"></div>
+            </div>
+            <div className="menu-icon_line-bottom"></div>
+          </div>
         </div>
       </div>
-
-      <div className={`lg:hidden ${open ? 'flex' : 'hidden'} flex-col gap-3 px-5 pb-5 bg-white border-t border-gray-200`}>
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className="text-black hover:text-gray-600 transition-colors"
-            onClick={() => setOpen(false)}
-          >
-            {item.label}
-          </a>
-        ))}
-        <a 
-          href="#get-started" 
-          className="mt-1 text-black hover:text-gray-600 transition-colors" 
-          onClick={() => setOpen(false)}
-        >
-          Get started
-        </a>
-      </div>
-    </header>
+    </div>
   )
 }
 
