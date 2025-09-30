@@ -1,7 +1,14 @@
+@import './styles/normalize.css';
+@import './styles/webflow.css';
+@import './styles/massa-rebranding-066821.webflow.css';
+
 @import "tailwindcss";
 
+/* Import Space Grotesk font */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Space Grotesk', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,6 +20,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Apply Space Grotesk to all text elements */
+body, h1, h2, h3, h4, h5, h6, p, div, span, a, button, input, textarea, select, label, li, ul, ol, td, th, tr, table, caption, blockquote, cite, code, pre, small, strong, em, b, i, u, s, mark, del, ins, sub, sup, q, abbr, acronym, address, dfn, kbd, samp, var, time, data, meter, progress, output, details, summary, figcaption, legend, fieldset, optgroup, option {
+  font-family: 'Space Grotesk', system-ui, Avenir, Helvetica, Arial, sans-serif !important;
 }
 
 a {
