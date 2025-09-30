@@ -24,8 +24,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -64,5 +62,124 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+  .navbar__logo-img {
+    color: #000000;
+  }
+}
+
+/* Navbar styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: saturate(120%) blur(8px);
+  background: rgba(10, 10, 10, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar__logo {
+  font-size: 18px;
+}
+
+.navbar__logo-img {
+  height: 24px;
+  width: auto;
+  display: block;
+  color: #ffffff;
+}
+
+.navbar__nav {
+  display: none;
+  gap: 18px;
+}
+
+.navbar__link {
+  color: inherit;
+  opacity: 0.9;
+}
+.navbar__link:hover {
+  opacity: 1;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar__cta {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #0052ff;
+  color: #fff;
+}
+
+.navbar__burger {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+.navbar__burger-line {
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+}
+
+.navbar__mobile {
+  display: none;
+}
+.navbar__mobile.is-open {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 20px 20px;
+}
+.navbar__mobile-link {
+  color: inherit;
+  opacity: 0.9;
+}
+.navbar__mobile-cta {
+  margin-top: 4px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #0052ff;
+  color: #fff;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .navbar__nav {
+    display: inline-flex;
+  }
+  .navbar__burger {
+    display: none;
+  }
+  .navbar__mobile {
+    display: none !important;
   }
 }
