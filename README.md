@@ -1,92 +1,92 @@
 # Massa.net v2
 
-## Redéfinir la LIBERTÉ à l'ère numérique
+## Redefining FREEDOM in the digital age
 
-### Le premier réseau cloud décentralisé
+### The first decentralized cloud network
 
-Massa est la Layer 1 qui apporte une véritable décentralisation là où elle est nécessaire.
+Massa is the Layer 1 that brings true decentralization where it's needed.
 
-## 🚀 À propos du projet
+## 🚀 About the project
 
-Massa.net v2 est une refonte complète du site web officiel de Massa, une blockchain Layer 1 révolutionnaire qui combine :
+Massa.net v2 is a complete redesign of Massa's official website, a revolutionary Layer 1 blockchain that combines:
 
-- **DeWeb** : Le web tel que vous le connaissez, 100% décentralisé
-- **ASC** : Contrats intelligents autonomes
-- **Technologie unique** : Construite pour la liberté
+- **DeWeb**: The web as you know it, 100% decentralized
+- **ASC**: Autonomous Smart Contracts
+- **Unique technology**: Built for freedom
 
 ## 🎯 Vision
 
-Nous oublions les racines. Sommes-nous vraiment en train d'expérimenter le Web3 aujourd'hui ?
+We forget our roots. Are we really experiencing Web3 today?
 
-L'évolution du Web3 promettait de décentraliser internet, mais aujourd'hui, elle révèle une réalité troublante : La plupart des dApps ne sont pas vraiment Web3, mais prétendent l'être. Elles dépendent encore fortement des infrastructures Web2, créant des préoccupations de sécurité importantes.
+Web3 evolution promised to decentralize the internet, but today it reveals a troubling reality: Most dApps are not really Web3, but claim to be. They still heavily depend on Web2 infrastructure, creating significant security concerns.
 
-### Déployez une dApp qui vit pour toujours
+### Deploy a dApp that lives forever
 
-Le Web alimenté par Massa - Il fonctionne exactement comme le web normal, mais il est 100% décentralisé, immuable et sécurisé, pour toujours.
+The Massa-powered Web - It works exactly like the normal web, but it's 100% decentralized, immutable and secure, forever.
 
-## ✨ Fonctionnalités clés
+## ✨ Key features
 
-### 🌐 Hébergement web onchain
-- Ininterrompu, non censuré
-- Stockage permanent et redondant
-- Alternative complète à IPFS
+### 🌐 Onchain web hosting
+- Uninterrupted, uncensored
+- Permanent and redundant storage
+- Complete alternative to IPFS
 
-### 🤖 Contrats intelligents autonomes
-- Automatisation complète, zéro interférence
-- Déploiement de vraies dApps décentralisées
+### 🤖 Autonomous smart contracts
+- Complete automation, zero interference
+- Deployment of truly decentralized dApps
 
-### 🔗 Décentralisation véritable
-- Aucun point de défaillance unique
-- Sécurité maximale
+### 🔗 True decentralization
+- No single point of failure
+- Maximum security
 
-## 🎮 Cas d'usage
+## 🎮 Use cases
 
-- **Plateformes de médias sociaux décentralisées** : 100% non censurables, entièrement hébergées on-chain
-- **Sites et dApps décentralisés** : Sites web à l'épreuve du DNS-Hijacking et applications DeFi
-- **Automatisation cross-chain décentralisée** : Automatisez vos dApps, entièrement décentralisées, à travers d'innombrables chaînes
-- **NFTs évolutifs** : NFTs auto-évolutifs avec déclencheurs on-chain
-- **Gaming Web3** : Automatisez les NPCs, les transactions in-game, apportant une véritable décentralisation au gaming
-- **Fournisseurs de stockage** : Partagez votre stockage inutilisé avec d'autres utilisateurs et gagnez des tokens
+- **Decentralized social media platforms**: 100% uncensorable, entirely on-chain hosted
+- **Decentralized websites and dApps**: DNS-Hijacking-proof websites and DeFi applications
+- **Decentralized cross-chain automation**: Automate your dApps, fully decentralized, across countless chains
+- **Evolutive NFTs**: Self-evolving NFTs with on-chain triggers
+- **Web3 Gaming**: Automate NPCs, in-game transactions, bringing true decentralization to gaming
+- **Storage providers**: Share your unused storage with other users and earn tokens
 
-## 🛠️ Technologies utilisées
+## 🛠️ Technologies used
 
-- **Blockchain Layer 1** : Infrastructure de base décentralisée
-- **DeWeb** : Hébergement web décentralisé
-- **ASC** : Contrats intelligents autonomes
-- **Stockage on-chain** : Stockage permanent et immuable
+- **Layer 1 Blockchain**: Decentralized base infrastructure
+- **DeWeb**: Decentralized web hosting
+- **ASC**: Autonomous Smart Contracts
+- **On-chain storage**: Permanent and immutable storage
 
-## 🚀 Démarrage rapide
+## 🚀 Quick start
 
-1. Explorez l'écosystème Massa
-2. Apprenez les concepts de base via la documentation
-3. Déployez votre première dApp décentralisée
-4. Rejoignez la communauté
+1. Explore the Massa ecosystem
+2. Learn the basics through documentation
+3. Deploy your first decentralized dApp
+4. Join the community
 
-## 📚 Ressources
+## 📚 Resources
 
-- **Documentation** : Apprenez les concepts de base de la blockchain Massa
-- **Grants & Bounties** : Pour les idées prometteuses qui ont besoin d'aide ou de financement
-- **Écosystème** : Explorez l'écosystème Massa
-- **Forum communautaire** : Discussions constructives
+- **Documentation**: Learn the basics of the Massa blockchain
+- **Grants & Bounties**: For promising ideas that need help or funding
+- **Ecosystem**: Explore the Massa ecosystem
+- **Community forum**: Constructive discussions
 
 ## 🌍 Mission
 
-Depuis 2019, nous sommes en mission pour construire quelque chose de vraiment unique. Une solution guidée par un seul objectif : la véritable décentralisation.
+Since 2019, we have been on a mission to build something truly unique. A solution guided by a single objective: true decentralization.
 
-L'adoption de masse ne viendra pas des airdrops, des points, du farming ou de la gestion agressive de communauté. Ce dont nous avons besoin, c'est de créer de vrais outils et solutions à de vrais problèmes.
+Mass adoption will not come from airdrops, points, farming or aggressive community management. What we need is to create real tools and solutions to real problems.
 
-Nous visons un internet vraiment libre.
+We aim for a truly free internet.
 
 ## 📞 Contact
 
-- **Site officiel** : [https://www.massa.net/](https://www.massa.net/)
-- **Forum communautaire** : Discussions constructives
-- **Blog** : Dernières nouvelles sur l'écosystème
+- **Official website**: [https://www.massa.net/](https://www.massa.net/)
+- **Community forum**: Constructive discussions
+- **Blog**: Latest news about the ecosystem
 
-## 📄 Licence
+## 📄 License
 
 © 2025 Massa
 
 ---
 
-*Massa apporte la décentralisation là où elle est nécessaire. Ce qui nous motive, c'est l'idée d'expérimenter le vrai Web3 et de l'ouvrir au monde.*
+*Massa brings decentralization where it's needed. What motivates us is the idea of experiencing true Web3 and opening it to the world.*
