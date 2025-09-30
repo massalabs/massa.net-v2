@@ -1,14 +1,12 @@
 import './App.css'
 import { Navbar } from './components/Navbar'
+import { Home } from './pages/Home'
 
 function App() {
   return (
     <div>
       <Navbar />
-      <main style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 20px' }}>
-        <h1>Homepage</h1>
-        <p>Scaffold for Massa.net v2.</p>
-      </main>
+      <Home />
     </div>
   )
 }
