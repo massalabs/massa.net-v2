@@ -13,7 +13,7 @@ export function Navbar() {
           <div className="uui-navbar07_menu-left">
             <div data-hover="true" data-delay="300" data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb28c" className="uui-navbar07_menu-dropdown w-dropdown">
               <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
-                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg></div>
                 <div className="text-block-5"><strong className="bold-text">Solutions</strong></div>
@@ -46,7 +46,7 @@ export function Navbar() {
             </div>
             <div data-hover="true" data-delay="300" data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2ac" className="uui-navbar07_menu-dropdown w-dropdown">
               <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
-                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg></div>
                 <div className="text-block-5"><strong className="bold-text">Build</strong></div>
@@ -72,7 +72,7 @@ export function Navbar() {
             </div>
             <div data-hover="true" data-delay="300" data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2c4" className="uui-navbar07_menu-dropdown w-dropdown">
               <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
-                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg></div>
                 <div className="text-block-5"><strong className="bold-text">Explore</strong></div>
@@ -98,7 +98,7 @@ export function Navbar() {
             </div>
             <div data-hover="true" data-delay="300" data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2d4" className="uui-navbar07_menu-dropdown w-dropdown">
               <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
-                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg></div>
                 <div className="text-block-5"><strong className="bold-text">Community</strong></div>
@@ -124,7 +124,7 @@ export function Navbar() {
             </div>
             <div data-hover="true" data-delay="300" data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2ec" className="uui-navbar07_menu-dropdown w-dropdown">
               <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
-                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg></div>
                 <div className="text-block-5"><strong className="bold-text">About</strong></div>
