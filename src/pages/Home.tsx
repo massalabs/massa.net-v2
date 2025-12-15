@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { AnimatedFreedom } from '../components/AnimatedFreedom'
 import { AnimatedPixels } from '../components/AnimatedPixels'
 import { useBlogPosts } from '../hooks/useContentData'
