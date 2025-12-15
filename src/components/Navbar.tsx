@@ -155,13 +155,13 @@ export function Navbar() {
                       <div className="uui-text-size-small">Community Forum for constructive discussions</div>
         </div>
                   </a>
-                  <a href="#" className="uui-navbar07_dropdown-link w-inline-block">
-                    <div className="uui-navbar07_icon-wrapper"><img src="/images/Ambassador.svg" loading="lazy" alt="" /></div>
-                    <div className="uui-navbar07_item-right">
-                      <div className="uui-navbar07_item-heading">Ambassador</div>
-                      <div className="uui-text-size-small">Coming soon</div>
-      </div>
-                  </a>
+                  <Link to="/ambassador" className="uui-navbar07_dropdown-link w-inline-block">
+  <div className="uui-navbar07_icon-wrapper"><img src="/images/Ambassador.svg" loading="lazy" alt="" /></div>
+  <div className="uui-navbar07_item-right">
+    <div className="uui-navbar07_item-heading">Ambassador</div>
+    <div className="uui-text-size-small">Coming soon</div>
+  </div>
+</Link>
                 </div>
               </nav>
             </div>
