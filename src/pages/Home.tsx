@@ -1,7 +1,11 @@
+import { Link } from 'react-router-dom'
 import { AnimatedFreedom } from '../components/AnimatedFreedom'
 import { AnimatedPixels } from '../components/AnimatedPixels'
+import { useBlogPosts } from '../hooks/useContentData'
 
 export function Home() {
+  const blogPosts = useBlogPosts()
+  
   return (
     <div>
       {/* Hero Section */}
@@ -142,7 +146,7 @@ export function Home() {
               <div className="uui-space-large">
                 <div className="uui-space-large"></div>
               </div>
-            </div>
+          </div>
           </div>
         </div>
       </section>
@@ -296,31 +300,27 @@ export function Home() {
           <div className="container-large">
             <div className="wrapper-bloc-header is--blog"></div>
             <div className="blog_component">
-              <div className="blog_list-wrapper w-dyn-list">
-                <nav role="list" className="blog_list-preview w-dyn-items">
-                  <div role="listitem" className="collection-item w-dyn-item">
-                    <img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" width="Auto" alt="" className="image-7 w-dyn-bind-empty" />
-                    <div className="text-block w-dyn-bind-empty"></div>
-                    <div className="text-block-2 w-dyn-bind-empty"></div>
-                    <a href="#" className="button-3 w-button">Read more </a>
-                  </div>
-                </nav>
-                <div className="w-dyn-empty">
-                  <div>No items found.</div>
-                </div>
-                <div role="navigation" aria-label="List" className="w-pagination-wrapper pagination">
-                  <a href="#" aria-label="Previous Page" className="w-pagination-previous">
-                    <svg className="w-pagination-previous-icon" height="12px" width="12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" transform="translate(0, 1)">
-                      <path fill="none" stroke="currentColor" fillRule="evenodd" d="M8 10L4 6l4-4"></path>
-                    </svg>
-                    <div className="w-inline-block">Previous</div>
-                  </a>
-                  <a href="#" aria-label="Next Page" className="w-pagination-next">
-                    <div className="w-inline-block">Next</div>
-                    <svg className="w-pagination-next-icon" height="12px" width="12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" transform="translate(0, 1)">
-                      <path fill="none" stroke="currentColor" fillRule="evenodd" d="M4 2l4 4-4 4"></path>
-                    </svg>
-                  </a>
+              <div className="blog_list-wrapper">
+                <div className="blog_list-preview">
+                  {blogPosts.slice(0, 3).map(post => (
+                    <div key={post.id} role="listitem" className="collection-item w-dyn-item">
+                      {post.image && (
+                        <img 
+                          src={encodeURI(post.image)} 
+                          loading="lazy" 
+                          width="Auto" 
+                          alt={post.title} 
+                          className="image-7"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = '/images/Technology.svg'
+                          }}
+                        />
+                      )}
+                      <div className="text-block">{post.title}</div>
+                      <div className="text-block-2">{post.excerpt}</div>
+                      <a href={`/blog/${post.id}`} target="_blank" rel="noopener noreferrer" className="button-3 w-button">Read more</a>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -328,87 +328,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <section className="section-5">
-        <div className="uui-padding-vertical-xlarge">
-          <div className="w-layout-grid uui-footer05_top-wrapper">
-            <a href="#" className="uui-footer05_logo-link w-inline-block"><img width="120" loading="lazy" alt="" src="/images/LOGO.svg" /></a>
-            <div className="uui-footer05_link-list">
-              <div className="uui-footer05_link-list-heading">Solutions</div>
-              <a href="/deweb" className="uui-footer05_link w-inline-block">
-                <div className="text-block-12">Deweb</div>
-              </a>
-              <a href="/asc" className="uui-footer05_link w-inline-block">
-                <div className="text-block-12">ASC</div>
-              </a>
-              <a href="/technology" className="uui-footer05_link w-inline-block">
-                <div className="text-block-12">Technology</div>
-              </a>
-            </div>
-            <div className="uui-footer05_link-list">
-              <div className="uui-footer05_link-list-heading">Build</div>
-              <a href="https://docs.massa.net/" target="_blank" className="uui-footer05_link w-inline-block">
-                <div>Docs</div>
-              </a>
-              <a href="/grants-bounty" className="uui-footer05_link w-inline-block">
-                <div>Grants & Bounties</div>
-              </a>
-            </div>
-            <div className="uui-footer05_link-list">
-              <div className="uui-footer05_link-list-heading">Explore</div>
-              <a href="/ecosystem" className="uui-footer05_link w-inline-block">
-                <div>Ecosystem</div>
-              </a>
-              <a href="/get-mas" className="uui-footer05_link-copy w-inline-block">
-                <div>Get $MAS</div>
-              </a>
-            </div>
-            <div className="uui-footer05_link-list">
-              <div className="uui-footer05_link-list-heading">Community</div>
-              <a href="https://forum.massa.community/" className="uui-footer05_link w-inline-block">
-                <div>Forum</div>
-              </a>
-              <a href="#" className="uui-footer05_link w-inline-block"></a>
-            </div>
-            <div className="uui-footer05_link-list">
-              <div className="uui-footer05_link-list-heading">About</div>
-              <a href="/team" className="uui-footer05_link w-inline-block">
-                <div>Team</div>
-              </a>
-              <a href="/blog" className="uui-footer05_link w-inline-block">
-                <div>Blog</div>
-              </a>
-              <a href="/privacy-policy" className="uui-footer05_link w-inline-block">
-                <div>Privacy policy</div>
-              </a>
-              <a href="/terms-of-service" className="uui-footer05_link w-inline-block">
-                <div>Terms of service</div>
-              </a>
-            </div>
-          </div>
-          <div className="w-layout-hflex flex-block-5">
-            <a href="https://coinmarketcap.com/fr/currencies/massa/" className="w-inline-block"><img src="/images/CMC.svg" loading="lazy" width="140" alt="" /></a>
-            <a href="https://www.coingecko.com/en/coins/massa" className="w-inline-block"><img src="/images/CG.svg" loading="lazy" width="93" alt="" /></a>
-          </div>
-          <div className="uui-footer05_bottom-wrapper">
-            <div className="uui-footer05_legal-list-wrapper">
-              <div className="uui-text-size-small-4 text-color-gray500">© 2025 Massa</div>
-            </div>
-            <div className="w-layout-grid uui-footer05_social-icons">
-              <a href="https://discord.com/invite/massa" className="w-inline-block"><img src="/images/Discord.svg" loading="lazy" alt="" /></a>
-              <a href="https://x.com/massachain" className="w-inline-block"><img src="/images/X.svg" loading="lazy" alt="" /></a>
-              <a href="https://www.youtube.com/@massa_chain" className="w-inline-block"><img src="/images/Youtube.svg" loading="lazy" alt="" /></a>
-              <a href="https://t.me/massanetwork" className="w-inline-block"><img src="/images/Tg.svg" loading="lazy" width="24" alt="" /></a>
-              <a href="https://fr.linkedin.com/company/massa-labs" className="w-inline-block"><img src="/images/Linkedin.svg" loading="lazy" alt="" /></a>
-              <a href="https://massachain.medium.com/" className="w-inline-block"><img src="/images/user-check.svg" loading="lazy" alt="" /></a>
-              <a href="https://github.com/massalabs" className="w-inline-block"><img src="/images/Github.svg" loading="lazy" alt="" /></a>
-            </div>
-          </div>
-        </div>
-        <div className="w-layout-hflex flex-block">
-          <a href="#" className="w-inline-block"><img width="120" loading="lazy" alt="" src="/images/LOGO.svg" /></a>
-        </div>
-      </section>
     </div>
   )
 }
