@@ -17,6 +17,7 @@ import { BlogPost } from './pages/BlogPost'
 import { PrivacyPolicy } from './pages/PrivacyPolicy'
 import { TermsOfService } from './pages/TermsOfService'
 import { NotFound } from './pages/NotFound'
+import AmbassadorComingSoon from './pages/Ambassador'
 
 function Layout() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/start" element={<Start />} />
           <Route path="/team" element={<Team />} />
           <Route path="/blog" element={<Blog />} />
+<Route path="/ambassador" element={<AmbassadorComingSoon />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
