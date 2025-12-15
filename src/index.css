@@ -1,7 +1,7 @@
 /* Local Fonts - Space Grotesk */
-@import '/fonts/space-grotesk.css';
+@import '../public/fonts/space-grotesk.css';
 /* Local Fonts - Animation Fonts */
-@import '/fonts/animation-fonts.css';
+@import '../public/fonts/animation-fonts.css';
 
 @import './styles/normalize.css';
 @import './styles/webflow.css';
