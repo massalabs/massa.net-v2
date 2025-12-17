@@ -5,3 +5,11 @@ declare module '*.html?raw' {
   export default content
 }
 
+interface ImportMetaEnv {
+  readonly VITE_PLAUSIBLE_API_HOST?: string
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
+

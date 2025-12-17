@@ -26,6 +26,8 @@ jobs:
         run: echo "commit_hash=$(git rev-parse --short=7 HEAD)" >> $GITHUB_OUTPUT
 
       - name: Build
+        env:
+          VITE_PLAUSIBLE_API_HOST: ${{ matrix.network == 'mainnet' && secrets.PLAUSIBLE_API_HOST || 'false' }}
         run: npm run build
 
       - name: Deploy Main → buildnet
