@@ -9,7 +9,7 @@ import App from './App.tsx'
 const plausibleApiHost = import.meta.env.VITE_PLAUSIBLE_API_HOST
 if(plausibleApiHost && plausibleApiHost.length && plausibleApiHost !== "false") {
   init({
-    domain: "massa.net",
+    domain: "massa.net.deweb",
     endpoint: import.meta.env.VITE_PLAUSIBLE_API_HOST
   })
 }
