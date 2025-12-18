@@ -129,7 +129,7 @@ export const blogPosts = [
     id: "massas-deweb-a-decentralized-blockchain-web-hosting-tool",
     title: "Massa's DeWeb: A Decentralized Blockchain Web Hosting Tool",
     excerpt: "In this article, we'll explore how Massa, a unique layer-1 blockchain, is tackling the need for truly decentralized web hosting by providing a powerful, blockchain technology alternative to traditional hosting providers like AWS and Vercel.",
-    image: "/images/6793708062d275f1cf99115e_A%20Decentralized%20Blockchain%20Web%20Hosting%20Tool-03.png",
+    image: "/images/6793708062d275f1cf99115e_A Decentralized Blockchain Web Hosting Tool-03.png",
     date: "2025-01-24",
     url: "/blog/massas-deweb-a-decentralized-blockchain-web-hosting-tool",
     author: "Massa Team",

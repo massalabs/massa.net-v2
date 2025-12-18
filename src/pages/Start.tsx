@@ -52,7 +52,7 @@ export function Start() {
               href: 'https://www.enkrypt.com/download.html',
             },
           ].map((item) => (
-            <div className="card-button" key={item.title}>
+            <div key={item.title} className="card-button">
               <div>
                 <div className="heading-3-copy">{item.title}</div>
                 <div className="uui-text-size-large">{item.text}</div>

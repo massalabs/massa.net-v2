@@ -1874,7 +1874,7 @@ h4 {
 
 .uui-section_cta11 {
   background-color: #0000;
-  background-image: url('../images/background-rectangle.svg');
+  background-image: url('/images/background-rectangle.svg');
   background-position: 50%;
   background-size: auto;
   padding-bottom: 60px;
@@ -2293,7 +2293,7 @@ h4 {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   background-color: #fff;
-  background-image: url('../images/PIXEL-MULTI-BACKGROUND.svg');
+  background-image: url('/images/PIXEL-MULTI-BACKGROUND.svg');
   background-position: 0 0;
   background-size: auto;
   flex-flow: row;
@@ -3251,7 +3251,7 @@ h4 {
 }
 
 .section-6 {
-  background-image: url('../images/Background.svg');
+  background-image: url('/images/Background.svg');
   background-position: 0 0;
   background-size: auto;
   flex-flow: column;
@@ -3369,7 +3369,7 @@ h4 {
 }
 
 .section-7 {
-  background-image: url('../images/Background.svg');
+  background-image: url('/images/Background.svg');
   background-position: 0 0;
   background-size: auto;
   margin-left: 0;
@@ -4050,7 +4050,7 @@ h4 {
 
 .section-15 {
   background-color: var(--black);
-  background-image: url('../images/pixelong.svg');
+  background-image: url('/images/pixelong.svg');
   background-position: 0 0;
   background-size: auto;
   flex-flow: column;
@@ -4082,7 +4082,7 @@ h4 {
 }
 
 .section-16 {
-  background-image: url('../images/background-rectangle.svg');
+  background-image: url('/images/background-rectangle.svg');
   background-position: 0 0;
   background-size: auto;
 }
@@ -5453,7 +5453,7 @@ h4 {
 }
 
 .section-12-copy {
-  background-image: url('../images/Background.svg');
+  background-image: url('/images/Background.svg');
   background-position: 0 0;
   background-size: auto;
   flex-flow: column;
@@ -5607,7 +5607,7 @@ h4 {
 
 .section-10-copy {
   background-color: var(--black);
-  background-image: url('../images/PIXEL-MULTI-BACKGROUND.svg');
+  background-image: url('/images/PIXEL-MULTI-BACKGROUND.svg');
   background-position: 0 0;
   background-size: auto;
   padding-top: 4rem;
@@ -6653,7 +6653,7 @@ h4 {
   }
 
   .uui-styleguide_logomark-bg {
-    background-image: url('../images/untitled-ui-logomark.svg');
+    background-image: url('/images/untitled-ui-logomark.svg');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -7122,7 +7122,7 @@ h4 {
   }
 
   .uui-styleguide_logomark-bg-2 {
-    background-image: url('../images/untitled-ui-logomark.svg');
+    background-image: url('/images/untitled-ui-logomark.svg');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;

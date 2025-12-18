@@ -31,6 +31,49 @@ body {
   min-height: 100vh;
   background-color: #ffffff;
   color: #0b0b0b;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Corriger le scroll horizontal sur mobile/tablette */
+@media screen and (max-width: 991px) {
+  body,
+  html {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Remplacer 100vw par 100% pour éviter le scroll horizontal */
+  .utility-page-wrap {
+    width: 100% !important;
+  }
+  
+  .uui-heroheader14_image-background {
+    width: 100% !important;
+  }
+  
+  .blog_category-menu {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  
+  .uui-heroheader14_image-wrapper {
+    width: 100% !important;
+  }
+  
+  /* S'assurer que tous les éléments respectent la largeur de l'écran */
+  .uui-section_heroheader14,
+  .section-5,
+  .uui-page-padding,
+  .uui-container-large {
+    max-width: 100% !important;
+    overflow-x: hidden;
+  }
 }
 
 a {
@@ -152,9 +195,39 @@ a {
 }
 
 .section-5 {
-  width: 100%;
-  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #ffffff;
+}
+
+/* Optimisation de la vidéo sur la page deweb */
+.section-21 {
+  padding: 0 2rem 4rem !important;
+}
+
+@media screen and (max-width: 991px) {
+  .section-21 {
+    padding: 0 1rem 2rem !important;
+  }
+}
+
+.video {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .section-5 .uui-padding-vertical-xlarge {
@@ -171,4 +244,454 @@ a {
   width: 100%;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+/* Styles spécifiques pour la page Deweb - Remplace le noir par #0000a8 */
+body.page-deweb {
+  --deweb-blue: #0000a8;
+  --black: #0000a8;
+  --untitled-ui--gray700: #0000a8;
+  --untitled-ui--gray600: #0000a8;
+  --untitled-ui--gray500: #0000a8;
+  --untitled-ui--gray400: #0000a8;
+}
+
+/* Menu - Tous les éléments */
+body.page-deweb .uui-navbar07_component,
+body.page-deweb .uui-navbar07_dropdown-toggle,
+body.page-deweb .uui-navbar07_dropdown-link,
+body.page-deweb .uui-navbar07_dropdown-link-copy-copy,
+body.page-deweb .text-block-5,
+body.page-deweb .bold-text,
+body.page-deweb .uui-navbar07_item-heading,
+body.page-deweb .uui-navbar07_item-right,
+body.page-deweb .uui-text-size-small,
+body.page-deweb .textlink,
+body.page-deweb .uui-navbar07_logo-link {
+  color: #0000a8 !important;
+}
+
+/* Logo du site - filtre pour convertir en bleu */
+body.page-deweb .uui-logo_component,
+body.page-deweb .uui-logo_component img,
+body.page-deweb .uui-navbar07_logo-link,
+body.page-deweb .uui-navbar07_logo-link img {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7500%) hue-rotate(240deg) brightness(95%) contrast(150%) !important;
+}
+
+/* Icônes du menu - les SVG sont chargés comme images, donc on utilise un filtre pour les convertir en bleu */
+body.page-deweb .uui-navbar07_icon-wrapper img {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7500%) hue-rotate(240deg) brightness(95%) contrast(150%);
+}
+
+/* Hover du menu */
+body.page-deweb .uui-navbar07_dropdown-toggle:hover,
+body.page-deweb .uui-navbar07_dropdown-link:hover,
+body.page-deweb .uui-navbar07_dropdown-link-copy-copy:hover {
+  background-color: rgba(0, 0, 168, 0.08) !important;
+  color: #0000a8 !important;
+}
+
+body.page-deweb .uui-navbar07_dropdown-list {
+  border-color: rgba(0, 0, 168, 0.2) !important;
+}
+
+/* Footer - Tous les éléments */
+body.page-deweb .section-5,
+body.page-deweb .uui-footer05_link,
+body.page-deweb .uui-footer05_link-list-heading,
+body.page-deweb .uui-footer05_legal-list-wrapper,
+body.page-deweb .text-color-gray500,
+body.page-deweb .text-block-12,
+body.page-deweb .uui-text-size-small-4,
+body.page-deweb .uui-footer05_logo-link {
+  color: #0000a8 !important;
+}
+
+body.page-deweb .uui-footer05_link:hover {
+  color: rgba(0, 0, 168, 0.7) !important;
+}
+
+body.page-deweb .uui-footer05_bottom-wrapper {
+  border-top-color: rgba(0, 0, 168, 0.2) !important;
+}
+
+/* Logo footer - filtre pour convertir en bleu */
+body.page-deweb .uui-footer05_logo-link img {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7500%) hue-rotate(240deg) brightness(95%) contrast(150%);
+}
+
+/* Icônes sociales du menu (Discord, Twitter/X) - filtre pour convertir en bleu */
+body.page-deweb .div-block-25 img,
+body.page-deweb .link-block img,
+body.page-deweb .link-block-2 img {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7500%) hue-rotate(240deg) brightness(95%) contrast(150%);
+}
+
+/* Tous les logos et icônes du footer - filtre pour convertir en bleu */
+body.page-deweb .flex-block-5 img,
+body.page-deweb .uui-footer05_social-icons img,
+body.page-deweb .uui-footer05_social-icons a img,
+body.page-deweb .flex-block img {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7500%) hue-rotate(240deg) brightness(95%) contrast(150%);
+}
+
+/* Premier bouton avec texte blanc, bleu au hover */
+body.page-deweb .button-blue,
+body.page-deweb .button-blue.w-button {
+  color: #ffffff !important;
+}
+
+body.page-deweb .button-blue:hover,
+body.page-deweb .button-blue.w-button:hover {
+  color: #0000a8 !important;
+}
+
+/* Textes des cartes Censorship-Resistant, Cost-Effective, Total Immutability en blanc */
+body.page-deweb .card-deweb,
+body.page-deweb .card-deweb .heading-3-deweb,
+body.page-deweb .card-deweb .uui-text-size-large-deweb {
+  color: #ffffff !important;
+}
+
+/* Bouton Get started sur la page deweb - même style que Start Now */
+body.page-deweb .uui-navbar07_menu-right .button.w-button {
+  background-color: #0000a8 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+body.page-deweb .uui-navbar07_menu-right .button.w-button:hover {
+  background-color: rgba(0, 0, 168, 0.9) !important;
+  color: #ffffff !important;
+}
+
+/* Desktop uniquement : Get started sans background, texte bleu */
+@media screen and (min-width: 992px) {
+  body.page-deweb .uui-navbar07_menu-right .link-block-7 {
+    background-color: transparent !important;
+    color: #0000a8 !important;
+    border: none !important;
+  }
+  
+  body.page-deweb .uui-navbar07_menu-right .link-block-7:hover {
+    background-color: transparent !important;
+    color: #0000a8 !important;
+  }
+  
+  body.page-deweb .uui-navbar07_menu-right .textlink {
+    color: #0000a8 !important;
+  }
+}
+
+/* Section Use-cases avec background blanc sur la page ASC */
+.section-use-cases {
+  background-color: #ffffff !important;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Corriger le background noir de section-17 si elle est encore utilisée */
+.section-17 {
+  background-color: #ffffff !important;
+}
+
+/* Corriger le background du titre Use-cases */
+.section-use-cases .heading-4-center,
+.section-17 .heading-4-center {
+  background-color: transparent !important;
+  background: none !important;
+  color: #000 !important;
+}
+
+/* S'assurer que section-17 n'a pas de background noir si elle est encore utilisée */
+.section-17 {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* Forcer le background transparent pour heading-4-center dans section-use-cases */
+.section-use-cases h2.heading-4-center {
+  background-color: transparent !important;
+  background: none !important;
+  color: #000 !important;
+}
+
+/* Background gris léger pour la section "Decentralization is Being Overlooked" sur la page ASC uniquement */
+.page-asc .section-8 {
+  background-color: #f5f5f5 !important;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+/* Centrer le contenu de section-8 sur la page ASC */
+.page-asc .section-8 .container-2-copy,
+.page-asc .section-8 .w-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+}
+
+.page-asc .section-8 .heading-4-copy,
+.page-asc .section-8 .uui-text-size-xlarge-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* S'assurer que section-8 sur Technology reste blanche */
+.section-8 {
+  background-color: #ffffff !important;
+}
+
+@media screen and (max-width: 991px) {
+  .section-8 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Footer sur tablette comme sur mobile */
+@media screen and (max-width: 991px) {
+  .uui-footer05_top-wrapper {
+    grid-template-columns: 1fr !important;
+    grid-row-gap: 2rem !important;
+  }
+  
+  .uui-footer05_link-list {
+    width: 100% !important;
+  }
+  
+  .uui-footer05_bottom-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+  }
+  
+  .uui-footer05_social-icons {
+    justify-content: center !important;
+  }
+  
+  .flex-block-5 {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+  }
+}
+
+/* Liens des bounties - style cliquable avec soulignement au hover */
+.collection-item-7 a,
+.collection-item-4 a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: text-decoration 0.2s ease;
+}
+
+.collection-item-7 a:hover,
+.collection-item-4 a:hover {
+  text-decoration: underline;
+}
+
+/* Espacement entre les bounties */
+.collection-item-4 {
+  margin-bottom: 3rem !important;
+}
+
+.collection-item-7 {
+  margin-bottom: 3rem !important;
+}
+
+.collection-item-4:last-child,
+.collection-item-7:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* FAQ Accordéon - Question en gras et réponse cachée par défaut */
+.rl_faq6_question-text {
+  font-weight: 700 !important;
+}
+
+.rl_faq6_accordion {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.rl_faq6_answer {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out !important;
+}
+
+.rl_faq6_answer-wrapper {
+  transition: transform 0.3s ease-out !important;
+}
+
+/* Ecosystem - Limiter la largeur des cartes */
+.section-12 {
+  margin-bottom: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.projects_wrapper {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+}
+
+.projects_wrapper .collection-list-wrapper {
+  max-width: 100% !important;
+}
+
+.projects_wrapper .collection-list {
+  grid-template-columns: repeat(3, 1fr) !important;
+  max-width: 100% !important;
+  grid-column-gap: 2rem !important;
+  grid-row-gap: 2rem !important;
+}
+
+.projects_wrapper .collection-item-3 {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.projects_wrapper .flex-block-4 {
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+.projects_wrapper .flex-block-4 img {
+  width: 24px !important;
+  height: 24px !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.projects_wrapper .flex-block-4 img:hover {
+  opacity: 0.7 !important;
+}
+
+@media screen and (max-width: 991px) {
+  .projects_wrapper .collection-list {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .projects_wrapper {
+    padding: 0 1rem !important;
+  }
+  
+  .projects_wrapper .collection-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.rl_faq6_question {
+  cursor: pointer;
+  user-select: none;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.use-cases-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.use-cases-container .heading-4-center {
+  margin-top: 0;
+  margin-bottom: 3rem;
+  padding-top: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .section-use-cases {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .use-cases-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Menu mobile/tablette - Format volet pour les dropdowns */
+@media screen and (max-width: 991px) {
+  .w-nav-menu .uui-navbar07_menu-dropdown {
+    width: 100%;
+  }
+  
+  .w-nav-menu .uui-navbar07_dropdown-list {
+    position: static !important;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 0;
+  }
+  
+  .w-nav-menu .uui-navbar07_dropdown-list.is-open {
+    display: block !important;
+  }
+  
+  .w-nav-menu .uui-navbar07_dropdown-link {
+    padding-left: 2rem;
+    padding-right: 1rem;
+  }
+  
+  .w-nav-menu .uui-navbar07_dropdown-toggle {
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+/* Tous les textes noirs sur la page */
+body.page-deweb h1,
+body.page-deweb h2,
+body.page-deweb h3,
+body.page-deweb h4,
+body.page-deweb h5,
+body.page-deweb h6,
+body.page-deweb p,
+body.page-deweb div,
+body.page-deweb span,
+body.page-deweb a,
+body.page-deweb .heading-4-center,
+body.page-deweb .heading-4-copy,
+body.page-deweb .heading-4-deweb,
+body.page-deweb .uui-heading-medium,
+body.page-deweb .uui-heading-xlarge,
+body.page-deweb .uui-heading-xlargeblue,
+body.page-deweb .uui-text-size-xlarge,
+body.page-deweb .uui-text-size-xlarge-blue,
+body.page-deweb .uui-text-size-xlarge-deweb,
+body.page-deweb .text-block-9,
+body.page-deweb .text-block-6-blue,
+body.page-deweb .heading-3-deweb,
+body.page-deweb .heading-3-deweb-2,
+body.page-deweb .uui-text-size-large-deweb {
+  color: #0000a8 !important;
+}
+
+/* Remplace les couleurs dans les variables CSS */
+body.page-deweb * {
+  --black: #0000a8 !important;
+  color: inherit;
 }

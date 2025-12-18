@@ -11,7 +11,7 @@ export function BackgroundPattern({ type, className = '' }: BackgroundPatternPro
         return (
           <div className={`w-full ${className}`}>
             <img 
-              src="/webflow-export/images/pixel.svg" 
+              src="/images/pixel.svg" 
               alt="" 
               className="w-full h-auto"
               loading="lazy"
@@ -24,7 +24,7 @@ export function BackgroundPattern({ type, className = '' }: BackgroundPatternPro
           <div 
             className={`w-full h-full bg-cover bg-no-repeat bg-center ${className}`}
             style={{
-              backgroundImage: "url('/webflow-export/images/PIXEL-MULTI-BACKGROUND.svg')",
+              backgroundImage: "url('/images/PIXEL-MULTI-BACKGROUND.svg')",
               backgroundPosition: '0 0',
               backgroundSize: 'auto'
             }}
@@ -36,7 +36,7 @@ export function BackgroundPattern({ type, className = '' }: BackgroundPatternPro
           <div 
             className={`w-full h-full bg-cover bg-no-repeat bg-center ${className}`}
             style={{
-              backgroundImage: "url('/webflow-export/images/background-rectangle.svg')",
+              backgroundImage: "url('/images/background-rectangle.svg')",
               backgroundPosition: '50%',
               backgroundSize: 'auto'
             }}
@@ -48,7 +48,7 @@ export function BackgroundPattern({ type, className = '' }: BackgroundPatternPro
           <div 
             className={`w-full h-full bg-cover bg-no-repeat bg-center ${className}`}
             style={{
-              backgroundImage: "url('/webflow-export/images/Background.svg')",
+              backgroundImage: "url('/images/Background.svg')",
               backgroundPosition: '0 0',
               backgroundSize: 'auto'
             }}

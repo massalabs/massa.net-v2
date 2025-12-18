@@ -89,7 +89,7 @@ export function Technology() {
 
       <section className="section-8">
         <div className="w-layout-blockcontainer container-2-copy w-container">
-          <h2 className="heading-4-copy">It’s scaled, decentralized and secure at the same time.</h2>
+          <h2 className="heading-4-copy">It's scaled, decentralized and secure at the same time.</h2>
           <div className="uui-space-large"></div>
           <a href="/documents/Whitepaper.pdf" className="button w-button" target="_blank" rel="noreferrer">
             Read the Whitepaper
@@ -159,7 +159,7 @@ export function Technology() {
                     <h3 className="heading">Autonomous Smart Contracts</h3>
                     <div className="uui-space-xsmall"></div>
                     <div className="uui-text-size-xlarge">
-                      Massa’s ASCs activate based on predefined conditions, eliminating external triggers. These ASCs enable:
+                      Massa's ASCs activate based on predefined conditions, eliminating external triggers. These ASCs enable:
                       <br />
                       <br />
                       Automated strategies on DEXs like limit orders
