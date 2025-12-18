@@ -42,17 +42,14 @@ export function Deweb() {
       </header>
 
       <section className="section-21">
-        <div style={{ paddingTop: '56.25%', maxWidth: '800px', width: '100%', margin: '0 auto' }} className="video w-video w-embed">
+        <div className="video w-video w-embed">
           <iframe
             className="embedly-embed"
             src="https://www.youtube.com/embed/jW56dlUAd7A?rel=0&modestbranding=1"
-            width="800"
-            height="450"
             scrolling="no"
             allowFullScreen
             title="Introducing DeWeb"
             loading="lazy"
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
           />
         </div>
       </section>
