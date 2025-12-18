@@ -1,11 +1,17 @@
 import { AnimatedFreedom } from '../components/AnimatedFreedom'
 import { AnimatedPixels } from '../components/AnimatedPixels'
 import { useBlogPosts } from '../hooks/useContentData'
+import { SEO } from '../components/SEO'
 
 export function Home() {
   const blogPosts = useBlogPosts()
   
   return (
+    <>
+      <SEO 
+        title="The Host of Freedom"
+        description="Massa is a layer 1 blockchain, and the first decentralized cloud network, bringing true decentralization to where it's needed through its technology."
+      />
     <div>
       {/* Hero Section */}
       <header className="uui-section_heroheader14">
@@ -328,6 +334,7 @@ export function Home() {
       </section>
 
     </div>
+    </>
   )
 }
 

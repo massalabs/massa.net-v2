@@ -218,7 +218,7 @@ export function WebflowPage({ html, className }: WebflowPageProps) {
   }, [navigate, content])
 
   if (!content.html) {
-    return <div className="webflow-page webflow-page--loading">Chargement...</div>
+    return <div className="webflow-page webflow-page--loading">Loading...</div>
   }
 
   const combinedClass = useMemo(() => {

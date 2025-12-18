@@ -1,6 +1,6 @@
 export function Asc() {
   return (
-    <div>
+    <div className="page-asc">
       <header className="uui-section_heroheader14">
         <div className="uui-page-padding">
           <div className="uui-container-large">
@@ -54,35 +54,35 @@ export function Asc() {
         </div>
       </section>
 
-      <section className="section-17">
-        <h2 className="heading-4-center">Use-cases</h2>
-      </section>
-
-      <section className="section-4-copy">
-        <div className="div-block-15-copy-copy">
-          <div className="card">
-            <div className="heading-3-copy">DeFi</div>
-            <div className="uui-text-size-large">
-              Fully automated strategies on DEXs.
-              <br />
+      <section className="section-use-cases">
+        <div className="use-cases-container">
+          <h2 className="heading-4-center">Use-cases</h2>
+          <div className="div-block-15-copy-copy">
+            <div className="card">
+              <div className="heading-3-copy">DeFi</div>
+              <div className="uui-text-size-large">
+                Fully automated strategies on DEXs.
+                <br />
+              </div>
             </div>
-          </div>
-          <div className="card">
-            <div className="heading-3-copy">Payment</div>
-            <div className="uui-text-size-large">
-              Loan payments and collateral liquidations
-              <br />
+            <div className="card">
+              <div className="heading-3-copy">Payment</div>
+              <div className="uui-text-size-large">
+                Loan payments and collateral liquidations
+                <br />
+              </div>
             </div>
-          </div>
-          <div className="card">
-            <div className="heading-3-copy">Gaming and NFTs</div>
-            <div className="uui-text-size-large">
-              Evolving NFTs and gaming environments
-              <br />
+            <div className="card">
+              <div className="heading-3-copy">Gaming and NFTs</div>
+              <div className="uui-text-size-large">
+                Evolving NFTs and gaming environments
+                <br />
+              </div>
             </div>
           </div>
         </div>
       </section>
+
 
       <section className="section-8">
         <div className="w-layout-blockcontainer container-2-copy w-container">
@@ -105,7 +105,7 @@ export function Asc() {
                     <h2 className="heading-4-center">Autonomous Smart Contracts</h2>
                     <div className="uui-space-xsmall"></div>
                     <div className="text-block-9">
-                      This is where Massa’s Autonomous Smart Contracts step in, ensuring that Decentralization remains as one
+                      This is where Massa's Autonomous Smart Contracts step in, ensuring that Decentralization remains as one
                       of the core pillars of the Blockchain for the forseeable future.
                     </div>
                   </div>
@@ -138,7 +138,7 @@ export function Asc() {
                   <strong>✅ Censorship-Resistant &amp; Trustless</strong>
                 </div>
                 <div className="uui-text-size-large-margin">
-                  Since execution is fully decentralized, there’s no single point of failure or reliance on centralized
+                  Since execution is fully decentralized, there's no single point of failure or reliance on centralized
                   services, ensuring maximum security and resilience.
                   <br />
                 </div>

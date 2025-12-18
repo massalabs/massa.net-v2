@@ -62,7 +62,7 @@ export function Footer() {
           </div>
         </div>
         <div className="w-layout-hflex flex-block-5">
-          <a href="https://coinmarketcap.com/fr/currencies/massa/" target="_blank" rel="noreferrer" className="w-inline-block">
+          <a href="https://coinmarketcap.com/currencies/massa/" target="_blank" rel="noreferrer" className="w-inline-block">
             <img src="/images/CMC.svg" loading="lazy" width="140" alt="" />
           </a>
           <a href="https://www.coingecko.com/en/coins/massa" target="_blank" rel="noreferrer" className="w-inline-block">
@@ -86,7 +86,7 @@ export function Footer() {
             <a href="https://t.me/massanetwork" target="_blank" rel="noreferrer" className="w-inline-block">
               <img src="/images/Tg.svg" loading="lazy" width="24" alt="" />
             </a>
-            <a href="https://fr.linkedin.com/company/massa-labs" target="_blank" rel="noreferrer" className="w-inline-block">
+            <a href="https://www.linkedin.com/company/massa-labs" target="_blank" rel="noreferrer" className="w-inline-block">
               <img src="/images/Linkedin.svg" loading="lazy" alt="" />
             </a>
             <a href="https://massachain.medium.com/" target="_blank" rel="noreferrer" className="w-inline-block">
@@ -97,11 +97,6 @@ export function Footer() {
             </a>
           </div>
         </div>
-      </div>
-      <div className="w-layout-hflex flex-block">
-        <Link to="/" className="w-inline-block">
-          <img width="120" loading="lazy" alt="Massa" src="/images/LOGO.svg" />
-        </Link>
       </div>
     </section>
   )

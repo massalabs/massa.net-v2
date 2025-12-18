@@ -30,18 +30,14 @@ export function GetMas() {
               <div className="uui-text-size-large-margin">
                 You already own some crypto on Massa chain ? Exchange them on DEX:
               </div>
-              <ul role="list">
-                <li className="list-item-2">
-                  <a href="https://app.dusa.io/" target="_blank" rel="noreferrer">
-                    Dusa
-                  </a>
-                </li>
-                <li className="list-item-2">
-                  <a href="https://www.eaglefi.io/" target="_blank" rel="noreferrer">
-                    EagleFi
-                  </a>
-                </li>
-              </ul>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+                <a href="https://app.dusa.io/" target="_blank" rel="noreferrer" className="button w-button">
+                  Dusa
+                </a>
+                <a href="https://www.eaglefi.io/" target="_blank" rel="noreferrer" className="button w-button">
+                  EagleFi
+                </a>
+              </div>
             </div>
           </div>
           <div className="card-button">
@@ -50,18 +46,14 @@ export function GetMas() {
                 <strong className="heading-3-copy">CEX</strong>
               </div>
               <div className="uui-text-size-large-margin">Buy with your credit card on crypto trading CEX platform</div>
-              <ul role="list">
-                <li className="list-item-2">
-                  <a href="https://www.mexc.co" target="_blank" rel="noreferrer">
-                    MEXC
-                  </a>
-                </li>
-                <li className="list-item-2">
-                  <a href="https://www.bitgetapp.com" target="_blank" rel="noreferrer">
-                    Bitget
-                  </a>
-                </li>
-              </ul>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+                <a href="https://www.mexc.co" target="_blank" rel="noreferrer" className="button w-button">
+                  MEXC
+                </a>
+                <a href="https://www.bitgetapp.com" target="_blank" rel="noreferrer" className="button w-button">
+                  Bitget
+                </a>
+              </div>
             </div>
           </div>
         </div>

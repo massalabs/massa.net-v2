@@ -1,4 +1,14 @@
+import { useEffect } from 'react'
+
 export function Deweb() {
+  useEffect(() => {
+    // Ajouter une classe au body pour cibler les styles spécifiques
+    document.body.classList.add('page-deweb')
+    return () => {
+      document.body.classList.remove('page-deweb')
+    }
+  }, [])
+
   return (
     <div>
       <header className="uui-section_heroheader14">
@@ -32,15 +42,17 @@ export function Deweb() {
       </header>
 
       <section className="section-21">
-        <div style={{ paddingTop: '56.17021276595745%' }} className="video w-video w-embed">
+        <div style={{ paddingTop: '56.25%', maxWidth: '800px', width: '100%', margin: '0 auto' }} className="video w-video w-embed">
           <iframe
             className="embedly-embed"
-            src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FjW56dlUAd7A%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjW56dlUAd7A&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FjW56dlUAd7A%2Fhqdefault.jpg&type=text%2Fhtml&schema=youtube"
-            width="940"
-            height="528"
+            src="https://www.youtube.com/embed/jW56dlUAd7A?rel=0&modestbranding=1"
+            width="800"
+            height="450"
             scrolling="no"
             allowFullScreen
             title="Introducing DeWeb"
+            loading="lazy"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
           />
         </div>
       </section>
@@ -82,7 +94,7 @@ export function Deweb() {
             <div>
               <div className="heading-3-deweb">Total Immutability</div>
               <div className="uui-text-size-large-deweb">
-                Make your site so permanent, even you can’t take it down.
+                Make your site so permanent, even you can't take it down.
                 <br />
               </div>
             </div>

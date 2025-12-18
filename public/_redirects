@@ -1,0 +1,9 @@
+# Netlify redirects (si tu utilises Netlify)
+# Pour les autres hébergeurs, crée un fichier similaire selon leur format
+
+# Rediriger toutes les routes vers index.html pour SPA
+/*    /index.html   200
+
+# Gérer les vraies 404
+# Les routes inexistantes seront gérées par React Router
+

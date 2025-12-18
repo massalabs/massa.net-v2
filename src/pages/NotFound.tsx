@@ -1,7 +1,25 @@
 import { Link } from 'react-router-dom'
+import { SEO } from '../components/SEO'
+import { useEffect } from 'react'
 
 export function NotFound() {
+  useEffect(() => {
+    // S'assurer que le serveur renvoie un 404
+    // En production, cela devrait être géré par le serveur web
+    // Pour Vite en dev, on peut au moins mettre le status dans l'URL
+    if (import.meta.env.PROD) {
+      // En production, le serveur web devrait gérer ça
+      document.title = '404 - Page introuvable | Massa'
+    }
+  }, [])
+
   return (
+    <>
+      <SEO 
+        title="404 - Page introuvable" 
+        description="La page demandée n'existe pas."
+        noindex={true}
+      />
     <section className="uui-section_layout38">
       <div className="uui-page-padding-2">
         <div className="uui-container-large-2">
@@ -23,6 +41,7 @@ export function NotFound() {
         </div>
       </div>
     </section>
+    </>
   )
 }
 

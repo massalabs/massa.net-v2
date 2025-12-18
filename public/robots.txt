@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://massa.net/sitemap.xml
+
+# Pages à ne pas indexer (si nécessaire)
+# Disallow: /admin/
+# Disallow: /private/
