@@ -105,7 +105,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     id: "gossip",
     name: "Gossip",
     description: "Secure your conversations with encryption strong enough to outlast tomorrow's computers.",
-    image: "/images/gossip.svg",
+    image: "/images/gossip.png",
     website: "https://usegossip.massa.network/",
     links: [{ type: "x", url: "https://x.com/UseGossip" }],
     category: ["Social"],
