@@ -102,6 +102,15 @@ export const ecosystemProjects: EcosystemProject[] = [
     category: ["Social"],
   },
   {
+    id: "gossip",
+    name: "Gossip",
+    description: "Secure your conversations with encryption strong enough to outlast tomorrow's computers.",
+    image: "/images/gossip.svg",
+    website: "https://usegossip.massa.network/",
+    links: [{ type: "x", url: "https://x.com/UseGossip" }],
+    category: ["Social"],
+  },
+  {
     id: "starknet",
     name: "Starknet",
     description: "Shaping the future with scale and integrity.",

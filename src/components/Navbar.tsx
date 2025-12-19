@@ -5,6 +5,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [isMobile, setIsMobile] = useState(false)
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -15,8 +16,35 @@ export function Navbar() {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
+  // Nettoyer le timeout au démontage
+  useEffect(() => {
+    return () => {
+      if (closeTimeout) {
+        clearTimeout(closeTimeout)
+      }
+    }
+  }, [closeTimeout])
+
   const toggleDropdown = (id: string) => {
     setOpenDropdown((current) => (current === id ? null : id))
+  }
+
+  const handleDropdownEnter = (id: string) => {
+    // Annuler le timeout de fermeture si on entre à nouveau
+    if (closeTimeout) {
+      clearTimeout(closeTimeout)
+      setCloseTimeout(null)
+    }
+    setOpenDropdown(id)
+  }
+
+  const handleDropdownLeave = (id: string) => {
+    // Ajouter un délai avant de fermer pour permettre à la souris de se déplacer vers le dropdown
+    const timeout = setTimeout(() => {
+      setOpenDropdown((current) => (current === id ? null : current))
+      setCloseTimeout(null)
+    }, 150) // 150ms de délai
+    setCloseTimeout(timeout)
   }
 
   const dropdownEvents = (id: string) => {
@@ -30,8 +58,18 @@ export function Navbar() {
       }
     }
     return {
-      onPointerEnter: () => setOpenDropdown(id),
-      onPointerLeave: () => setOpenDropdown((current) => (current === id ? null : current)),
+      onPointerEnter: () => handleDropdownEnter(id),
+      onPointerLeave: () => handleDropdownLeave(id),
+    }
+  }
+
+  const dropdownListEvents = (id: string) => {
+    if (isMobile) {
+      return {}
+    }
+    return {
+      onPointerEnter: () => handleDropdownEnter(id),
+      onPointerLeave: () => handleDropdownLeave(id),
     }
   }
 
@@ -78,6 +116,7 @@ export function Navbar() {
               <nav
                 data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb292"
                 className={`uui-navbar07_dropdown-list w-dropdown-list ${openDropdown === 'solutions' ? 'is-open w--open' : ''}`}
+                {...dropdownListEvents('solutions')}
               >
                 <div className="uui-navbar07_dropdown-link-list">
                 <Link to="/deweb" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
@@ -120,6 +159,7 @@ export function Navbar() {
               <nav
                 data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2b2"
                 className={`uui-navbar07_dropdown-list w-dropdown-list ${openDropdown === 'build' ? 'is-open w--open' : ''}`}
+                {...dropdownListEvents('build')}
               >
                 <div className="uui-navbar07_dropdown-link-list">
                 <a href="https://docs.massa.net/" target="_blank" className="uui-navbar07_dropdown-link w-inline-block" rel="noreferrer" onClick={handleLinkClick}>
@@ -155,6 +195,7 @@ export function Navbar() {
               <nav
                 data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2ca"
                 className={`uui-navbar07_dropdown-list w-dropdown-list ${openDropdown === 'explore' ? 'is-open w--open' : ''}`}
+                {...dropdownListEvents('explore')}
               >
                 <div className="uui-navbar07_dropdown-link-list">
                 <Link to="/ecosystem" className="uui-navbar07_dropdown-link-copy-copy w-inline-block" onClick={handleLinkClick}>
@@ -196,6 +237,7 @@ export function Navbar() {
               <nav
                 data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2da"
                 className={`uui-navbar07_dropdown-list w-dropdown-list ${openDropdown === 'community' ? 'is-open w--open' : ''}`}
+                {...dropdownListEvents('community')}
               >
                 <div className="uui-navbar07_dropdown-link-list">
                   <a href="https://forum.massa.community/" target="_blank" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
@@ -231,6 +273,7 @@ export function Navbar() {
               <nav
                 data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb2f2"
                 className={`uui-navbar07_dropdown-list w-dropdown-list ${openDropdown === 'about' ? 'is-open w--open' : ''}`}
+                {...dropdownListEvents('about')}
               >
                 <div className="uui-navbar07_dropdown-link-list">
                 <Link to="/team" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
