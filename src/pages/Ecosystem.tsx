@@ -88,12 +88,13 @@ export function Ecosystem() {
                     <div className="div-block-21">
                       {project.image && (
                         <img 
-                          src={encodeURI(project.image)} 
+                          src={project.image} 
                           alt={project.name} 
                           width="154" 
                           className="image-22"
                           loading="lazy"
                           onError={(e) => {
+                            console.error('Failed to load image:', project.image, 'for project:', project.name)
                             (e.target as HTMLImageElement).src = '/images/Technology.svg'
                           }}
                         />
