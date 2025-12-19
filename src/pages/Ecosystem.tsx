@@ -88,7 +88,7 @@ export function Ecosystem() {
                     <div className="div-block-21">
                       {project.image && (
                         <img 
-                          src={project.image} 
+                          src={encodeURI(project.image)} 
                           alt={project.name} 
                           width="154" 
                           className="image-22"
