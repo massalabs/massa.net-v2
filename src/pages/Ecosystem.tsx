@@ -94,7 +94,6 @@ export function Ecosystem() {
                           className="image-22"
                           loading="lazy"
                           onError={(e) => {
-                            console.error('Failed to load image:', project.image, 'for project:', project.name)
                             (e.target as HTMLImageElement).src = '/images/Technology.svg'
                           }}
                         />
