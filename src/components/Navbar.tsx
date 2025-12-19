@@ -5,7 +5,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [isMobile, setIsMobile] = useState(false)
-  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null)
+  const [closeTimeout, setCloseTimeout] = useState<number | null>(null)
 
   useEffect(() => {
     const checkMobile = () => {
