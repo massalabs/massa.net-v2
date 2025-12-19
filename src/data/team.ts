@@ -31,14 +31,14 @@ export const team = [
     id: "thybault-alabarbe",
     name: "Thybault Alabarbe",
     role: "Software Engineer",
-    image: "/images/69245c5ef83f0d2a89ccec3a_photo.jpeg",
+    image: "/images/69245b6430b7e4f6457ca967_IMG_20251030_121009.jpg",
     linkedin: "https://www.linkedin.com/in/thybault-alabarbe/"
   },
   {
     id: "andrei-fleiser",
     name: "Andrei Fleiser",
     role: "Software Engineer",
-    image: "/images/69245b6430b7e4f6457ca967_IMG_20251030_121009.jpg",
+    image: "/images/69245c5ef83f0d2a89ccec3a_photo.jpeg",
     linkedin: "https://www.linkedin.com/in/andrei-fleiser-81a57b139/"
   },
   {
@@ -46,7 +46,7 @@ export const team = [
     name: "Léo Besançon",
     role: "Software Engineer",
     image: "/images/6924618f64ebabc381c1d99b_Leo.png",
-    linkedin: ""
+    linkedin: "https://www.linkedin.com/in/leo-besancon/"
   },
   {
     id: "jean-francois-morcillo",
