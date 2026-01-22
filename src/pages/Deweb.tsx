@@ -42,15 +42,56 @@ export function Deweb() {
       </header>
 
       <section className="section-21">
-        <div className="video w-video w-embed">
-          <iframe
-            className="embedly-embed"
-            src="https://www.youtube.com/embed/jW56dlUAd7A?rel=0&modestbranding=1"
-            scrolling="no"
-            allowFullScreen
-            title="Introducing DeWeb"
-            loading="lazy"
-          />
+        <div className="video w-video w-embed" style={{ paddingTop: '56.25%', height: 'auto' }}>
+          <a
+            href="https://www.youtube.com/watch?v=jW56dlUAd7A"
+            target="_blank"
+            rel="noreferrer noopener"
+            style={{ 
+              display: 'block', 
+              position: 'absolute', 
+              top: 0, 
+              left: 0, 
+              width: '100%', 
+              height: '100%',
+              cursor: 'pointer' 
+            }}
+            aria-label="Watch Introducing DeWeb on YouTube"
+          >
+            <img
+              src="/images/youtube-deweb-thumb.jpg"
+              alt="Introducing DeWeb - Click to watch on YouTube"
+              loading="lazy"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '68px',
+                height: '48px',
+                backgroundColor: 'rgba(23, 35, 34, 0.9)',
+                borderRadius: '14px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                pointerEvents: 'none',
+                zIndex: 1,
+              }}
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="white"
+                style={{ marginLeft: '4px' }}
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </a>
         </div>
       </section>
 

@@ -4,7 +4,7 @@ export function GetMas() {
       <section className="divsquares-copy">
         <h1>Get $MAS</h1>
         <div className="w-embed w-iframe">
-          <link rel="stylesheet" type="text/css" href="https://letsexchange.io/widget_lets.css" />
+          <link rel="stylesheet" type="text/css" href="/css/widget_lets.css" />
           <div className="lets-widget" id="lets_widget_ZA9pV7Cit1WsM8qP" style={{ width: '600px', height: '480px' }}>
             <iframe
               src="https://letsexchange.io/v2/widget?affiliate_id=ZA9pV7Cit1WsM8qP&is_iframe=true"
