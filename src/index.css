@@ -38,6 +38,330 @@ html {
   overflow-x: hidden;
 }
 
+/* Curseur personnalisé - SVG encodé en data URI */
+/* Note: La règle pour les éléments cliquables doit être après celle-ci pour surcharger */
+*:not(a):not(button):not([role="button"]):not(input[type="button"]):not(input[type="submit"]):not(input[type="reset"]):not(.w-button):not(.button):not(.uui-button):not(.uui-button-secondary-gray):not(.uui-navbar07_dropdown-toggle):not(.rl_faq6_question):not(.projects_wrapper .flex-block-4 img):not(.collection-item-7 a):not(.collection-item-4 a) {
+  cursor: url("data:image/svg+xml,%3Csvg width='47' height='55' viewBox='0 0 47 55' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40.126 26.6021L39.2827 24.103L36.7848 24.9467L35.9415 22.437L33.4437 23.2807L32.6003 20.7817L30.1025 21.6254L29.2485 19.1263L26.7506 19.97L25.9074 17.4603L23.4095 18.304L22.5662 15.805L20.0683 16.6487L19.225 14.1496L16.7165 14.9933L15.8732 12.4836L13.3753 13.3273L12.532 10.8283L10.0342 11.672L9.19088 9.16225L6.69302 10.0059L5.84971 7.50691L3.34117 8.35059L2.49788 5.85156L0 6.69525L15.1686 51.7419L17.6772 50.8982L16.8339 48.3885L19.3318 47.5448L18.4885 45.0458L20.9863 44.2021L20.1537 41.7031L25.1494 40.0157L26.8361 45.0138L29.3339 44.1701L31.0205 49.1788L33.529 48.3351L35.2156 53.3439L37.7135 52.5002L38.5568 54.9992L43.5525 53.3118L42.7092 50.8128L45.2178 49.9691L43.5312 44.9603L41.0333 45.804L39.3467 40.7953L36.8382 41.639L35.1516 36.6409L32.6537 37.4846L30.9671 32.4759L43.4778 28.2574L42.6345 25.7584L40.126 26.6021Z' fill='%230043FF'/%3E%3Cpath d='M35.0982 19.9379L34.2548 17.4388L31.757 18.2825L30.9137 15.7728L28.4158 16.6165L27.5725 14.1175L25.064 14.9612L24.2207 12.4621L21.7228 13.3058L20.8795 10.7961L18.3817 11.6398L17.5384 9.14077L15.0298 9.98446L14.1865 7.48543L11.6887 8.31844L10.8454 5.81941L8.34751 6.66309L7.50421 4.16406L5.00635 5.00776L16.8018 40.0369L19.2997 39.1932L18.4671 36.6942L20.9649 35.8505L20.1216 33.3515L22.6195 32.5078L21.7762 29.9981L24.2847 29.1544L25.9607 34.1631L28.4692 33.3194L30.1558 38.3282L32.6536 37.4845L34.3403 42.4826L36.8381 41.6389L38.5247 46.6476L43.5311 44.9602L41.8445 39.9515L39.3467 40.7952L37.6601 35.7971L35.1515 36.6408L33.4649 31.6321L30.9671 32.4757L28.4372 24.968L38.4393 21.5932L37.596 19.0942L35.0982 19.9379Z' fill='%2300FF6D'/%3E%3Cpath d='M15.9583 37.5389L5.00616 5.00875L7.50402 4.16505L6.66075 1.65535L4.16285 2.49903L3.31956 0L0.811035 0.843683L15.9904 45.8904L18.4882 45.0467L17.6449 42.5476L20.1535 41.7039L19.2995 39.1942L16.8017 40.0379L15.9583 37.5389Z' fill='%230043FF'/%3E%3Cpath d='M19.2999 39.1943L21.8084 38.3506L20.9651 35.8516L18.4673 36.6953L19.2999 39.1943Z' fill='%230043FF'/%3E%3Cpath d='M24.2847 29.1562L21.7761 29.9999L22.6194 32.5097L20.1216 33.3533L20.9649 35.8524L25.9606 34.165L24.2847 29.1562Z' fill='%230043FF'/%3E%3Cpath d='M28.4695 33.3203L25.9609 34.164L27.6475 39.1727L30.1561 38.3291L28.4695 33.3203Z' fill='%230043FF'/%3E%3Cpath d='M32.6536 37.4844L30.1558 38.3281L31.8317 43.3261L34.3402 42.4824L32.6536 37.4844Z' fill='%230043FF'/%3E%3Cpath d='M36.8382 41.6406L34.3403 42.4843L36.0269 47.4931L38.5248 46.6494L36.8382 41.6406Z' fill='%230043FF'/%3E%3Cpath d='M40.9482 20.751L40.1049 18.252L37.5963 19.0956L38.4396 21.5947L28.4375 24.9694L30.9674 32.4772L33.4652 31.6335L31.7787 26.6248L44.2893 22.417L43.446 19.9073L40.9482 20.751Z' fill='%230043FF'/%3E%3Cpath d='M35.1519 36.6415L37.6605 35.7978L35.9739 30.7891L33.4653 31.6327L35.1519 36.6415Z' fill='%230043FF'/%3E%3Cpath d='M39.3463 40.7968L41.8441 39.9531L40.1575 34.9551L37.6597 35.7988L39.3463 40.7968Z' fill='%230043FF'/%3E%3Cpath d='M43.5313 44.9618L46.0292 44.1181L44.3426 39.1094L41.8447 39.9531L43.5313 44.9618Z' fill='%230043FF'/%3E%3Cpath d='M38.5249 46.6483L39.3682 49.1473L44.3746 47.46L43.5313 44.9609L38.5249 46.6483Z' fill='%230043FF'/%3E%3Cpath d='M10.8456 5.81934L10.0023 3.32031L7.50439 4.164L8.3477 6.66302L10.8456 5.81934Z' fill='%230043FF'/%3E%3Cpath d='M14.1864 7.48628L13.3431 4.97656L10.8452 5.82026L11.6885 8.31929L14.1864 7.48628Z' fill='%230043FF'/%3E%3Cpath d='M17.5383 9.14161L16.6951 6.64258L14.1865 7.48626L15.0298 9.98529L17.5383 9.14161Z' fill='%230043FF'/%3E%3Cpath d='M20.8793 10.7979L20.036 8.29883L17.5381 9.14253L18.3814 11.6416L20.8793 10.7979Z' fill='%230043FF'/%3E%3Cpath d='M24.2206 12.4628L23.3773 9.95312L20.8794 10.7968L21.7227 13.3065L24.2206 12.4628Z' fill='%230043FF'/%3E%3Cpath d='M27.5726 14.1171L26.7292 11.6074L24.2207 12.4618L25.064 14.9608L27.5726 14.1171Z' fill='%230043FF'/%3E%3Cpath d='M30.9139 15.7725L30.0706 13.2734L27.5728 14.1171L28.416 16.6162L30.9139 15.7725Z' fill='%230043FF'/%3E%3Cpath d='M34.2547 17.4394L33.4115 14.9297L30.9136 15.7734L31.7569 18.2831L34.2547 17.4394Z' fill='%230043FF'/%3E%3Cpath d='M37.596 19.0947L36.7527 16.5957L34.2549 17.4394L35.0982 19.9384L37.596 19.0947Z' fill='%230043FF'/%3E%3C/svg%3E") 0 0, auto !important;
+}
+
+/* Curseur hover pour les éléments cliquables - SVG encodé en data URI - DOIT être après la règle générale */
+a,
+a:hover,
+a:focus,
+button,
+button:hover,
+button:focus,
+[role="button"],
+[role="button"]:hover,
+[role="button"]:focus,
+input[type="button"],
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="submit"],
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="reset"],
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+.w-button,
+.w-button:hover,
+.w-button:focus,
+.button,
+.button:hover,
+.button:focus,
+.uui-button,
+.uui-button:hover,
+.uui-button:focus,
+.uui-button-secondary-gray,
+.uui-button-secondary-gray:hover,
+.uui-button-secondary-gray:focus,
+.uui-navbar07_dropdown-toggle,
+.uui-navbar07_dropdown-toggle:hover,
+.uui-navbar07_dropdown-toggle:focus,
+.rl_faq6_question,
+.rl_faq6_question:hover,
+.rl_faq6_question:focus,
+.projects_wrapper .flex-block-4 img,
+.projects_wrapper .flex-block-4 img:hover,
+.collection-item-7 a,
+.collection-item-7 a:hover,
+.collection-item-4 a,
+.collection-item-4 a:hover {
+  cursor: url("data:image/svg+xml,%3Csvg width='125' height='188' viewBox='0 0 125 188' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M120.207 69.6602C117.726 65.6202 114.187 62.3453 109.958 60.1876L105.485 57.9074L103.187 55.6578C98.7289 51.2964 92.9379 48.6642 86.7486 48.1592L83.9451 45.4965C79.824 41.5788 74.5233 39.0844 68.8855 38.3958V12.6711C68.8855 5.67749 63.2018 0 56.2006 0C49.1993 0 43.5156 5.67749 43.5156 12.6711V85.193L28.4867 70.1805C25.2695 66.9669 21.7306 64.6561 17.9925 63.2941C15.3422 62.3453 12.6765 61.8709 9.82696 61.8709C5.96632 61.8709 2.4274 64.5796 0.818801 68.788C-0.820438 73.0576 0.0374816 77.5873 3.07084 80.6173C3.07084 80.6173 7.54428 84.7645 8.89244 86.1724C12.6152 90.09 15.097 93.5639 15.8937 95.9512L41.0797 171.748V188H106.419L107.783 171.947L117.205 147.906C119.441 142.197 121.157 136.245 122.291 130.215C123.425 124.186 124.007 118.018 124.007 111.882V83.0812C124.007 78.3372 122.689 73.7003 120.223 69.6602H120.207Z' fill='%23FF7300'/%3E%3Cpath d='M120.208 69.6602C117.726 65.6202 114.187 62.3453 109.959 60.1876L105.485 57.9074L103.187 55.6578C98.7292 51.2964 92.9382 48.6642 86.7489 48.1592L83.9454 45.4965C79.8243 41.5788 74.5236 39.0844 68.8858 38.3958V12.6711C68.8858 5.67749 63.2021 0 56.2162 0C49.2303 0 43.5312 5.67749 43.5312 12.6711V85.193L28.5023 70.1805C25.2851 66.9669 21.7462 64.6561 18.0081 63.2941C15.3578 62.3453 12.6921 61.8709 9.84258 61.8709C5.98194 61.8709 2.44303 64.5796 0.834426 68.788C-0.804813 73.0576 0.0531066 77.5873 3.08646 80.6173C3.08646 80.6173 7.5599 84.7645 8.90806 86.1724C12.6308 90.09 15.1127 93.5639 15.9093 95.9512L41.0954 171.748V188H106.435L107.799 171.947L117.22 147.906C119.457 142.197 121.173 136.245 122.307 130.215C123.44 124.186 124.022 118.018 124.022 111.882V83.0812C124.022 78.3372 122.705 73.7003 120.238 69.6602H120.208ZM118.339 111.882C118.339 117.666 117.787 123.482 116.715 129.159C115.642 134.837 114.034 140.453 111.92 145.84L102.207 170.646L101.211 182.353H46.7331V170.845L21.256 94.176C20.1683 90.9164 17.3953 86.9223 12.9832 82.2854C10.0111 79.1635 8.23398 77.4802 7.05434 76.6079C4.92486 74.4655 5.78278 71.6191 6.08918 70.808C6.83986 68.8645 8.37186 67.5178 9.82726 67.5178C12.0027 67.5178 14.0556 67.8698 16.0625 68.6043C19.0193 69.6755 21.8535 71.5425 24.4732 74.1747L43.5006 93.1966V102.929H49.1537V12.6711C49.1537 8.79935 52.3096 5.64689 56.1855 5.64689C60.0615 5.64689 63.2174 8.79935 63.2174 12.6711V87.3967H68.8705V44.0886C73.0375 44.7466 76.9441 46.6595 80.0235 49.5824L82.7045 52.1228V94.9871H88.3575V54.051C92.4326 54.7855 96.2167 56.729 99.2194 59.6672L100.981 61.3965V102.899H106.634V64.8244L107.385 65.207C110.679 66.8904 113.452 69.446 115.382 72.5985C117.312 75.7509 118.339 79.3778 118.339 83.0812V111.882Z' fill='%235218EF'/%3E%3C/svg%3E") 0 0, pointer !important;
+}
+
+/* Slider ASC — icônes visibles sur fond jaune */
+.slide-asc .menu-pictos-background {
+  z-index: 1;
+}
+.slide-asc .menu-pictos-background img {
+  filter: brightness(0) !important;
+  opacity: 0.3 !important;
+  width: 64px !important;
+  height: 64px !important;
+}
+
+/* Slider — bouton CTA adapté aux 2 couleurs de chaque slide */
+.slide-gossip .button-blue-inverted.w-button {
+  color: #18181B !important;
+  border-color: #18181B !important;
+  background-color: transparent !important;
+}
+.slide-gossip .button-blue-inverted.w-button:hover {
+  color: #3AF3D1 !important;
+  border-color: #18181B !important;
+  background-color: #18181B !important;
+}
+.slide-deweb .button-blue-inverted.w-button {
+  color: #ECECEC !important;
+  border-color: #ECECEC !important;
+  background-color: transparent !important;
+}
+.slide-deweb .button-blue-inverted.w-button:hover {
+  color: #0000A8 !important;
+  border-color: #ECECEC !important;
+  background-color: #ECECEC !important;
+}
+.slide-asc .button-blue-inverted.w-button {
+  color: #000 !important;
+  border-color: #000 !important;
+  background-color: transparent !important;
+}
+.slide-asc .button-blue-inverted.w-button:hover {
+  color: #FFFF00 !important;
+  border-color: #000 !important;
+  background-color: #000 !important;
+}
+
+/* Hero Home — section agrandie + composition pictos en arrière-plan */
+.hero-home {
+  position: relative;
+  overflow: hidden;
+  min-height: 75vh;
+  padding-top: clamp(4rem, 10vw, 6rem);
+  padding-bottom: clamp(4rem, 10vw, 6rem);
+}
+.hero-home .uui-page-padding {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section blog (section-6) — titre jaune au-dessus, bloc SVG + cards en dessous */
+.section-6 {
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFF00;
+  background-image: none; /* override Webflow Background.svg */
+}
+
+.section-blog-header {
+  background-color: #FFFF00;
+  padding: clamp(4rem, 10vw, 8rem) 1.5rem clamp(2rem, 4vw, 3rem);
+}
+
+.section-blog-header .section-blog-title {
+  max-width: 1309px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-blog-cards-block {
+  position: relative;
+  background-color: #FFFF00;
+  background-image: url('/images/background-circle-magenta.svg');
+  background-size: 100% 160%;
+  background-position: center 60%;
+  background-repeat: no-repeat;
+  padding: 0 1.5rem clamp(4rem, 10vw, 8rem);
+}
+
+.section-blog-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1309px;
+  margin: 0 auto;
+}
+
+.blog_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.blog_card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.blog_card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
+
+.blog_card-image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.blog_card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog_card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.blog_card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #0b0b0b;
+  margin: 0;
+}
+
+.blog_card-excerpt {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #525252;
+  margin: 0;
+  flex: 1;
+}
+
+.blog_card-cta {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #0043FF;
+}
+
+@media screen and (max-width: 900px) {
+  .blog_cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .blog_cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section "The Internet is Not Free" — fond SVG onde */
+.section-internet-not-free {
+  position: relative;
+  overflow: hidden;
+  background-color: #001E18;
+  background-image: url('/images/background%20onde.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Cards avec flou d'arrière-plan pour lisibilité */
+.internet-not-free-card {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Section Follow our journey — fond pixel pleine largeur écran + cards style */
+.section-follow-journey {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+  background-color: #00FF6D;
+  background-image: url('/images/background%20pixel.svg');
+  background-size: 100vw auto;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+}
+.follow-journey-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1309px;
+  margin: 0 auto;
+}
+.follow-journey-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.follow-journey-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(0, 30, 24, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+.follow-journey-card:hover {
+  background: rgba(0, 30, 24, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.follow-journey-logo {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+.follow-journey-label {
+  flex: 1;
+}
+@media screen and (max-width: 900px) {
+  .follow-journey-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .follow-journey-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .internet-not-free-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .internet-not-free-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Corriger le scroll horizontal sur mobile/tablette */
 @media screen and (max-width: 991px) {
   body,
@@ -143,6 +467,25 @@ a {
   opacity: 0.7;
 }
 
+/* Navbar glassmorphisme + fixé au top */
+.uui-navbar07_component {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+/* Espace pour compenser la navbar fixe */
+body {
+  padding-top: 5rem;
+}
+
 .uui-navbar07_dropdown-toggle {
   border-radius: 999px;
   cursor: pointer;
@@ -204,14 +547,60 @@ a {
   background-color: rgba(0, 0, 0, 0.04) !important;
 }
 
+/* Footer — fond pixel + glassmorphisme comme les cards */
 .section-5 {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: #001E18;
+  background-image: url('/images/background%20pixel.svg');
+  background-size: 100% auto;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.section-5 .uui-padding-vertical-xlarge {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: clamp(3rem, 6vw, 5rem) 2rem;
+  box-sizing: border-box;
+}
+
+.section-5 .uui-footer05_link-list-heading,
+.section-5 .uui-footer05_link,
+.section-5 .text-block-12,
+.section-5 .uui-text-size-small-4 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.section-5 .uui-footer05_link:hover {
+  color: #fff !important;
+  opacity: 0.9;
+}
+
+.section-5 .uui-footer05_logo-link img {
+  filter: brightness(0) invert(1);
+}
+
+.section-5 .uui-footer05_social-icons img {
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.section-5 .flex-block-5 img {
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
 }
 
 /* Optimisation de la vidéo sur la page deweb */
@@ -266,10 +655,6 @@ body.page-deweb .section-21 .video iframe {
   width: 100% !important;
   height: 100% !important;
   border: none !important;
-}
-
-.section-5 .uui-padding-vertical-xlarge {
-  width: 100%;
 }
 
 .uui-footer05_top-wrapper {
@@ -383,6 +768,24 @@ body.page-deweb .button-blue.w-button {
 body.page-deweb .button-blue:hover,
 body.page-deweb .button-blue.w-button:hover {
   color: #0000a8 !important;
+}
+
+/* Bouton style Deweb "Start Now" mais couleurs inversées (Learn more, Explore Gossip) */
+.button-blue-inverted.w-button {
+  color: #0000a8;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #0000a8;
+  width: 20rem;
+  padding: 1rem 1em 1rem 1rem;
+  font-family: Space Grotesk, sans-serif;
+  font-size: 1.25rem;
+}
+
+.button-blue-inverted.w-button:hover {
+  color: #ffffff;
+  background-color: #0000a8;
+  border: 1px solid #0000a8;
 }
 
 /* Textes des cartes Censorship-Resistant, Cost-Effective, Total Immutability en blanc */

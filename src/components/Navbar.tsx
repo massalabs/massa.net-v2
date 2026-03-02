@@ -100,46 +100,73 @@ export function Navbar() {
         </Link>
         <nav role="navigation" className={`uui-navbar07_menu w-nav-menu ${open ? 'w--open' : ''}`} {...(open ? { 'data-nav-menu-open': '' } : {})}>
           <div className="uui-navbar07_menu-left">
+            {/* Products: DeWeb, Gossip */}
             <div
               data-hover="true"
               data-delay="300"
-              data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb28c"
               className="uui-navbar07_menu-dropdown w-dropdown"
-              {...dropdownEvents('solutions')}
+              {...dropdownEvents('products')}
             >
               <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
                 <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"></path>
                   </svg></div>
-                <div className="text-block-5"><strong className="bold-text">Solutions</strong></div>
+                <div className="text-block-5"><strong className="bold-text">Products</strong></div>
               </div>
               <nav
-                data-w-id="f2f4127e-f14c-5b38-ea60-2d65363fb292"
-                className={`uui-navbar07_dropdown-list w-dropdown-list ${openDropdown === 'solutions' ? 'is-open w--open' : ''}`}
-                {...dropdownListEvents('solutions')}
+                className={`uui-navbar07_dropdown-list w-dropdown-list ${openDropdown === 'products' ? 'is-open w--open' : ''}`}
+                {...dropdownListEvents('products')}
               >
                 <div className="uui-navbar07_dropdown-link-list">
-                <Link to="/deweb" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
+                  <Link to="/deweb" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
                     <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/deweb.svg" alt="" /></div>
                     <div className="uui-navbar07_item-right">
                       <div className="uui-navbar07_item-heading">DeWeb</div>
                       <div className="uui-text-size-small">The web as you know, 100% decentralized</div>
                     </div>
-                </Link>
-                <Link to="/asc" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
+                  </Link>
+                  <Link to="/ecosystem" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
+                    <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/Ecosystem.svg" alt="" /></div>
+                    <div className="uui-navbar07_item-right">
+                      <div className="uui-navbar07_item-heading">Gossip</div>
+                      <div className="uui-text-size-small">Decentralized messaging, reimagined</div>
+                    </div>
+                  </Link>
+                </div>
+              </nav>
+            </div>
+            {/* Solutions: ASC, Technology */}
+            <div
+              data-hover="true"
+              data-delay="300"
+              className="uui-navbar07_menu-dropdown w-dropdown"
+              {...dropdownEvents('solutions')}
+            >
+              <div className="uui-navbar07_dropdown-toggle w-dropdown-toggle">
+                <div className="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg></div>
+                <div className="text-block-5"><strong className="bold-text">Solutions</strong></div>
+              </div>
+              <nav
+                className={`uui-navbar07_dropdown-list w-dropdown-list ${openDropdown === 'solutions' ? 'is-open w--open' : ''}`}
+                {...dropdownListEvents('solutions')}
+              >
+                <div className="uui-navbar07_dropdown-link-list">
+                  <Link to="/asc" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
                     <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/ASC.svg" alt="" /></div>
                     <div className="uui-navbar07_item-right">
                       <div className="uui-navbar07_item-heading">ASC</div>
                       <div className="uui-text-size-small">Autonomous Smart Contracts</div>
                     </div>
-                </Link>
-                <Link to="/technology" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
+                  </Link>
+                  <Link to="/technology" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
                     <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/Technology.svg" alt="" /></div>
                     <div className="uui-navbar07_item-right">
                       <div className="uui-navbar07_item-heading">Technology</div>
                       <div className="uui-text-size-small">Our unique tech built for freedom</div>
-                      </div>
-                </Link>
+                    </div>
+                  </Link>
                 </div>
               </nav>
             </div>
