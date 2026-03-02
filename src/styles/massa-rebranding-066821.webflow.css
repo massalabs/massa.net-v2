@@ -1474,7 +1474,8 @@ h4 {
 .uui-page-padding-2 {
   grid-column-gap: 40px;
   grid-row-gap: 40px;
-  background-color: #000;
+  background: unset;
+  background-color: unset;
   flex-flow: column;
   justify-content: center;
   align-items: center;
