@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export function Footer() {
+  const { t } = useLanguage()
   return (
     <section className="section-5">
       <div className="uui-padding-vertical-xlarge">
@@ -9,55 +11,55 @@ export function Footer() {
             <img width="120" loading="lazy" alt="" src="/images/LOGO.svg" />
           </Link>
           <div className="uui-footer05_link-list">
-            <div className="uui-footer05_link-list-heading">Solutions</div>
+            <div className="uui-footer05_link-list-heading">{t('footer.solutions')}</div>
             <Link to="/deweb" className="uui-footer05_link w-inline-block">
-              <div className="text-block-12">Deweb</div>
+              <div className="text-block-12">{t('footer.deweb')}</div>
             </Link>
             <Link to="/asc" className="uui-footer05_link w-inline-block">
-              <div className="text-block-12">ASC</div>
+              <div className="text-block-12">{t('footer.asc')}</div>
             </Link>
             <Link to="/technology" className="uui-footer05_link w-inline-block">
-              <div className="text-block-12">Technology</div>
+              <div className="text-block-12">{t('footer.technology')}</div>
             </Link>
           </div>
           <div className="uui-footer05_link-list">
-            <div className="uui-footer05_link-list-heading">Build</div>
+            <div className="uui-footer05_link-list-heading">{t('footer.build')}</div>
             <a href="https://docs.massa.net/" target="_blank" rel="noreferrer" className="uui-footer05_link w-inline-block">
-              <div>Docs</div>
+              <div>{t('footer.docs')}</div>
             </a>
             <Link to="/grants-bounty" className="uui-footer05_link w-inline-block">
-              <div>Grants & Bounties</div>
+              <div>{t('footer.grants')}</div>
             </Link>
           </div>
           <div className="uui-footer05_link-list">
-            <div className="uui-footer05_link-list-heading">Explore</div>
+            <div className="uui-footer05_link-list-heading">{t('footer.explore')}</div>
             <Link to="/ecosystem" className="uui-footer05_link w-inline-block">
-              <div>Ecosystem</div>
+              <div>{t('footer.ecosystem')}</div>
             </Link>
             <Link to="/get-mas" className="uui-footer05_link-copy w-inline-block">
-              <div>Get $MAS</div>
+              <div>{t('footer.getMas')}</div>
             </Link>
           </div>
           <div className="uui-footer05_link-list">
-            <div className="uui-footer05_link-list-heading">Community</div>
+            <div className="uui-footer05_link-list-heading">{t('footer.community')}</div>
             <a href="https://forum.massa.community/" target="_blank" rel="noreferrer" className="uui-footer05_link w-inline-block">
-              <div>Forum</div>
+              <div>{t('footer.forum')}</div>
             </a>
             <a href="#" className="uui-footer05_link w-inline-block"></a>
           </div>
           <div className="uui-footer05_link-list">
-            <div className="uui-footer05_link-list-heading">About</div>
+            <div className="uui-footer05_link-list-heading">{t('footer.about')}</div>
             <Link to="/team" className="uui-footer05_link w-inline-block">
-              <div>Team</div>
+              <div>{t('footer.team')}</div>
             </Link>
             <Link to="/blog" className="uui-footer05_link w-inline-block">
-              <div>Blog</div>
+              <div>{t('footer.blog')}</div>
             </Link>
             <Link to="/privacy-policy" className="uui-footer05_link w-inline-block">
-              <div>Privacy policy</div>
+              <div>{t('footer.privacy')}</div>
             </Link>
             <Link to="/terms-of-service" className="uui-footer05_link w-inline-block">
-              <div>Terms of service</div>
+              <div>{t('footer.terms')}</div>
             </Link>
           </div>
         </div>

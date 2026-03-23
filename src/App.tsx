@@ -1,5 +1,6 @@
 import './App.css'
 import { Routes, Route, Outlet } from 'react-router-dom'
+import { LanguageProvider } from './i18n/LanguageContext'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { ScrollToTop } from './components/ScrollToTop'
@@ -33,7 +34,7 @@ function Layout() {
 
 function App() {
   return (
-    <>
+    <LanguageProvider>
       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
@@ -54,7 +55,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </>
+    </LanguageProvider>
   )
 }
 

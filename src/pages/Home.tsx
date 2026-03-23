@@ -3,76 +3,31 @@ import { MenuPictosBackground } from '../components/MenuPictosBackground'
 import { HeroPictosBackground } from '../components/HeroPictosBackground'
 import { useBlogPosts } from '../hooks/useContentData'
 import { SEO } from '../components/SEO'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const SLIDER_SLIDES = [
   {
-    id: 'gossip',
-    title: 'Gossip',
-    subtitle: 'Decentralized messaging, reimagined',
-    description: 'A truly decentralized messaging application built on Massa blockchain. Experience secure, private, and censorship-resistant communication without relying on centralized servers.',
-    ctaLabel: 'Explore Gossip',
+    id: 'gossip' as const,
     ctaHref: '/ecosystem',
     image: '/images/gossip%20preview.png',
-    imageAlt: 'Gossip App - Mobile',
     background: '#3AF3D1',
   },
   {
-    id: 'deweb',
-    title: 'DeWeb',
-    subtitle: 'The web as you know, 100% decentralized',
-    description: 'Host your website and domain name in a fully decentralized way, permanently available and uncensorable.',
-    ctaLabel: 'Learn more',
+    id: 'deweb' as const,
     ctaHref: '/deweb',
     image: '/images/89b1956c9b306c972c5685d9f0e522df.png',
-    imageAlt: 'DeWeb Search - Hosting freedom, one block at a time',
     background: '#0000A8',
   },
   {
-    id: 'asc',
-    title: 'Autonomous Applications',
-    subtitle: 'Smart contracts that run by themselves',
-    description: 'Autonomous Smart Contracts (ASC) enable dApps to execute without constant external triggers. Build truly decentralized applications that operate 24/7 on the Massa network.',
-    ctaLabel: 'Discover ASC',
+    id: 'asc' as const,
     ctaHref: '/asc',
     image: '/images/ASC.svg',
-    imageAlt: 'Autonomous Smart Contracts',
     background: '#FFFF00',
   },
 ] as const
 
-/** Cards "The Internet is Not Free" — contenu + icône adaptée */
-const INTERNET_NOT_FREE_CARDS_DATA = [
-  {
-    title: 'A handful of gatekeepers',
-    text: 'Most websites run on a handful of providers, giving corporations the power to censor content, block users, or shut platforms down instantly.',
-    icon: 'gatekeepers',
-  },
-  {
-    title: 'Single points of failure',
-    text: 'When one server or provider goes offline, entire services disappear. Outages, DDoS attacks, or government pressure can silence millions at once.',
-    icon: 'server',
-  },
-  {
-    title: 'No due process',
-    text: 'Content can be removed, accounts banned, or domains seized without due process, threatening freedom of speech and open access to information.',
-    icon: 'shield',
-  },
-  {
-    title: 'Your data, their product',
-    text: 'User data is stored in centralized databases that are mined, sold, or breached—turning users into products rather than owners of their data.',
-    icon: 'database',
-  },
-  {
-    title: 'Targets for exploitation',
-    text: 'Centralized systems are prime targets for exploits, hacks, and surveillance, exposing users to privacy and security risks at scale.',
-    icon: 'target',
-  },
-  {
-    title: 'Access can be revoked',
-    text: 'Platforms control your content, identity, and reach. Access can be revoked at any time, with no guarantees or transparency.',
-    icon: 'lock',
-  },
-] as const
+/** Cards "The Internet is Not Free" — clés i18n : home.internet.<icon>.title / .text */
+const INTERNET_NOT_FREE_ICONS = ['gatekeepers', 'server', 'shield', 'database', 'target', 'lock'] as const
 
 /** Icônes SVG pour les cards */
 const CARD_ICONS: Record<string, React.ReactNode> = {
@@ -109,6 +64,7 @@ const CARD_ICONS: Record<string, React.ReactNode> = {
 }
 
 export function Home() {
+  const { t } = useLanguage()
   const blogPosts = useBlogPosts()
   const sliderSectionRef = useRef<HTMLElement>(null)
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -139,10 +95,7 @@ export function Home() {
   
   return (
     <>
-      <SEO 
-        title="The Host of Freedom"
-        description="Massa is a layer 1 blockchain, and the first decentralized cloud network, bringing true decentralization to where it's needed through its technology."
-      />
+      <SEO title={t('home.seo.title')} description={t('home.seo.description')} />
     <div>
       {/* Hero Section */}
       <header className="uui-section_heroheader14 hero-home">
@@ -154,18 +107,18 @@ export function Home() {
               <div className="uui-text-align-center">
                 <div className="uui-max-width-xlarge">
                   <div className="uui-button-row button-row-center">
-                    <div className="uui-heading-xlarge">The Internet that belongs to you, forever.</div>
+                    <div className="uui-heading-xlarge">{t('home.hero.heading')}</div>
                   </div>
-                  <h1 className="text-block-7">The first decentralized cloud network</h1>
+                  <h1 className="text-block-7">{t('home.hero.subheading')}</h1>
                   <div className="uui-space-small"></div>
                   <div className="uui-space-small"></div>
                   <div className="uui-max-width-large align-center">
-                    <div className="uui-text-size-xlarge">Stop relying on fragile servers and big tech. Massa hosts your apps and data directly on a global network that no one can shut down, censor, or control.</div>
+                    <div className="uui-text-size-xlarge">{t('home.hero.body')}</div>
                   </div>
                   <div className="uui-space-large"></div>
                   <div className="uui-button-row button-row-center is-reverse-mobile-landscape">
-                    <a href="/ecosystem" className="button w-button">Try Gossip Messenger</a>
-                    <a href="https://docs.massa.net/" className="button w-button">Start Building</a>
+                    <a href="/ecosystem" className="button w-button">{t('home.hero.ctaGossip')}</a>
+                    <a href="https://docs.massa.net/" className="button w-button">{t('home.hero.ctaBuild')}</a>
                   </div>
                   <div className="uui-space-large"></div>
                 </div>
@@ -286,18 +239,18 @@ export function Home() {
                             textAlign: slide.id === 'asc' ? 'center' : 'left',
                           }}
                         >
-                          {slide.title}
+                          {t(`home.slider.${slide.id}.title`)}
                         </h2>
                         <div className="uui-space-xsmall" />
                         <h2 className="uui-heading-medium" style={{ color: { gossip: '#18181B', deweb: '#ECECEC', asc: '#000' }[slide.id], fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', textAlign: slide.id === 'asc' ? 'center' : 'left' }}>
-                          {slide.subtitle}
+                          {t(`home.slider.${slide.id}.subtitle`)}
                         </h2>
                         <div className="uui-space-xsmall" />
                         <p className="text-block-9" style={{ color: slide.id === 'gossip' ? 'rgba(24,24,27,0.9)' : slide.id === 'deweb' ? 'rgba(236,236,236,0.9)' : 'rgba(0,0,0,0.85)', maxWidth: slide.id === 'asc' ? '520px' : '100%', margin: slide.id === 'asc' ? '0 auto 0.5rem' : '0 0 0.5rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)', textAlign: slide.id === 'asc' ? 'center' : 'left' }}>
-                          {slide.description}
+                          {t(`home.slider.${slide.id}.description`)}
                         </p>
                         <a href={slide.ctaHref} className="button-blue-inverted w-button slider-cta" style={{ display: slide.id === 'asc' ? 'inline-block' : undefined }}>
-                          {slide.ctaLabel}
+                          {t(`home.slider.${slide.id}.cta`)}
                         </a>
                       </div>
                     </div>
@@ -317,7 +270,7 @@ export function Home() {
                       >
                         <img
                           src={slide.image}
-                          alt={slide.imageAlt}
+                          alt={t(`home.slider.${slide.id}.imageAlt`)}
                           loading="lazy"
                           style={{
                             width: '100%',
@@ -332,7 +285,7 @@ export function Home() {
                             img.style.display = 'none'
                             const placeholder = document.createElement('div')
                             placeholder.style.cssText = 'width: 100%; padding: 60px 20px; background: rgba(255,255,255,0.08); text-align: center; color: rgba(255,255,255,0.6);'
-                            placeholder.textContent = slide.imageAlt
+                            placeholder.textContent = t(`home.slider.${slide.id}.imageAlt`)
                             img.parentElement?.appendChild(placeholder)
                           }}
                         />
@@ -366,7 +319,7 @@ export function Home() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
             <button
               type="button"
-              aria-label="Slide précédent"
+              aria-label={t('a11y.slidePrev')}
               onClick={goPrev}
               style={{
                 background: SLIDER_SLIDES[currentSlide].id === 'asc' ? 'rgba(0,0,0,0.15)' : SLIDER_SLIDES[currentSlide].id === 'gossip' ? 'rgba(24,24,27,0.15)' : 'rgba(255,255,255,0.15)',
@@ -391,7 +344,7 @@ export function Home() {
                 <button
                   key={i}
                   type="button"
-                  aria-label={`Aller au slide ${i + 1}`}
+                  aria-label={t('a11y.goSlide', { n: i + 1 })}
                   onClick={() => goToSlide(i)}
                   style={{
                     width: 10,
@@ -409,7 +362,7 @@ export function Home() {
             </div>
             <button
               type="button"
-              aria-label="Slide suivant"
+              aria-label={t('a11y.slideNext')}
               onClick={goNext}
               style={{
                 background: SLIDER_SLIDES[currentSlide].id === 'asc' ? 'rgba(0,0,0,0.15)' : SLIDER_SLIDES[currentSlide].id === 'gossip' ? 'rgba(24,24,27,0.15)' : 'rgba(255,255,255,0.15)',
@@ -479,7 +432,7 @@ export function Home() {
               flex: '1 1 100%',
             }}
           >
-            The Internet is Not Free
+            {t('home.internet.title')}
           </h2>
         </header>
 
@@ -500,9 +453,9 @@ export function Home() {
               gap: '1.5rem',
             }}
           >
-            {INTERNET_NOT_FREE_CARDS_DATA.map((item) => (
+            {INTERNET_NOT_FREE_ICONS.map((icon) => (
               <div
-                key={item.title}
+                key={icon}
                 className="internet-not-free-card"
                 style={{
                   display: 'flex',
@@ -517,7 +470,7 @@ export function Home() {
                 }}
               >
                 <div style={{ color: '#fff' }}>
-                  {CARD_ICONS[item.icon]}
+                  {CARD_ICONS[icon]}
                 </div>
                 <h3
                   style={{
@@ -530,7 +483,7 @@ export function Home() {
                     color: '#fff',
                   }}
                 >
-                  {item.title}
+                  {t(`home.internet.${icon}.title`)}
                 </h3>
                 <p
                   style={{
@@ -543,7 +496,7 @@ export function Home() {
                     color: 'rgba(255,255,255,0.85)',
                   }}
                 >
-                  {item.text}
+                  {t(`home.internet.${icon}.text`)}
                 </p>
               </div>
             ))}
@@ -567,7 +520,7 @@ export function Home() {
               margin: '0 0 1.5rem 0',
             }}
           >
-            Follow our journey
+            {t('home.follow.title')}
           </h2>
           <div className="follow-journey-cards">
             <a href="https://x.com/massachain" className="follow-journey-card" target="_blank" rel="noopener noreferrer">
@@ -610,7 +563,7 @@ export function Home() {
               margin: 0,
             }}
           >
-            Read the latest from Massa
+            {t('home.blog.title')}
           </h2>
         </div>
         <div className="section-blog-cards-block">
@@ -639,7 +592,7 @@ export function Home() {
                 <div className="blog_card-body">
                   <h3 className="blog_card-title">{post.title}</h3>
                   <p className="blog_card-excerpt">{post.excerpt}</p>
-                  <span className="blog_card-cta">Read more</span>
+                  <span className="blog_card-cta">{t('home.blog.readMore')}</span>
                 </div>
               </a>
             ))}
