@@ -512,13 +512,82 @@ body {
   border-radius: 16px;
   padding: 1rem;
   box-shadow: 0 16px 40px rgba(15, 15, 15, 0.16);
-  width: max-content;
-  min-width: 280px;
+  width: min(720px, 92vw);
+  min-width: 560px;
+  overflow: hidden;
   opacity: 0;
   pointer-events: none;
   transform: translate3d(0, 10px, 0);
   transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 30;
+}
+
+.uui-navbar07_mega-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+  gap: 1rem;
+  align-items: start;
+}
+
+.uui-navbar07_mega-right {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.uui-navbar07_mega-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.uui-navbar07_mega-card-media {
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.uui-navbar07_mega-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.uui-navbar07_mega-card-body {
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.uui-navbar07_mega-card:hover {
+  border-color: rgba(0, 67, 255, 0.28);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 67, 255, 0.08);
+}
+
+.uui-navbar07_mega-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0b0b0b;
+  margin-bottom: 0.35rem;
+}
+
+.uui-navbar07_mega-card-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #4f4f4f;
 }
 
 .uui-navbar07_dropdown-list.is-open {
@@ -545,6 +614,105 @@ body {
 
 .uui-navbar07_dropdown-link-copy-copy:hover {
   background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Sélecteur de langue — dropdown */
+.navbar-lang-dropdown {
+  position: relative;
+  margin-right: 0.6rem;
+  z-index: 40;
+}
+
+.uui-navbar07_menu-right .navbar-lang-dropdown {
+  flex-shrink: 0;
+}
+
+.navbar-lang-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0b0b0b;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.navbar-lang-trigger:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+.navbar-lang-trigger-label {
+  max-width: 7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navbar-lang-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.navbar-lang-chevron {
+  flex-shrink: 0;
+  opacity: 0.65;
+}
+
+.navbar-lang-list {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  min-width: 11rem;
+  max-height: min(70vh, 22rem);
+  overflow-y: auto;
+  margin: 0;
+  padding: 0.35rem;
+  list-style: none;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(15, 15, 15, 0.12);
+}
+
+.navbar-lang-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  background: transparent;
+  color: #0b0b0b;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.navbar-lang-option:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.navbar-lang-option.is-active {
+  background: rgba(0, 67, 255, 0.08);
+  font-weight: 600;
+  color: #0043ff;
 }
 
 /* Footer — fond pixel + glassmorphisme comme les cards */
@@ -579,12 +747,14 @@ body {
 
 .section-5 .uui-footer05_link-list-heading,
 .section-5 .uui-footer05_link,
+.section-5 .uui-footer05_link-copy,
 .section-5 .text-block-12,
 .section-5 .uui-text-size-small-4 {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.section-5 .uui-footer05_link:hover {
+.section-5 .uui-footer05_link:hover,
+.section-5 .uui-footer05_link-copy:hover {
   color: #fff !important;
   opacity: 0.9;
 }
@@ -722,6 +892,7 @@ body.page-deweb .uui-navbar07_dropdown-list {
 /* Footer - Tous les éléments */
 body.page-deweb .section-5,
 body.page-deweb .uui-footer05_link,
+body.page-deweb .uui-footer05_link-copy,
 body.page-deweb .uui-footer05_link-list-heading,
 body.page-deweb .uui-footer05_legal-list-wrapper,
 body.page-deweb .text-color-gray500,
@@ -731,7 +902,8 @@ body.page-deweb .uui-footer05_logo-link {
   color: #0000a8 !important;
 }
 
-body.page-deweb .uui-footer05_link:hover {
+body.page-deweb .uui-footer05_link:hover,
+body.page-deweb .uui-footer05_link-copy:hover {
   color: rgba(0, 0, 168, 0.7) !important;
 }
 
@@ -1090,6 +1262,14 @@ body.page-deweb .uui-navbar07_menu-right .button.w-button:hover {
   
   .w-nav-menu .uui-navbar07_dropdown-list.is-open {
     display: block !important;
+  }
+
+  .w-nav-menu .uui-navbar07_mega-layout {
+    display: block;
+  }
+
+  .w-nav-menu .uui-navbar07_mega-right {
+    display: none;
   }
   
   .w-nav-menu .uui-navbar07_dropdown-link {
