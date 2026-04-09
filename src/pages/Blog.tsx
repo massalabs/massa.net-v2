@@ -4,11 +4,11 @@ export function Blog() {
   const blogPosts = useBlogPosts()
   
   return (
-    <div className="w-layout-hflex flex-block-3">
-      <div className="padding-global">
+    <div className="w-layout-hflex flex-block-3 page-blog">
+      <div className="padding-global home-section-bg home-section-bg--blog-flat">
         <div className="container-large">
           <h1 className="heading-4-center-black">Read the latest from Massa</h1>
-          <div className="blog_component">
+          <div className="blog_component home-section-bg home-section-bg--blog">
             <div className="blog_list-wrapper">
               <div className="blog_list">
                 {blogPosts.map(post => (

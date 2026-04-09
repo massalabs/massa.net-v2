@@ -112,6 +112,11 @@ export function Deweb() {
         <div className="div-block-15-copy-copy">
           <div className="card-deweb">
             <div>
+              <div className="deweb-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
               <div className="heading-3-deweb">Censorship-Resistant</div>
               <div className="uui-text-size-large-deweb">
                 Distributed across a global network and accessible from anywhere, any time.
@@ -121,6 +126,12 @@ export function Deweb() {
           </div>
           <div className="card-deweb">
             <div>
+              <div className="deweb-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.7" />
+                  <path d="M8.5 10.5C8.5 9.4 9.4 8.5 10.5 8.5H13.5C14.6 8.5 15.5 9.4 15.5 10.5C15.5 11.6 14.6 12.5 13.5 12.5H10.5C9.4 12.5 8.5 13.4 8.5 14.5C8.5 15.6 9.4 16.5 10.5 16.5H13.5C14.6 16.5 15.5 15.6 15.5 14.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+                </svg>
+              </div>
               <div className="heading-3-deweb">Cost-Effective</div>
             </div>
             <div className="uui-text-size-large-deweb">
@@ -130,6 +141,12 @@ export function Deweb() {
           </div>
           <div className="card-deweb">
             <div>
+              <div className="deweb-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <rect x="4" y="11" width="16" height="9" rx="2" stroke="currentColor" strokeWidth="1.7" />
+                  <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+                </svg>
+              </div>
               <div className="heading-3-deweb">Total Immutability</div>
               <div className="uui-text-size-large-deweb">
                 Make your site so permanent, even you can't take it down.

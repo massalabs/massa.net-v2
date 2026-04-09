@@ -9,6 +9,7 @@ import { Deweb } from './pages/Deweb'
 import { Asc } from './pages/Asc'
 import { Technology } from './pages/Technology'
 import { Ecosystem } from './pages/Ecosystem'
+import { Gossip } from './pages/Gossip'
 import { GetMas } from './pages/GetMas'
 import { GrantsBounty } from './pages/GrantsBounty'
 import { Start } from './pages/Start'
@@ -43,6 +44,7 @@ function App() {
           <Route path="/asc" element={<Asc />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/ecosystem" element={<Ecosystem />} />
+          <Route path="/gossip" element={<Gossip />} />
           <Route path="/get-mas" element={<GetMas />} />
           <Route path="/grants-bounty" element={<GrantsBounty />} />
           <Route path="/start" element={<Start />} />
