@@ -1,17 +1,26 @@
+import { useEffect } from 'react'
+
 export function Asc() {
+  useEffect(() => {
+    document.body.classList.add('page-asc-theme')
+    return () => {
+      document.body.classList.remove('page-asc-theme')
+    }
+  }, [])
+
   return (
     <div className="page-asc">
-      <header className="uui-section_heroheader14">
+      <header className="uui-section_heroheader14 home-section-bg home-section-bg--blog-flat asc-hero-no-svg">
         <div className="uui-page-padding">
           <div className="uui-container-large">
             <div className="uui-space"></div>
             <div className="uui-heroheader14_component">
               <div className="uui-text-align-center">
                 <div className="uui-max-width-xlarge">
-                  <h1 className="uui-heading-xlarge">Decentralized Blockchain Automation</h1>
+                  <h1 className="uui-heading-xlarge asc-hero-title">Decentralized Blockchain Automation</h1>
                   <div className="uui-space-small"></div>
                   <div className="uui-button-row button-row-center">
-                    <div className="text-block-6">Fully Automated Smart Contracts</div>
+                    <div className="text-block-6 asc-hero-kicker">Fully Automated Smart Contracts</div>
                   </div>
                   <div className="uui-space-small"></div>
                   <div className="uui-max-width-large align-center">
@@ -26,11 +35,11 @@ export function Asc() {
           </div>
         </div>
         <section>
-          <img src="/images/pixel.svg" loading="lazy" alt="" className="image-21" />
+          <img src="/images/pixel.svg" loading="lazy" alt="" className="image-21 asc-hero-pixel" />
         </section>
       </header>
 
-      <section className="uui-section_layout38">
+      <section className="uui-section_layout38 home-section-bg home-section-bg--internet-flat asc-market-section">
         <div className="uui-page-padding-2-copy">
           <div className="uui-container-large-2">
             <div className="uui-padding-vertical-xhuge">
@@ -54,7 +63,7 @@ export function Asc() {
         </div>
       </section>
 
-      <section className="section-use-cases">
+      <section className="section-use-cases home-section-bg home-section-bg--follow-internet">
         <div className="use-cases-container">
           <h2 className="heading-4-center">Use-cases</h2>
           <div className="div-block-15-copy-copy">
@@ -84,7 +93,7 @@ export function Asc() {
       </section>
 
 
-      <section className="section-8">
+      <section className="section-8 home-section-bg home-section-bg--gossip-flat">
         <div className="w-layout-blockcontainer container-2-copy w-container">
           <h2 className="heading-4-copy">Decentralization is Being Overlooked</h2>
           <div className="uui-space-xsmall"></div>
@@ -95,7 +104,7 @@ export function Asc() {
         </div>
       </section>
 
-      <section className="uui-section_layout38">
+      <section className="uui-section_layout38 home-section-bg home-section-bg--follow-flat">
         <div className="uui-page-padding-2-copy">
           <div className="uui-container-large-2">
             <div className="uui-padding-vertical-xhuge">
@@ -118,12 +127,12 @@ export function Asc() {
           </section>
         </div>
 
-        <section className="section-4">
+        <section className="section-4 home-section-bg home-section-bg--blog">
           <div className="div-block-15-high">
             <div className="card">
               <div>
                 <div className="heading-3">
-                  <strong>✅ Fully On-chain Automation</strong>
+                  Fully On-chain Automation
                 </div>
                 <div className="uui-text-size-large-margin">
                   Unlike traditional smart contracts that rely on external bots (like Chainlink Keepers or Gelato), Massa ASCs
@@ -135,7 +144,7 @@ export function Asc() {
             <div className="card">
               <div>
                 <div className="heading-3">
-                  <strong>✅ Censorship-Resistant &amp; Trustless</strong>
+                  Censorship-Resistant &amp; Trustless
                 </div>
                 <div className="uui-text-size-large-margin">
                   Since execution is fully decentralized, there's no single point of failure or reliance on centralized
@@ -147,7 +156,7 @@ export function Asc() {
             <div className="card">
               <div>
                 <div className="heading-3">
-                  <strong>✅ Self-Sustaining Smart Contracts</strong>
+                  Self-Sustaining Smart Contracts
                 </div>
                 <div className="uui-text-size-large-margin">
                   Massa ASCs can <strong>wake themselves up</strong> and execute actions automatically, enabling use cases like{' '}

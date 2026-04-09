@@ -1,6 +1,5 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { MenuPictosBackground } from '../components/MenuPictosBackground'
-import { HeroPictosBackground } from '../components/HeroPictosBackground'
 import { useBlogPosts } from '../hooks/useContentData'
 import { SEO } from '../components/SEO'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -25,6 +24,8 @@ const SLIDER_SLIDES = [
     background: '#FFFF00',
   },
 ] as const
+
+const DEWEB_BG_LOGOS = Array.from({ length: 20 }, (_, i) => `/images/logo_${i + 1}.svg`)
 
 /** Cards "The Internet is Not Free" — clés i18n : home.internet.<icon>.title / .text */
 const INTERNET_NOT_FREE_ICONS = ['gatekeepers', 'server', 'shield', 'database', 'target', 'lock'] as const
@@ -67,7 +68,49 @@ export function Home() {
   const { t } = useLanguage()
   const blogPosts = useBlogPosts()
   const sliderSectionRef = useRef<HTMLElement>(null)
+  const hoverEnterTimerRef = useRef<number | null>(null)
+  const hoverLeaveTimerRef = useRef<number | null>(null)
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [dewebLogoIndex, setDewebLogoIndex] = useState(0)
+  const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 992)
+  const [isSliderHovered, setIsSliderHovered] = useState(false)
+  useEffect(() => {
+    document.body.classList.add('page-home-theme')
+    return () => {
+      document.body.classList.remove('page-home-theme')
+    }
+  }, [])
+
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 992)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    return () => {
+      if (hoverEnterTimerRef.current) window.clearTimeout(hoverEnterTimerRef.current)
+      if (hoverLeaveTimerRef.current) window.clearTimeout(hoverLeaveTimerRef.current)
+    }
+  }, [])
+
+  useEffect(() => {
+    document.body.classList.remove('page-home-hover-gossip', 'page-home-hover-deweb', 'page-home-hover-asc')
+    if (isDesktop && isSliderHovered) {
+      const slideId = SLIDER_SLIDES[currentSlide].id
+      document.body.classList.add(`page-home-hover-${slideId}`)
+    }
+  }, [isDesktop, isSliderHovered, currentSlide])
+
+  const isSliderFullscreen = isDesktop && isSliderHovered
+
+  useEffect(() => {
+    if (SLIDER_SLIDES[currentSlide].id !== 'deweb') return
+    const intervalId = window.setInterval(() => {
+      setDewebLogoIndex((prev) => (prev + 1) % DEWEB_BG_LOGOS.length)
+    }, 700)
+    return () => window.clearInterval(intervalId)
+  }, [currentSlide])
   const goToSlide = (index: number) => {
     // Boucle infinie : si index < 0, aller à la dernière slide, si index >= length, aller à la première
     if (index < 0) {
@@ -92,14 +135,45 @@ export function Home() {
       return prevIndex < 0 ? SLIDER_SLIDES.length - 1 : prevIndex
     })
   }
+
+  const activeTheme = isDesktop && isSliderHovered ? SLIDER_SLIDES[currentSlide].id : 'home'
+  const themeBackground: Record<'home' | 'gossip' | 'deweb' | 'asc', string> = {
+    home: '#00FF6D',
+    gossip: '#3AF3D1',
+    deweb: '#0000A8',
+    asc: '#FFFF00',
+  }
+  const themeForeground: Record<'home' | 'gossip' | 'deweb' | 'asc', string> = {
+    home: '#0043FF',
+    gossip: '#18181B',
+    deweb: '#ECECEC',
+    asc: '#000000',
+  }
   
+  const handleSliderMouseEnter = () => {
+    if (hoverLeaveTimerRef.current) {
+      window.clearTimeout(hoverLeaveTimerRef.current)
+      hoverLeaveTimerRef.current = null
+    }
+    if (hoverEnterTimerRef.current) window.clearTimeout(hoverEnterTimerRef.current)
+    hoverEnterTimerRef.current = window.setTimeout(() => setIsSliderHovered(true), 120)
+  }
+
+  const handleSliderMouseLeave = () => {
+    if (hoverEnterTimerRef.current) {
+      window.clearTimeout(hoverEnterTimerRef.current)
+      hoverEnterTimerRef.current = null
+    }
+    if (hoverLeaveTimerRef.current) window.clearTimeout(hoverLeaveTimerRef.current)
+    hoverLeaveTimerRef.current = window.setTimeout(() => setIsSliderHovered(false), 160)
+  }
+
   return (
     <>
       <SEO title={t('home.seo.title')} description={t('home.seo.description')} />
     <div>
       {/* Hero Section */}
       <header className="uui-section_heroheader14 hero-home">
-        <HeroPictosBackground />
         <div className="uui-page-padding">
           <div className="uui-container-large">
             <div className="uui-space"></div>
@@ -126,41 +200,31 @@ export function Home() {
             </div>
           </div>
         </div>
+        <div className="hero-home-bottom-logos" aria-hidden="true">
+          <img src="/images/logo_1.svg" alt="" className="hero-home-bottom-logo" />
+          <img src="/images/gossiplogo.svg" alt="" className="hero-home-bottom-logo" />
+        </div>
       </header>
 
       {/* Slider Gossip / DeWeb / ASC */}
       <section
         ref={sliderSectionRef}
         className={`uui-section_layout38 slide-${SLIDER_SLIDES[currentSlide].id}`}
+        onMouseEnter={handleSliderMouseEnter}
+        onMouseLeave={handleSliderMouseLeave}
         style={{
-          height: '82vh',
-          minHeight: '520px',
-          maxHeight: '82vh',
+          height: isSliderFullscreen ? '95vh' : '82vh',
+          minHeight: isSliderFullscreen ? '95vh' : '520px',
+          maxHeight: isSliderFullscreen ? '95vh' : '82vh',
           display: 'flex',
           flexDirection: 'column',
-          background: SLIDER_SLIDES[currentSlide].background,
-          transition: 'background 0.5s ease-out',
-          color: { gossip: '#18181B', deweb: '#ECECEC', asc: '#000' }[SLIDER_SLIDES[currentSlide].id],
+          background: themeBackground[activeTheme],
+          transition: 'background 260ms ease, height 220ms ease, min-height 220ms ease, max-height 220ms ease',
+          color: themeForeground[activeTheme],
           position: 'relative',
           overflow: 'hidden',
         }}
       >
-        {/* Grille blanche — uniquement sur DeWeb */}
-        {SLIDER_SLIDES[currentSlide].id === 'deweb' && (
-          <div
-            aria-hidden
-            style={{
-              position: 'absolute',
-              inset: 0,
-              backgroundImage: `
-                linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)
-              `,
-              backgroundSize: '32px 32px',
-              pointerEvents: 'none',
-            }}
-          />
-        )}
         {/* Icônes — uniquement sur ASC */}
         {SLIDER_SLIDES[currentSlide].id === 'asc' && <MenuPictosBackground scoped variant="dark" />}
 
@@ -224,29 +288,40 @@ export function Home() {
                       }}
                     >
                       <div className="uui-max-width-large-2" style={{ margin: 0 }}>
-                        <h2
-                          className="heading-4-center slide-title"
-                          style={{
-                            fontFamily: "'Space Grotesk', sans-serif",
-                            fontWeight: 500,
-                            fontSize: 'clamp(2rem, 5vw, 64px)',
-                            lineHeight: 1.35,
-                            letterSpacing: '-0.0182em',
-                            color: { gossip: '#18181B', deweb: '#ECECEC', asc: '#000' }[slide.id],
-                            backgroundColor: 'unset',
-                            background: 'unset',
-                            margin: 0,
-                            textAlign: slide.id === 'asc' ? 'center' : 'left',
-                          }}
-                        >
-                          {t(`home.slider.${slide.id}.title`)}
-                        </h2>
+                        {slide.id === 'deweb' ? (
+                          <div className="deweb-logos-marquee" aria-hidden="true">
+                            <img
+                              key={`deweb-title-logo-${dewebLogoIndex}`}
+                              src={DEWEB_BG_LOGOS[dewebLogoIndex]}
+                              alt=""
+                              className="deweb-title-logo-single"
+                            />
+                          </div>
+                        ) : (
+                          <h2
+                            className="heading-4-center slide-title"
+                            style={{
+                              fontFamily: "'Space Grotesk', sans-serif",
+                              fontWeight: 500,
+                              fontSize: 'clamp(2rem, 5vw, 64px)',
+                              lineHeight: 1.35,
+                              letterSpacing: '-0.0182em',
+                              color: themeForeground[activeTheme],
+                              backgroundColor: 'unset',
+                              background: 'unset',
+                              margin: 0,
+                              textAlign: slide.id === 'asc' ? 'center' : 'left',
+                            }}
+                          >
+                            {t(`home.slider.${slide.id}.title`)}
+                          </h2>
+                        )}
                         <div className="uui-space-xsmall" />
-                        <h2 className="uui-heading-medium" style={{ color: { gossip: '#18181B', deweb: '#ECECEC', asc: '#000' }[slide.id], fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', textAlign: slide.id === 'asc' ? 'center' : 'left' }}>
+                        <h2 className="uui-heading-medium" style={{ color: themeForeground[activeTheme], fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', textAlign: slide.id === 'asc' ? 'center' : 'left' }}>
                           {t(`home.slider.${slide.id}.subtitle`)}
                         </h2>
                         <div className="uui-space-xsmall" />
-                        <p className="text-block-9" style={{ color: slide.id === 'gossip' ? 'rgba(24,24,27,0.9)' : slide.id === 'deweb' ? 'rgba(236,236,236,0.9)' : 'rgba(0,0,0,0.85)', maxWidth: slide.id === 'asc' ? '520px' : '100%', margin: slide.id === 'asc' ? '0 auto 0.5rem' : '0 0 0.5rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)', textAlign: slide.id === 'asc' ? 'center' : 'left' }}>
+                        <p className="text-block-9" style={{ color: themeForeground[activeTheme], maxWidth: slide.id === 'asc' ? '520px' : '100%', margin: slide.id === 'asc' ? '0 auto 0.5rem' : '0 0 0.5rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)', textAlign: slide.id === 'asc' ? 'center' : 'left' }}>
                           {t(`home.slider.${slide.id}.description`)}
                         </p>
                         <a href={slide.ctaHref} className="button-blue-inverted w-button slider-cta" style={{ display: slide.id === 'asc' ? 'inline-block' : undefined }}>
@@ -322,12 +397,12 @@ export function Home() {
               aria-label={t('a11y.slidePrev')}
               onClick={goPrev}
               style={{
-                background: SLIDER_SLIDES[currentSlide].id === 'asc' ? 'rgba(0,0,0,0.15)' : SLIDER_SLIDES[currentSlide].id === 'gossip' ? 'rgba(24,24,27,0.15)' : 'rgba(255,255,255,0.15)',
+                background: 'rgba(0,0,0,0.15)',
                 border: 'none',
                 borderRadius: '50%',
                 width: 44,
                 height: 44,
-                color: { gossip: '#18181B', deweb: '#ECECEC', asc: '#000' }[SLIDER_SLIDES[currentSlide].id],
+                color: themeForeground[activeTheme],
                 cursor: 'pointer',
                 opacity: 1,
                 display: 'flex',
@@ -352,8 +427,8 @@ export function Home() {
                     borderRadius: '50%',
                     border: 'none',
                     background: currentSlide === i
-                      ? { gossip: '#18181B', deweb: '#ECECEC', asc: '#000' }[SLIDER_SLIDES[currentSlide].id]
-                      : (SLIDER_SLIDES[currentSlide].id === 'asc' ? 'rgba(0,0,0,0.4)' : SLIDER_SLIDES[currentSlide].id === 'gossip' ? 'rgba(24,24,27,0.4)' : 'rgba(236,236,236,0.4)'),
+                      ? themeForeground[activeTheme]
+                      : 'rgba(0,0,0,0.25)',
                     cursor: 'pointer',
                     padding: 0,
                   }}
@@ -365,12 +440,12 @@ export function Home() {
               aria-label={t('a11y.slideNext')}
               onClick={goNext}
               style={{
-                background: SLIDER_SLIDES[currentSlide].id === 'asc' ? 'rgba(0,0,0,0.15)' : SLIDER_SLIDES[currentSlide].id === 'gossip' ? 'rgba(24,24,27,0.15)' : 'rgba(255,255,255,0.15)',
+                background: 'rgba(0,0,0,0.15)',
                 border: 'none',
                 borderRadius: '50%',
                 width: 44,
                 height: 44,
-                color: { gossip: '#18181B', deweb: '#ECECEC', asc: '#000' }[SLIDER_SLIDES[currentSlide].id],
+                color: themeForeground[activeTheme],
                 cursor: 'pointer',
                 opacity: 1,
                 display: 'flex',
@@ -392,7 +467,7 @@ export function Home() {
         className="section-internet-not-free"
         style={{
           width: '100%',
-          color: '#fff',
+          color: 'var(--home-dyn-fg, #00FF6D)',
           padding: 'clamp(4rem, 10vw, 8rem) 1.5rem',
         }}
       >
@@ -427,7 +502,7 @@ export function Home() {
               fontSize: 'clamp(2rem, 5vw, 64px)',
               lineHeight: 1.35,
               letterSpacing: '-0.0182em',
-              color: '#FFFFFF',
+              color: 'var(--home-dyn-fg, #00FF6D)',
               margin: 0,
               flex: '1 1 100%',
             }}
@@ -440,7 +515,7 @@ export function Home() {
           style={{
             boxSizing: 'border-box',
             width: '100%',
-            borderTop: '1px solid #E0E0E0',
+            borderTop: '1px solid var(--home-dyn-fg, #00FF6D)',
             paddingTop: '28px',
           }}
         >
@@ -469,7 +544,7 @@ export function Home() {
                   borderRadius: '12px',
                 }}
               >
-                <div style={{ color: '#fff' }}>
+                <div style={{ color: '#00FF6D' }}>
                   {CARD_ICONS[icon]}
                 </div>
                 <h3
@@ -480,7 +555,7 @@ export function Home() {
                     letterSpacing: '-0.5px',
                     margin: 0,
                     fontWeight: 600,
-                    color: '#fff',
+                    color: 'var(--home-dyn-fg, #00FF6D)',
                   }}
                 >
                   {t(`home.internet.${icon}.title`)}
@@ -493,7 +568,7 @@ export function Home() {
                     lineHeight: '1.6',
                     letterSpacing: '-0.3px',
                     margin: 0,
-                    color: 'rgba(255,255,255,0.85)',
+                    color: 'var(--home-dyn-fg, #00FF6D)',
                   }}
                 >
                   {t(`home.internet.${icon}.text`)}

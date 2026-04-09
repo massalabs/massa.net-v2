@@ -284,7 +284,7 @@ export function Navbar() {
                         <div className="uui-text-size-small">{t('nav.item.deweb.desc')}</div>
                       </div>
                     </Link>
-                    <Link to="/ecosystem" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
+                    <Link to="/gossip" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
                       <div className="uui-navbar07_icon-wrapper"><img loading="lazy" src="/images/Ecosystem.svg" alt="" /></div>
                       <div className="uui-navbar07_item-right">
                         <div className="uui-navbar07_item-heading">{t('nav.item.gossip.title')}</div>

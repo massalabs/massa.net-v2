@@ -1,7 +1,7 @@
 export function GetMas() {
   return (
-    <div>
-      <section className="divsquares-copy">
+    <div className="page-get-mas">
+      <section className="divsquares-copy home-section-bg home-section-bg--gossip-flat">
         <h1>Get $MAS</h1>
         <div className="w-embed w-iframe">
           <link rel="stylesheet" type="text/css" href="/css/widget_lets.css" />
@@ -17,7 +17,7 @@ export function GetMas() {
         </div>
       </section>
 
-      <section className="masprovider-links">
+      <section className="masprovider-links home-section-bg home-section-bg--internet">
         <h2 className="heading-4-center-white-copy">
           <strong className="bold-text-2-copy-copy">Exchanges:</strong>
         </h2>

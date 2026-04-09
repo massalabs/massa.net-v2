@@ -1,7 +1,16 @@
+import { useEffect } from 'react'
+
 export function Technology() {
+  useEffect(() => {
+    document.body.classList.add('page-technology-theme')
+    return () => {
+      document.body.classList.remove('page-technology-theme')
+    }
+  }, [])
+
   return (
-    <div>
-      <header className="uui-section_heroheader14">
+    <div className="page-technology">
+      <header className="uui-section_heroheader14 home-section-bg home-section-bg--deweb-slide-flat">
         <div className="uui-page-padding">
           <div className="uui-container-large">
             <div className="uui-space"></div>
@@ -35,11 +44,11 @@ export function Technology() {
           </div>
         </div>
         <section>
-          <img src="/images/Bigpixel.svg" loading="lazy" width="Auto" alt="" className="image-39" />
+          <img src="/images/Bigpixel-orange.svg" loading="lazy" width="Auto" alt="" className="image-39" />
         </section>
       </header>
 
-      <section className="section-4">
+      <section className="section-4 home-section-bg home-section-bg--follow-internet">
         <div className="div-block-15-copy-copy">
           <div className="card-copy-rose">
             <div className="text-block-13">7K+</div>
@@ -56,7 +65,7 @@ export function Technology() {
         </div>
       </section>
 
-      <section className="section-8">
+      <section className="section-8 home-section-bg home-section-bg--blog-flat">
         <div className="w-layout-blockcontainer container-2 w-container">
           <h2 className="heading-4-copy">
             Current blockchains are limited : for instance, Bitcoin can only process 5 transactions per second.
@@ -69,25 +78,20 @@ export function Technology() {
         </div>
       </section>
 
-      <section className="section-7">
+      <section className="section-7 home-section-bg home-section-bg--internet-flat">
         <div className="uui-container-large-2-copy">
-          <div className="div-block-5-copy">
-            <div className="div-block-4">
-              <div className="uui-cta11_component-copy">
-                <div className="div-block-18">
-                  <img src="/images/schemamulti.svg" loading="lazy" width="228" alt="" />
-                  <div className="uui-text-size-xlarge">
-                    Massa uses a multithreaded block graph allowing nodes to create blocks in parallel and process 10,000 transactions per
-                    second.With this parallel block structure, Massa is the first blockchain technology to solve the trilemma.
-                  </div>
-                </div>
+          <div className="uui-cta11_component-copy">
+            <div className="div-block-18">
+              <img src="/images/schemamulti.svg" loading="lazy" width="228" alt="" />
+              <div className="uui-text-size-xlarge">
+                Massa uses a multithreaded block graph allowing nodes to create blocks in parallel and process 10,000 transactions per
+                second.With this parallel block structure, Massa is the first blockchain technology to solve the trilemma.
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section className="section-8">
+      <section className="section-8 home-section-bg home-section-bg--gossip-flat">
         <div className="w-layout-blockcontainer container-2-copy w-container">
           <h2 className="heading-4-copy">It's scaled, decentralized and secure at the same time.</h2>
           <div className="uui-space-large"></div>
@@ -117,7 +121,7 @@ export function Technology() {
         </div>
       </section>
 
-      <section className="section-9">
+      <section className="section-9 home-section-bg home-section-bg--follow-flat">
         <div className="uui-padding-vertical-xhuge-copy">
           <div className="uui-layout39_component">
             <div className="uui-text-align-center-2">
@@ -149,37 +153,33 @@ export function Technology() {
         </div>
       </section>
 
-      <section className="section-10">
+      <section className="section-10 home-section-bg home-section-bg--blog">
         <div className="uui-container-large-2">
           <div className="uui-padding-vertical-xhuge">
-            <div className="div-block-5">
-              <div className="div-block-4">
-                <div className="uui-cta11_component">
-                  <div className="uui-text-align-center-2">
-                    <h3 className="heading">Autonomous Smart Contracts</h3>
-                    <div className="uui-space-xsmall"></div>
-                    <div className="uui-text-size-xlarge">
-                      Massa's ASCs activate based on predefined conditions, eliminating external triggers. These ASCs enable:
-                      <br />
-                      <br />
-                      Automated strategies on DEXs like limit orders
-                      <br />
-                      Loan payments and collateral liquidations
-                      <br />
-                      Evolving NFTs and gaming environments
-                      <br />
-                      <br />
-                      By embedding automation into smart contracts, ASCs unlock decentralized finance without centralized intermediaries.
-                    </div>
-                    <div className="uui-space-xsmall">
-                      <div className="uui-space-large"></div>
-                    </div>
-                    <a href="/asc" className="button w-button">
-                      Learn more
-                    </a>
-                  </div>
+            <div className="uui-cta11_component">
+              <div className="uui-text-align-center-2">
+                <h3 className="heading">Autonomous Smart Contracts</h3>
+                <div className="uui-space-xsmall"></div>
+                <div className="uui-text-size-xlarge">
+                  Massa's ASCs activate based on predefined conditions, eliminating external triggers. These ASCs enable:
+                  <br />
+                  <br />
+                  Automated strategies on DEXs like limit orders
+                  <br />
+                  Loan payments and collateral liquidations
+                  <br />
+                  Evolving NFTs and gaming environments
+                  <br />
+                  <br />
+                  By embedding automation into smart contracts, ASCs unlock decentralized finance without centralized intermediaries.
                 </div>
-              </div>
+                <div className="uui-space-xsmall">
+                  <div className="uui-space-large"></div>
+                </div>
+                <a href="/asc" className="button w-button">
+                  Learn more
+                </a>
+                  </div>
             </div>
           </div>
         </div>

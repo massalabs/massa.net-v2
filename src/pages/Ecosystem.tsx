@@ -31,8 +31,8 @@ export function Ecosystem() {
   }
 
   return (
-    <div>
-      <section className="section-11">
+    <div className="page-ecosystem">
+      <section className="section-11 home-section-bg home-section-bg--internet-flat">
         <div className="uui-container-large">
           <div className="uui-space"></div>
           <div className="uui-heroheader14_component">
@@ -48,7 +48,7 @@ export function Ecosystem() {
       </section>
       <img src="/images/background-pixel-reverse.svg" loading="lazy" alt="" className="image-21" />
       
-      <section className="section-12">
+      <section className="section-12 home-section-bg home-section-bg--follow-internet">
         <div className="form-block w-form">
           <form className="form">
             <div style={{ marginBottom: '2rem', padding: '0 2rem' }}>
