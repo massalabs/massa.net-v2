@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { useBlogPosts } from '../hooks/useContentData'
 import { SEO } from '../components/SEO'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -92,6 +92,13 @@ const DEWEB_BG_ICONS = Array.from({ length: 58 }, (_, index) => {
     alpha: 0.14 + (index % 5) * 0.06,
   }
 })
+
+type FloatingVarsStyle = CSSProperties & {
+  '--drift-x': string
+  '--drift-y': string
+  '--float-duration': string
+  '--float-delay': string
+}
 
 const renderDewebWebIcon = (variant: number) => {
   switch (variant) {
@@ -388,7 +395,7 @@ export function Home() {
                   width: `${head.size}px`,
                   height: `${head.size}px`,
                   opacity: head.alpha,
-                }}
+                } as FloatingVarsStyle}
               />
             ))}
           </div>
@@ -412,7 +419,7 @@ export function Home() {
                   width: `${icon.size}px`,
                   height: `${icon.size}px`,
                   opacity: icon.alpha,
-                }}
+                } as FloatingVarsStyle}
               />
             ))}
           </div>
@@ -434,7 +441,7 @@ export function Home() {
                   width: `${icon.width}px`,
                   height: `${icon.height}px`,
                   opacity: icon.alpha,
-                }}
+                } as FloatingVarsStyle}
               >
                 {renderDewebWebIcon(icon.variant)}
               </span>
