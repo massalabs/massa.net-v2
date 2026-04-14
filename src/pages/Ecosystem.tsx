@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useEcosystemProjects } from '../hooks/useContentData'
 import type { EcosystemCategory } from '../data/ecosystem'
 
@@ -9,6 +9,13 @@ type FilterCategory = EcosystemCategory | 'All'
 export function Ecosystem() {
   const allProjects = useEcosystemProjects()
   const [selectedCategory, setSelectedCategory] = useState<FilterCategory | null>(null)
+
+  useEffect(() => {
+    document.body.classList.add('page-mono-theme', 'page-ecosystem-theme')
+    return () => {
+      document.body.classList.remove('page-mono-theme', 'page-ecosystem-theme')
+    }
+  }, [])
 
   const filteredProjects = useMemo(() => {
     if (!selectedCategory || selectedCategory === 'All') {
@@ -34,20 +41,17 @@ export function Ecosystem() {
     <div className="page-ecosystem">
       <section className="section-11 home-section-bg home-section-bg--internet-flat">
         <div className="uui-container-large">
-          <div className="uui-space"></div>
           <div className="uui-heroheader14_component">
+            <div className="uui-space"></div>
             <div className="uui-text-align-center">
               <div className="uui-max-width-xlarge">
                 <h1 className="uui-heading-xlarge-white">Discover Massa Ecosystem</h1>
                 <div className="uui-max-width-large align-center"></div>
               </div>
             </div>
-            <div className="uui-space"></div>
           </div>
         </div>
       </section>
-      <img src="/images/background-pixel-reverse.svg" loading="lazy" alt="" className="image-21" />
-      
       <section className="section-12 home-section-bg home-section-bg--follow-internet">
         <div className="form-block w-form">
           <form className="form">
@@ -70,7 +74,11 @@ export function Ecosystem() {
                       onChange={() => toggleCategory(category)}
                       style={{ opacity: 0, position: 'absolute', zIndex: -1 }}
                     />
-                    <span className="fs-checkbox_label-4-2 w-form-label">
+                    <span
+                      className={`fs-checkbox_label-4-2 w-form-label ${
+                        category === 'Wallets' ? 'fs-checkbox_label-4-2--wallets' : ''
+                      }`}
+                    >
                       {category}
                     </span>
                   </label>

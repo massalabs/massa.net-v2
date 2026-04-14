@@ -1,7 +1,16 @@
+import { useEffect } from 'react'
+
 export function Start() {
+  useEffect(() => {
+    document.body.classList.add('page-start-theme', 'page-mono-theme')
+    return () => {
+      document.body.classList.remove('page-start-theme', 'page-mono-theme')
+    }
+  }, [])
+
   return (
     <div>
-      <header className="uui-section_heroheader14">
+      <header className="uui-section_heroheader14 home-section-bg home-section-bg--internet">
         <div className="uui-page-padding">
           <div className="uui-container-large">
             <div className="uui-space"></div>
@@ -15,14 +24,9 @@ export function Start() {
             </div>
           </div>
         </div>
-        <section>
-          <img src="/images/pixel.svg" loading="lazy" alt="" className="image-21" />
-        </section>
       </header>
 
-      <section className="section-17-copy"></section>
-
-      <section className="section-456">
+      <section className="section-456 home-section-bg home-section-bg--follow">
         <h2 className="heading-4-center-white">
           <strong className="bold-text-2-copy">Use Massa</strong>
         </h2>
@@ -66,7 +70,7 @@ export function Start() {
         </div>
       </section>
 
-      <section className="divsquares">
+      <section className="divsquares home-section-bg home-section-bg--follow-internet">
         <h2 className="heading-4-center-white-copy">
           <strong className="bold-text-2-copy-copy">Explore</strong>
         </h2>
@@ -112,23 +116,21 @@ export function Start() {
         </div>
       </section>
 
-      <section className="section-10-copy">
+      <section className="section-10-copy home-section-bg home-section-bg--blog">
         <div className="uui-container-large-2">
           <div className="uui-padding-vertical-xhuge">
             <div className="div-block-5">
-              <div className="div-block-4">
-                <div className="uui-cta11_component">
-                  <div className="uui-text-align-center-2">
-                    <h3 className="heading">Developper Tools</h3>
-                    <div className="uui-space-xsmall"></div>
-                    <div className="uui-text-size-xlarge">Everything you need to deploy on Massa</div>
-                    <div className="uui-space-xsmall">
-                      <div className="uui-space-large"></div>
-                    </div>
-                    <a href="https://docs.massa.net/" className="button w-button" target="_blank" rel="noreferrer">
-                      Massa Docs
-                    </a>
+              <div className="uui-cta11_component">
+                <div className="uui-text-align-center-2">
+                  <h3 className="heading">Developper Tools</h3>
+                  <div className="uui-space-xsmall"></div>
+                  <div className="uui-text-size-xlarge">Everything you need to deploy on Massa</div>
+                  <div className="uui-space-xsmall">
+                    <div className="uui-space-large"></div>
                   </div>
+                  <a href="https://docs.massa.net/" className="button w-button" target="_blank" rel="noreferrer">
+                    Massa Docs
+                  </a>
                 </div>
               </div>
             </div>

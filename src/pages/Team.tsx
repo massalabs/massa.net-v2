@@ -1,7 +1,15 @@
+import { useEffect } from 'react'
 import { useTeam } from '../hooks/useContentData'
 
 export function Team() {
   const team = useTeam()
+
+  useEffect(() => {
+    document.body.classList.add('page-mono-theme', 'page-team-theme')
+    return () => {
+      document.body.classList.remove('page-mono-theme', 'page-team-theme')
+    }
+  }, [])
   
   return (
     <div>
@@ -19,7 +27,6 @@ export function Team() {
           </div>
         </div>
       </section>
-      <img src="/images/background-pixel-reverse.svg" loading="lazy" alt="" className="image-21" />
       <section className="section-12">
         <div className="collection-list-wrapper-2 w-dyn-list">
           <div role="list" className="collection-list-5 w-dyn-items">

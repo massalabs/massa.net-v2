@@ -1,9 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useBounties } from '../hooks/useContentData'
 
 export function GrantsBounty() {
   const { open: openBounties, completed: completedBounties } = useBounties()
   const [openFaqItems, setOpenFaqItems] = useState<Set<number>>(new Set())
+
+  useEffect(() => {
+    document.body.classList.add('page-grants-theme')
+    return () => {
+      document.body.classList.remove('page-grants-theme')
+    }
+  }, [])
 
   const toggleFaq = (index: number) => {
     setOpenFaqItems(prev => {
@@ -44,16 +51,12 @@ export function GrantsBounty() {
           </div>
         </div>
       </header>
-      <section>
-        <img src="/images/Bigpixel.svg" loading="lazy" width="Auto" alt="" className="image-40" />
-      </section>
-
       <section className="logos-without-title">
         <div className="container-4"></div>
       </section>
 
-      <section className="section-14">
-        <div className="w-layout-blockcontainer bounties_container w-container">
+      <section className="section-14 section-14-open">
+        <div className="w-layout-blockcontainer bounties_container bounties-open w-container">
           <h2 className="heading-4-copy">Open bounties</h2>
           <div className="uui-space-large"></div>
           <div>
@@ -82,7 +85,10 @@ export function GrantsBounty() {
             ))}
           </div>
         </div>
-        <div className="w-layout-blockcontainer bounties_container w-container">
+      </section>
+
+      <section className="section-14 section-14-completed">
+        <div className="w-layout-blockcontainer bounties_container bounties-completed w-container">
           <h2 className="heading-4-copy">Bounties completed</h2>
           <div className="uui-space-large"></div>
           <div>
@@ -226,26 +232,20 @@ export function GrantsBounty() {
         </div>
       </section>
 
-      <section>
-        <img src="/images/Bigpixel.svg" loading="lazy" width="Auto" alt="" />
-      </section>
-
       <section className="section-10-copy">
         <div className="uui-container-large-2">
           <div className="uui-padding-vertical-xhuge">
             <div className="div-block-5">
-              <div className="div-block-4">
-                <div className="uui-cta11_component">
-                  <div className="uui-text-align-center-2">
-                    <h3 className="heading-7">Join our Developper</h3>
-                    <h3 className="heading">community on Discord</h3>
-                    <div className="uui-space-xsmall">
-                      <div className="uui-space-large"></div>
-                    </div>
-                    <a href="https://discord.com/invite/massa" className="button w-button" target="_blank" rel="noreferrer">
-                      Join
-                    </a>
+              <div className="uui-cta11_component">
+                <div className="uui-text-align-center-2">
+                  <h3 className="heading-7">Join our Developper</h3>
+                  <h3 className="heading">community on Discord</h3>
+                  <div className="uui-space-xsmall">
+                    <div className="uui-space-large"></div>
                   </div>
+                  <a href="https://discord.com/invite/massa" className="button w-button" target="_blank" rel="noreferrer">
+                    Join
+                  </a>
                 </div>
               </div>
             </div>

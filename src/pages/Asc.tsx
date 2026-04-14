@@ -1,4 +1,36 @@
-import { useEffect } from 'react'
+import { useEffect, type CSSProperties } from 'react'
+
+const seeded01 = (seed: number) => {
+  const x = Math.sin(seed * 12.9898 + 78.233) * 43758.5453
+  return x - Math.floor(x)
+}
+
+const ASC_HERO_BG_ICONS = Array.from({ length: 64 }, (_, index) => {
+  const sources = [
+    '/images/deweb.svg',
+    '/images/ASC.svg',
+    '/images/Technology.svg',
+    '/images/Docs.svg',
+    '/images/Bounties.svg',
+    '/images/Forum.svg',
+    '/images/Ambassador.svg',
+    '/images/Team.svg',
+    '/images/Blog.svg',
+  ]
+  const r1 = seeded01(index + 11)
+  const r2 = seeded01(index + 101)
+  return {
+    src: sources[index % sources.length],
+    x: 4 + r1 * 92,
+    y: 2 + r2 * 96,
+    driftX: ((index % 9) - 4) * 6,
+    driftY: ((index % 7) - 3) * 8,
+    duration: 15 + (index % 8),
+    delay: (index % 10) * -1.4,
+    size: 16 + (index % 4) * 4,
+    alpha: 0.48 + (index % 4) * 0.1,
+  }
+})
 
 export function Asc() {
   useEffect(() => {
@@ -11,9 +43,29 @@ export function Asc() {
   return (
     <div className="page-asc">
       <header className="uui-section_heroheader14 home-section-bg home-section-bg--blog-flat asc-hero-no-svg">
+        <div className="asc-hero-floating-icons" aria-hidden="true">
+          {ASC_HERO_BG_ICONS.map((icon, index) => (
+            <img
+              key={`asc-hero-icon-${index}`}
+              src={icon.src}
+              alt=""
+              className="asc-hero-floating-icon"
+              style={{
+                '--drift-x': `${icon.driftX}px`,
+                '--drift-y': `${icon.driftY}px`,
+                '--float-duration': `${icon.duration}s`,
+                '--float-delay': `${icon.delay}s`,
+                left: `${icon.x}%`,
+                top: `${icon.y}%`,
+                width: `${icon.size}px`,
+                height: `${icon.size}px`,
+                opacity: icon.alpha,
+              } as CSSProperties}
+            />
+          ))}
+        </div>
         <div className="uui-page-padding">
           <div className="uui-container-large">
-            <div className="uui-space"></div>
             <div className="uui-heroheader14_component">
               <div className="uui-text-align-center">
                 <div className="uui-max-width-xlarge">

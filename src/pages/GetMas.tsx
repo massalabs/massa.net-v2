@@ -1,10 +1,28 @@
+import { useEffect, useState } from 'react'
+
 export function GetMas() {
+  const [isWidgetLoading, setIsWidgetLoading] = useState(true)
+
+  useEffect(() => {
+    document.body.classList.add('page-mono-theme', 'page-getmas-theme')
+    return () => {
+      document.body.classList.remove('page-mono-theme', 'page-getmas-theme')
+    }
+  }, [])
+
   return (
     <div className="page-get-mas">
       <section className="divsquares-copy home-section-bg home-section-bg--gossip-flat">
         <h1>Get $MAS</h1>
         <div className="w-embed w-iframe">
           <link rel="stylesheet" type="text/css" href="/css/widget_lets.css" />
+          <div className="lets-widget-wrapper">
+            {isWidgetLoading && (
+              <div className="lets-widget-loader" aria-live="polite">
+                <div className="lets-widget-loader__spinner" aria-hidden="true" />
+                <span>Chargement du widget...</span>
+              </div>
+            )}
           <div className="lets-widget" id="lets_widget_ZA9pV7Cit1WsM8qP" style={{ width: '600px', height: '480px' }}>
             <iframe
               src="https://letsexchange.io/v2/widget?affiliate_id=ZA9pV7Cit1WsM8qP&is_iframe=true"
@@ -12,7 +30,9 @@ export function GetMas() {
               height="100%"
               frameBorder="0"
               allow="clipboard-read; clipboard-write"
+              onLoad={() => setIsWidgetLoading(false)}
             ></iframe>
+          </div>
           </div>
         </div>
       </section>
