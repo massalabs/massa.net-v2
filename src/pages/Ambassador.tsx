@@ -1,6 +1,17 @@
+import { useEffect } from 'react'
+import { useLanguage } from '../i18n/LanguageContext'
+
 export default function AmbassadorComingSoon() {
+  const { t } = useLanguage()
+  useEffect(() => {
+    document.body.classList.add('page-home-theme')
+    return () => {
+      document.body.classList.remove('page-home-theme')
+    }
+  }, [])
+
   return (
-    <div className="uui-section_heroheader14">
+    <div className="uui-section_heroheader14 hero-home">
       <div className="uui-page-padding">
         <div className="uui-container-large">
           <div className="uui-space"></div>
@@ -9,9 +20,9 @@ export default function AmbassadorComingSoon() {
               <div className="uui-max-width-xlarge">
                 <h1 className="uui-heading-xlarge">Ambassador</h1>
                 <div className="uui-space-small"></div>
-                <p className="uui-text-size-xlarge">Coming soon</p>
+                <p className="uui-text-size-xlarge">{t('ambassador.hero.comingSoon')}</p>
                 <div className="uui-space-large"></div>
-                <a href="/" className="button w-button">Retour à l’accueil</a>
+                <a href="/" className="button w-button">{t('ambassador.hero.ctaHome')}</a>
               </div>
             </div>
           </div>

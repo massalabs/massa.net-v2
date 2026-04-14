@@ -124,6 +124,12 @@ export const en: Record<string, string> = {
 
   'home.blog.title': 'Read the latest from Massa',
   'home.blog.readMore': 'Read more',
+  'gossip.hero.heading': 'Decentralized messenger, hosted on-chain.',
+  'gossip.hero.body':
+    'A simple messaging app running on Massa mainnet. No central server, no single point of failure - just direct, decentralized communication.',
+  'gossip.hero.ctaOpen': 'Open Gossip',
+  'ambassador.hero.comingSoon': 'Coming soon',
+  'ambassador.hero.ctaHome': 'Back to home',
 
   'a11y.slidePrev': 'Previous slide',
   'a11y.slideNext': 'Next slide',
@@ -253,6 +259,12 @@ export const fr: Record<string, string> = {
 
   'home.blog.title': 'Les dernières nouvelles de Massa',
   'home.blog.readMore': 'Lire la suite',
+  'gossip.hero.heading': 'Messagerie décentralisée, hébergée on-chain.',
+  'gossip.hero.body':
+    'Une application de messagerie simple qui tourne sur le mainnet Massa. Pas de serveur central, pas de point de défaillance unique - juste une communication directe et décentralisée.',
+  'gossip.hero.ctaOpen': 'Ouvrir Gossip',
+  'ambassador.hero.comingSoon': 'Bientôt disponible',
+  'ambassador.hero.ctaHome': 'Retour à l’accueil',
 
   'a11y.slidePrev': 'Diapositive précédente',
   'a11y.slideNext': 'Diapositive suivante',

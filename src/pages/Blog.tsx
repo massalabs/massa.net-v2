@@ -1,7 +1,15 @@
+import { useEffect } from 'react'
 import { useBlogPosts } from '../hooks/useContentData'
 
 export function Blog() {
   const blogPosts = useBlogPosts()
+
+  useEffect(() => {
+    document.body.classList.add('page-blog-theme', 'page-blog', 'page-mono-theme')
+    return () => {
+      document.body.classList.remove('page-blog-theme', 'page-blog', 'page-mono-theme')
+    }
+  }, [])
   
   return (
     <div className="w-layout-hflex flex-block-3 page-blog">

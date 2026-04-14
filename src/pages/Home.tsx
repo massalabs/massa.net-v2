@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { MenuPictosBackground } from '../components/MenuPictosBackground'
 import { useBlogPosts } from '../hooks/useContentData'
 import { SEO } from '../components/SEO'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -7,7 +6,7 @@ import { useLanguage } from '../i18n/LanguageContext'
 const SLIDER_SLIDES = [
   {
     id: 'gossip' as const,
-    ctaHref: '/ecosystem',
+    ctaHref: '/gossip',
     image: '/images/gossip%20preview.png',
     background: '#3AF3D1',
   },
@@ -26,6 +25,152 @@ const SLIDER_SLIDES = [
 ] as const
 
 const DEWEB_BG_LOGOS = Array.from({ length: 20 }, (_, i) => `/images/logo_${i + 1}.svg`)
+const GOSSIP_BG_HEADS = Array.from({ length: 42 }, (_, index) => ({
+  src: `/images/Head${(index % 4) + 1}.svg`,
+  x: (index * 17 + (index % 3) * 7) % 100,
+  y: (index * 29 + (index % 5) * 11) % 100,
+  driftX: ((index % 9) - 4) * 7,
+  driftY: ((index % 7) - 3) * 9,
+  duration: 14 + (index % 10),
+  delay: (index % 9) * -1.5,
+  size: 10 + (index % 5) * 4,
+  alpha: 0.14 + (index % 6) * 0.08,
+}))
+
+const halton = (index: number, base: number) => {
+  let result = 0
+  let f = 1 / base
+  let i = index
+  while (i > 0) {
+    result += f * (i % base)
+    i = Math.floor(i / base)
+    f /= base
+  }
+  return result
+}
+
+const ASC_BG_ICONS = Array.from({ length: 44 }, (_, index) => {
+  const sources = [
+    '/images/deweb.svg',
+    '/images/ASC.svg',
+    '/images/Technology.svg',
+    '/images/Docs.svg',
+    '/images/Bounties.svg',
+    '/images/Forum.svg',
+    '/images/Ambassador.svg',
+    '/images/Team.svg',
+    '/images/Blog.svg',
+  ]
+  const hX = halton(index + 1, 2)
+  const hY = halton(index + 1, 3)
+  return {
+    src: sources[index % sources.length],
+    x: 6 + hX * 88,
+    y: 8 + hY * 84,
+    driftX: ((index % 9) - 4) * 6,
+    driftY: ((index % 7) - 3) * 8,
+    duration: 15 + (index % 8),
+    delay: (index % 10) * -1.4,
+    size: 12 + (index % 4) * 3,
+    alpha: 0.08 + (index % 5) * 0.03,
+  }
+})
+
+const DEWEB_BG_ICONS = Array.from({ length: 58 }, (_, index) => {
+  const hX = halton(index + 1, 2)
+  const hY = halton(index + 1, 3)
+  return {
+    variant: index % 9,
+    x: 5 + hX * 90,
+    y: 6 + hY * 88,
+    driftX: ((index % 11) - 5) * 6,
+    driftY: ((index % 9) - 4) * 7,
+    duration: 13 + (index % 9),
+    delay: (index % 10) * -1.25,
+    width: 22 + (index % 5) * 8,
+    height: 10 + (index % 4) * 4,
+    alpha: 0.14 + (index % 5) * 0.06,
+  }
+})
+
+const renderDewebWebIcon = (variant: number) => {
+  switch (variant) {
+    case 0:
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M3 12h18M12 3c2.6 2.1 4 5.4 4 9s-1.4 6.9-4 9c-2.6-2.1-4-5.4-4-9s1.4-6.9 4-9Z" stroke="currentColor" strokeWidth="1.7" />
+        </svg>
+      )
+    case 1:
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M12 3.5v17M4.5 12h15M6.5 7.5c1.6 1 3.4 1.5 5.5 1.5s3.9-.5 5.5-1.5M6.5 16.5c1.6-1 3.4-1.5 5.5-1.5s3.9.5 5.5 1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+        </svg>
+      )
+    case 2:
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="2.2" fill="currentColor" />
+          <circle cx="5" cy="7" r="1.5" fill="currentColor" />
+          <circle cx="19" cy="8" r="1.5" fill="currentColor" />
+          <circle cx="6.5" cy="17.5" r="1.5" fill="currentColor" />
+          <circle cx="17.5" cy="17.5" r="1.5" fill="currentColor" />
+          <path d="M12 12 5 7M12 12l7-4M12 12l-5.5 5.5M12 12l5.5 5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+        </svg>
+      )
+    case 3:
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3.5" y="5" width="17" height="12.5" rx="2.2" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M7 20h10M9 17.5v2.5m6-2.5v2.5M6.5 9.5h11M9.5 7.5v4M14.5 7.5v4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+        </svg>
+      )
+    case 4:
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 12.5 8 8l3 3 5-5 4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M3.5 18.5h17" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+          <circle cx="8" cy="8" r="1.3" fill="currentColor" />
+          <circle cx="11" cy="11" r="1.3" fill="currentColor" />
+          <circle cx="16" cy="6" r="1.3" fill="currentColor" />
+          <circle cx="20" cy="10" r="1.3" fill="currentColor" />
+        </svg>
+      )
+    case 5:
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3.2 20.2 7.9v8.2L12 20.8 3.8 16.1V7.9L12 3.2Z" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M12 3.2v17.6M3.8 7.9 12 12l8.2-4.1" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case 6:
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" strokeWidth="2" />
+          <path d="M3 12h18M12 3v18M7 7.5h10M7 16.5h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
+        </svg>
+      )
+    case 7:
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.4" stroke="currentColor" strokeWidth="1.8" strokeDasharray="1.2 2.1" strokeLinecap="round" />
+          <path d="M3.8 12h16.4M12 3.8v16.4M6.8 8.2c1.4.7 3.1 1 5.2 1 2.1 0 3.8-.3 5.2-1M6.8 15.8c1.4-.7 3.1-1 5.2-1 2.1 0 3.8.3 5.2 1" stroke="currentColor" strokeWidth="1.4" strokeDasharray="0.8 2" strokeLinecap="round" />
+        </svg>
+      )
+    default:
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.8" stroke="currentColor" strokeWidth="1.7" />
+          <circle cx="7.2" cy="10.2" r="0.9" fill="currentColor" />
+          <circle cx="13.5" cy="7.2" r="0.9" fill="currentColor" />
+          <circle cx="16.8" cy="13.8" r="0.9" fill="currentColor" />
+          <path d="M7.2 10.2 13.5 7.2 16.8 13.8 10.1 16.5 7.2 10.2Z" stroke="currentColor" strokeWidth="1.2" />
+        </svg>
+      )
+  }
+}
 
 /** Cards "The Internet is Not Free" — clés i18n : home.internet.<icon>.title / .text */
 const INTERNET_NOT_FREE_ICONS = ['gatekeepers', 'server', 'shield', 'database', 'target', 'lock'] as const
@@ -138,16 +283,16 @@ export function Home() {
 
   const activeTheme = isDesktop && isSliderHovered ? SLIDER_SLIDES[currentSlide].id : 'home'
   const themeBackground: Record<'home' | 'gossip' | 'deweb' | 'asc', string> = {
-    home: '#00FF6D',
+    home: '#FFFFFF',
     gossip: '#3AF3D1',
     deweb: '#0000A8',
     asc: '#FFFF00',
   }
   const themeForeground: Record<'home' | 'gossip' | 'deweb' | 'asc', string> = {
-    home: '#0043FF',
+    home: '#000000',
     gossip: '#18181B',
     deweb: '#ECECEC',
-    asc: '#000000',
+    asc: '#1E1D03',
   }
   
   const handleSliderMouseEnter = () => {
@@ -191,7 +336,7 @@ export function Home() {
                   </div>
                   <div className="uui-space-large"></div>
                   <div className="uui-button-row button-row-center is-reverse-mobile-landscape">
-                    <a href="/ecosystem" className="button w-button">{t('home.hero.ctaGossip')}</a>
+                    <a href="https://usegossip.massa.network/" target="_blank" rel="noreferrer" className="button w-button">{t('home.hero.ctaGossip')}</a>
                     <a href="https://docs.massa.net/" className="button w-button">{t('home.hero.ctaBuild')}</a>
                   </div>
                   <div className="uui-space-large"></div>
@@ -225,8 +370,77 @@ export function Home() {
           overflow: 'hidden',
         }}
       >
-        {/* Icônes — uniquement sur ASC */}
-        {SLIDER_SLIDES[currentSlide].id === 'asc' && <MenuPictosBackground scoped variant="dark" />}
+        {SLIDER_SLIDES[currentSlide].id === 'gossip' && (
+          <div className="home-gossip-floating-heads" aria-hidden="true">
+            {GOSSIP_BG_HEADS.map((head, index) => (
+              <img
+                key={`home-gossip-head-${index}`}
+                src={head.src}
+                alt=""
+                className="home-gossip-floating-head"
+                style={{
+                  '--drift-x': `${head.driftX}px`,
+                  '--drift-y': `${head.driftY}px`,
+                  '--float-duration': `${head.duration}s`,
+                  '--float-delay': `${head.delay}s`,
+                  left: `${head.x}%`,
+                  top: `${head.y}%`,
+                  width: `${head.size}px`,
+                  height: `${head.size}px`,
+                  opacity: head.alpha,
+                }}
+              />
+            ))}
+          </div>
+        )}
+
+        {SLIDER_SLIDES[currentSlide].id === 'asc' && (
+          <div className="home-asc-floating-icons" aria-hidden="true">
+            {ASC_BG_ICONS.map((icon, index) => (
+              <img
+                key={`home-asc-icon-${index}`}
+                src={icon.src}
+                alt=""
+                className="home-asc-floating-icon"
+                style={{
+                  '--drift-x': `${icon.driftX}px`,
+                  '--drift-y': `${icon.driftY}px`,
+                  '--float-duration': `${icon.duration}s`,
+                  '--float-delay': `${icon.delay}s`,
+                  left: `${icon.x}%`,
+                  top: `${icon.y}%`,
+                  width: `${icon.size}px`,
+                  height: `${icon.size}px`,
+                  opacity: icon.alpha,
+                }}
+              />
+            ))}
+          </div>
+        )}
+
+        {SLIDER_SLIDES[currentSlide].id === 'deweb' && (
+          <div className="home-deweb-floating-icons" aria-hidden="true">
+            {DEWEB_BG_ICONS.map((icon, index) => (
+              <span
+                key={`home-deweb-icon-${index}`}
+                className={`home-deweb-floating-icon deweb-web-icon--${icon.variant === 6 ? 'pixel' : icon.variant === 7 ? 'dot' : icon.variant === 8 ? 'blur' : 'classic'}`}
+                style={{
+                  '--drift-x': `${icon.driftX}px`,
+                  '--drift-y': `${icon.driftY}px`,
+                  '--float-duration': `${icon.duration}s`,
+                  '--float-delay': `${icon.delay}s`,
+                  left: `${icon.x}%`,
+                  top: `${icon.y}%`,
+                  width: `${icon.width}px`,
+                  height: `${icon.height}px`,
+                  opacity: icon.alpha,
+                }}
+              >
+                {renderDewebWebIcon(icon.variant)}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* Slider = toute la section : track en flex 1, un slide à la fois */}
         <div
@@ -467,7 +681,7 @@ export function Home() {
         className="section-internet-not-free"
         style={{
           width: '100%',
-          color: 'var(--home-dyn-fg, #00FF6D)',
+          color: 'var(--home-dyn-fg, #FFFFFF)',
           padding: 'clamp(4rem, 10vw, 8rem) 1.5rem',
         }}
       >
@@ -502,7 +716,7 @@ export function Home() {
               fontSize: 'clamp(2rem, 5vw, 64px)',
               lineHeight: 1.35,
               letterSpacing: '-0.0182em',
-              color: 'var(--home-dyn-fg, #00FF6D)',
+              color: 'var(--home-dyn-fg, #FFFFFF)',
               margin: 0,
               flex: '1 1 100%',
             }}
@@ -515,7 +729,7 @@ export function Home() {
           style={{
             boxSizing: 'border-box',
             width: '100%',
-            borderTop: '1px solid var(--home-dyn-fg, #00FF6D)',
+            borderTop: '1px solid var(--home-dyn-fg, #FFFFFF)',
             paddingTop: '28px',
           }}
         >
@@ -539,12 +753,12 @@ export function Home() {
                   gap: '16px',
                   padding: '1.5rem',
                   boxSizing: 'border-box',
-                  background: 'rgba(0,30,24,0.6)',
+                  background: 'rgba(0, 0, 0, 0.35)',
                   border: '1px solid rgba(255,255,255,0.12)',
                   borderRadius: '12px',
                 }}
               >
-                <div style={{ color: '#00FF6D' }}>
+                <div style={{ color: 'var(--home-dyn-fg, #FFFFFF)' }}>
                   {CARD_ICONS[icon]}
                 </div>
                 <h3
@@ -555,7 +769,7 @@ export function Home() {
                     letterSpacing: '-0.5px',
                     margin: 0,
                     fontWeight: 600,
-                    color: 'var(--home-dyn-fg, #00FF6D)',
+                    color: 'var(--home-dyn-fg, #FFFFFF)',
                   }}
                 >
                   {t(`home.internet.${icon}.title`)}
@@ -568,7 +782,7 @@ export function Home() {
                     lineHeight: '1.6',
                     letterSpacing: '-0.3px',
                     margin: 0,
-                    color: 'var(--home-dyn-fg, #00FF6D)',
+                    color: 'var(--home-dyn-fg, #FFFFFF)',
                   }}
                 >
                   {t(`home.internet.${icon}.text`)}
