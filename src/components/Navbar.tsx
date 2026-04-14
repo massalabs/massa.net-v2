@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, type CSSProperties, type ReactNode } from 'react'
+import { useState, useEffect, useRef, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { LANGUAGES, type LocaleCode } from '../i18n/localeMeta'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -46,10 +46,6 @@ export function Navbar() {
       }
     }
   }, [closeTimeout])
-
-  const toggleDropdown = (id: string) => {
-    setOpenDropdown((current) => (current === id ? null : current))
-  }
 
   const handleDropdownEnter = (id: string) => {
     if (closeTimeout) {
