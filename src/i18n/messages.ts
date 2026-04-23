@@ -71,7 +71,8 @@ export const en: Record<string, string> = {
   'home.seo.description':
     "Massa is a layer 1 blockchain, and the first decentralized cloud network, bringing true decentralization to where it's needed through its technology.",
 
-  'home.hero.heading': 'The Internet that belongs to you, forever.',
+  'home.hero.heading': 'The Internet that Belongs to You ',
+  'home.hero.headingAccent': 'Forever',
   'home.hero.subheading': 'The first decentralized cloud network',
   'home.hero.body':
     'Stop relying on fragile servers and big tech. Massa hosts your apps and data directly on a global network that no one can shut down, censor, or control.',

@@ -983,10 +983,14 @@ body.page-deweb .uui-section_heroheader14.deweb-hero .image-21-copy {
   box-sizing: border-box;
   background-color: rgba(0, 67, 255, 1);
   background-image: url('/images/background%20pixel%20green.svg');
-  background-size: 100vw auto;
-  background-position: center calc(100% + 80px);
-  background-repeat: no-repeat;
-  padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+  background-size: auto clamp(180px, 22vw, 260px);
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  padding: clamp(4rem, 10vw, 8rem) 1.5rem clamp(6rem, 14vw, 10rem);
+}
+
+.section-follow-journey .follow-journey-title {
+  margin-bottom: clamp(2rem, 6vw, 3.5rem) !important;
 }
 .follow-journey-content {
   position: relative;
@@ -1016,8 +1020,9 @@ body.page-deweb .uui-section_heroheader14.deweb-hero .image-21-copy {
   font-size: 1rem;
   transition: background 0.2s, border-color 0.2s;
 }
-.follow-journey-card:hover {
-  background: rgba(0, 30, 24, 0.8);
+.follow-journey-card:hover,
+.section-follow-journey .follow-journey-card:hover {
+  background: rgba(40, 40, 44, 0.85) !important;
   border-color: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
@@ -4386,6 +4391,164 @@ body.page-ecosystem-theme .page-ecosystem .projects_wrapper .flex-block-4 img {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(103%) contrast(103%) !important;
 }
 
+/* ============================================================
+   Ecosystem — horizontal rectangle cards, 2 per row
+   ============================================================ */
+
+/* 2-column grid regardless of desktop width */
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper {
+  max-width: 1180px !important;
+}
+
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .collection-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-column-gap: 1rem !important;
+  grid-row-gap: 1rem !important;
+}
+
+@media (max-width: 560px) {
+  body.page-ecosystem-theme .page-ecosystem .projects_wrapper .collection-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Card shell: compact rectangle */
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .collection-item-3 {
+  display: grid !important;
+  grid-template-columns: 1fr auto !important;
+  grid-template-rows: 1fr auto !important;
+  gap: 0.85rem 1rem !important;
+  padding: 1.1rem 1.25rem !important;
+  background: rgba(255, 255, 255, 0.035) !important;
+  background-color: rgba(255, 255, 255, 0.035) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 14px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease !important;
+}
+
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .collection-item-3:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  transform: translateY(-2px);
+}
+
+/* Top row: logo + title + description in a grid */
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .collection-item-3 .div-block-21 {
+  grid-column: 1 / -1 !important;
+  grid-row: 1 !important;
+  display: grid !important;
+  grid-template-columns: 64px minmax(0, 1fr) !important;
+  grid-template-rows: auto auto !important;
+  column-gap: 1rem !important;
+  row-gap: 0.3rem !important;
+  padding: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  align-items: start !important;
+}
+
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .image-22 {
+  grid-column: 1 !important;
+  grid-row: 1 / span 2 !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 !important;
+  padding: 6px !important;
+  object-fit: contain !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+  align-self: start !important;
+}
+
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .collection-item-3 .heading-5-copy {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  margin: 0 !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em !important;
+}
+
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .collection-item-3 .uui-text-size-large {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  margin: 0 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+/* Bottom row: categories on the left, social icons on the right */
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .collection-list-wrapper-3 {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  max-width: 100% !important;
+  align-self: end !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .collection-list-7 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.4rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .flex-block-4 {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  align-self: end !important;
+  justify-self: end !important;
+  display: inline-flex !important;
+  gap: 0.55rem !important;
+  margin: 0 !important;
+}
+
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .flex-block-4 a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .flex-block-4 a:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.page-ecosystem-theme .page-ecosystem .projects_wrapper .flex-block-4 img {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* Tighter pill styling */
+body.page-ecosystem-theme .page-ecosystem .text-block-15 {
+  min-height: 24px !important;
+  padding: 0.2rem 0.6rem !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.01em !important;
+}
+
 body.page-ecosystem-theme .page-ecosystem .fs-checkbox_field-4-2 {
   border: 1px solid rgba(255, 255, 255, 0.35) !important;
   background: rgba(255, 255, 255, 0.05) !important;
@@ -4718,5 +4881,628 @@ body.page-grants-theme .section-14 .collection-item-7,
 body.page-grants-theme .section-14 .collection-item-4 *,
 body.page-grants-theme .section-14 .collection-item-7 * {
   color: var(--grants-bg) !important;
+}
+
+/* ============================================================
+   Gossip · Essential Features grid
+   ============================================================ */
+
+.gossip-features {
+  position: relative;
+  padding: clamp(4rem, 9vw, 8rem) 0 clamp(5rem, 10vw, 9rem);
+  background: #18181b;
+  color: #3af3d1;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.gossip-features::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 45% at 15% 0%, rgba(58, 243, 209, 0.08), transparent 70%),
+    radial-gradient(45% 40% at 95% 100%, rgba(58, 243, 209, 0.06), transparent 70%),
+    linear-gradient(180deg, rgba(58, 243, 209, 0.02), transparent 30%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gossip-features::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(58, 243, 209, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(58, 243, 209, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, black, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, black, transparent 85%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.gossip-features .uui-page-padding,
+.gossip-features .uui-container-large {
+  position: relative;
+  z-index: 1;
+}
+
+.gossip-features__header {
+  max-width: 780px;
+  margin: 0 0 clamp(3rem, 6vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.gossip-features__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: fit-content;
+  padding: 0.45rem 0.9rem 0.45rem 0.7rem;
+  border: 1px solid rgba(58, 243, 209, 0.25);
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(58, 243, 209, 0.85);
+  background: rgba(58, 243, 209, 0.04);
+  backdrop-filter: blur(6px);
+}
+
+.gossip-features__eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #3af3d1;
+  box-shadow: 0 0 12px rgba(58, 243, 209, 0.8);
+  animation: gossip-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes gossip-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+.gossip-features__title {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+
+.gossip-features__title-accent {
+  color: #3af3d1;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.gossip-features__lede {
+  margin: 0;
+  max-width: 58ch;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.65;
+  color: rgba(228, 228, 231, 0.72);
+}
+
+.gossip-features__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(58, 243, 209, 0.14);
+  border: 1px solid rgba(58, 243, 209, 0.14);
+  overflow: visible;
+}
+
+/* Stepped pixel brackets at the top-left & bottom-right of the grid */
+.gossip-features__grid::before,
+.gossip-features__grid::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #3af3d1;
+  pointer-events: none;
+  box-shadow:
+    3px 0 0 #3af3d1,
+    6px 0 0 #3af3d1,
+    0 3px 0 #3af3d1,
+    0 6px 0 #3af3d1;
+}
+
+.gossip-features__grid::before {
+  top: -3px;
+  left: -3px;
+}
+
+.gossip-features__grid::after {
+  bottom: -3px;
+  right: -3px;
+  box-shadow:
+    -3px 0 0 #3af3d1,
+    -6px 0 0 #3af3d1,
+    0 -3px 0 #3af3d1,
+    0 -6px 0 #3af3d1;
+}
+
+.gossip-feature-card {
+  position: relative;
+  padding: clamp(1.6rem, 2.4vw, 2.2rem);
+  background:
+    radial-gradient(circle at 1px 1px, rgba(58, 243, 209, 0.05) 1px, transparent 1.6px) 0 0 / 8px 8px,
+    #1c1c1f;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 260px;
+  transition: background 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
+}
+
+.gossip-feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 80% at 0% 0%, rgba(58, 243, 209, 0.1), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.gossip-feature-card:hover {
+  background:
+    radial-gradient(circle at 1px 1px, rgba(58, 243, 209, 0.09) 1px, transparent 1.6px) 0 0 / 8px 8px,
+    #202024;
+}
+
+.gossip-feature-card:hover::before {
+  opacity: 1;
+}
+
+.gossip-feature-card:hover .gossip-feature-card__index {
+  color: #3af3d1;
+}
+
+.gossip-feature-card:hover .gossip-feature-card__rule {
+  --pixel-color: #3af3d1;
+  width: 3.25rem;
+}
+
+.gossip-feature-card:hover .gossip-feature-card__corner {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.gossip-feature-card:hover .gossip-feature-card__pixel {
+  opacity: 0.7;
+  transform: translate(-2px, 2px) rotate(-4deg);
+}
+
+.gossip-feature-card__pixel {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.15rem;
+  width: 26px;
+  height: 26px;
+  opacity: 0.32;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gossip-feature-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gossip-feature-card__index {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: rgba(58, 243, 209, 0.65);
+  padding: 0.12rem 0.4rem;
+  border: 1px solid rgba(58, 243, 209, 0.25);
+  background: rgba(58, 243, 209, 0.04);
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.gossip-feature-card:hover .gossip-feature-card__index {
+  border-color: rgba(58, 243, 209, 0.6);
+  background: rgba(58, 243, 209, 0.08);
+}
+
+/* Pixel-dashed rule: repeating 3×1 pixel marks with 2px gaps */
+.gossip-feature-card__rule {
+  --pixel-color: rgba(58, 243, 209, 0.45);
+  display: block;
+  height: 3px;
+  width: 1.75rem;
+  background:
+    linear-gradient(to right, var(--pixel-color) 3px, transparent 3px) 0 0 / 6px 3px repeat-x;
+  image-rendering: pixelated;
+  transition: width 0.3s ease, --pixel-color 0.3s ease;
+}
+
+.gossip-feature-card__title {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #f4f4f5;
+}
+
+.gossip-feature-card__body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(228, 228, 231, 0.62);
+}
+
+/* Pixel-stepped bracket that appears bottom-left on hover */
+.gossip-feature-card__corner {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 3px;
+  height: 3px;
+  background: #3af3d1;
+  box-shadow:
+    3px 0 0 #3af3d1,
+    6px 0 0 #3af3d1,
+    0 -3px 0 #3af3d1,
+    0 -6px 0 #3af3d1;
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.gossip-features__footer {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: flex;
+  justify-content: center;
+}
+
+.gossip-features__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1.6rem;
+  border: 1px solid rgba(58, 243, 209, 0.5);
+  border-radius: 2px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #3af3d1;
+  background: transparent;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.gossip-features__cta:hover {
+  background: #3af3d1;
+  color: #18181b;
+  border-color: #3af3d1;
+}
+
+.gossip-features__cta:hover svg {
+  transform: translateX(3px);
+}
+
+.gossip-features__cta svg {
+  transition: transform 0.3s ease;
+}
+
+/* Asymmetric last-card placement: centers the 7th card on its row */
+@media (min-width: 960px) {
+  .gossip-feature-card:nth-child(7) {
+    grid-column: 2 / 3;
+  }
+}
+
+@media (max-width: 959px) {
+  .gossip-features__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .gossip-features__grid {
+    grid-template-columns: 1fr;
+  }
+  .gossip-feature-card {
+    min-height: 0;
+  }
+}
+
+/* ============================================================
+   Mobile refinements — hero heading / slider / not-free cards
+   ============================================================ */
+
+/* --- 1b. Gossip hero: center title + copy on mobile (Webflow
+       .uui-heading-xlarge defaults to flex: justify-content: flex-end) --- */
+@media (max-width: 768px) {
+  .gossip-hero .uui-heading-xlarge,
+  .gossip-hero .gossip-title,
+  .gossip-hero .gossip-heading,
+  .gossip-hero .gossip-subtitle {
+    display: block !important;
+    text-align: center !important;
+    justify-content: center !important;
+    flex-flow: unset !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .gossip-hero .uui-text-align-center {
+    text-align: center !important;
+  }
+
+  .gossip-hero .gossip-title {
+    font-size: clamp(2rem, 9vw, 2.75rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  .gossip-hero .gossip-heading {
+    font-size: clamp(1.25rem, 5vw, 1.5rem) !important;
+    line-height: 1.3 !important;
+  }
+
+  .gossip-hero .gossip-subtitle {
+    font-size: clamp(0.95rem, 3.8vw, 1.05rem) !important;
+    line-height: 1.6 !important;
+    max-width: 44ch !important;
+  }
+
+  .gossip-hero .gossip-cta {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* --- 1. Home hero heading: proper block layout, centered, inline accent --- */
+@media (max-width: 768px) {
+  .hero-home .uui-button-row,
+  .hero-home .uui-button-row.button-row-center {
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .hero-home .uui-heading-xlarge {
+    display: block !important;
+    text-align: center !important;
+    justify-content: center !important;
+    flex-flow: unset !important;
+    font-size: clamp(2rem, 8.5vw, 2.6rem) !important;
+    line-height: 1.15 !important;
+    padding: 0 0.75rem !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .hero-home .uui-heading-xlarge strong {
+    display: inline !important;
+    font-weight: 700;
+    white-space: normal;
+  }
+
+  .hero-home .uui-max-width-xlarge {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* --- 2. Home slider (Gossip / DeWeb / ASC): stack on mobile --- */
+@media (max-width: 900px) {
+  .uui-section_layout38 {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding: 2.5rem 0 1.25rem !important;
+    touch-action: pan-y;
+  }
+
+  /* Collapse the flex-1 spacer: the section grows to content */
+  .uui-section_layout38 > div,
+  .uui-section_layout38 > div > div,
+  .uui-section_layout38 > div > div > div {
+    height: auto !important;
+    min-height: 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* The horizontal strip must keep its width + translate behavior */
+  .uui-section_layout38 > div > div > div:first-child {
+    display: flex !important;
+  }
+
+  .uui-section_layout38 .uui-page-padding-2 {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 1.25rem !important;
+    padding: 0 1.25rem !important;
+    text-align: center !important;
+  }
+
+  .uui-section_layout38 .uui-text-align-center-2 {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    text-align: center !important;
+  }
+
+  .uui-section_layout38 .uui-max-width-large-2 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .uui-section_layout38 .slide-title,
+  .uui-section_layout38 .heading-4-center,
+  .uui-section_layout38 .uui-heading-medium,
+  .uui-section_layout38 .text-block-9 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .uui-section_layout38 .slide-title {
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .uui-section_layout38 .uui-heading-medium {
+    font-size: clamp(1.1rem, 4.2vw, 1.4rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  .uui-section_layout38 .text-block-9 {
+    font-size: clamp(0.9rem, 3.6vw, 1rem) !important;
+    line-height: 1.55 !important;
+    max-width: 44ch !important;
+  }
+
+  /* DeWeb logo centered on mobile */
+  .uui-section_layout38 .deweb-logos-marquee {
+    justify-content: center !important;
+    margin: 0 auto 0.25rem !important;
+  }
+  .uui-section_layout38 .deweb-title-logo-single {
+    object-position: center !important;
+    margin: 0 auto !important;
+  }
+
+  .slider-slide-image {
+    max-width: min(260px, 70vw) !important;
+    max-height: 42vh !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18) !important;
+  }
+
+  .slider-slide-image img {
+    max-height: 42vh !important;
+  }
+
+  /* Move nav out of absolute positioning, flow inline below the content */
+  .uui-section_layout38 .slider-nav-root {
+    position: static !important;
+    transform: none !important;
+    margin: 1.25rem auto 0 !important;
+    padding: 0.25rem 1rem 0.5rem !important;
+  }
+
+  /* Mobile: solid dark pill — stays readable on every slide (mobile
+     always renders the 'home' white bg regardless of current slide,
+     since the hover-driven theme swap is desktop-only). */
+  .slider-nav-btn {
+    background: #18181b !important;
+    color: #ffffff !important;
+    border: 1px solid #18181b !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .slider-nav-btn:active {
+    transform: scale(0.94);
+    background: #3af3d1 !important;
+    color: #18181b !important;
+    border-color: #3af3d1 !important;
+  }
+
+  /* Tame the decorative floating icons on ASC/Gossip so they don't
+     inflate section height on mobile */
+  .uui-section_layout38 .home-gossip-floating-heads,
+  .uui-section_layout38 .home-asc-floating-icons,
+  .uui-section_layout38 .home-deweb-floating-icons {
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .uui-section_layout38 {
+    padding: 1.75rem 0 1rem !important;
+  }
+
+  .slider-slide-image {
+    max-width: min(220px, 62vw) !important;
+    max-height: 38vh !important;
+  }
+
+  .slider-slide-image img {
+    max-height: 38vh !important;
+  }
+
+  .slider-nav-btn {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+/* --- 3. "Internet is not free" cards: single column on mobile --- */
+@media (max-width: 768px) {
+  .section-internet-not-free .internet-not-free-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: auto !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .section-internet-not-free {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .section-internet-not-free .internet-not-free-cards {
+    grid-template-columns: 1fr !important;
+    gap: 0.875rem !important;
+  }
+
+  .section-internet-not-free .internet-not-free-card {
+    padding: 1.25rem 1.1rem !important;
+    gap: 0.75rem !important;
+    border-radius: 14px !important;
+  }
+
+  .section-internet-not-free .internet-not-free-card h3 {
+    font-size: 1.05rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .section-internet-not-free .internet-not-free-card p {
+    font-size: 0.92rem !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .section-internet-not-free > div > header h2 {
+    font-size: clamp(1.75rem, 7vw, 2.25rem) !important;
+    line-height: 1.2 !important;
+  }
 }
 

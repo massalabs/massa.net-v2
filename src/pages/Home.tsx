@@ -320,6 +320,24 @@ export function Home() {
     hoverLeaveTimerRef.current = window.setTimeout(() => setIsSliderHovered(false), 160)
   }
 
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null)
+  const handleSliderTouchStart = (event: React.TouchEvent<HTMLElement>) => {
+    const touch = event.touches[0]
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY }
+  }
+  const handleSliderTouchEnd = (event: React.TouchEvent<HTMLElement>) => {
+    const start = touchStartRef.current
+    if (!start) return
+    const touch = event.changedTouches[0]
+    const deltaX = touch.clientX - start.x
+    const deltaY = touch.clientY - start.y
+    touchStartRef.current = null
+    if (Math.abs(deltaX) > 48 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (deltaX < 0) goNext()
+      else goPrev()
+    }
+  }
+
   return (
     <>
       <SEO title={t('home.seo.title')} description={t('home.seo.description')} />
@@ -333,9 +351,8 @@ export function Home() {
               <div className="uui-text-align-center">
                 <div className="uui-max-width-xlarge">
                   <div className="uui-button-row button-row-center">
-                    <div className="uui-heading-xlarge">{t('home.hero.heading')}</div>
+                    <div className="uui-heading-xlarge">{t('home.hero.heading')}<strong>{t('home.hero.headingAccent')}</strong></div>
                   </div>
-                  <h1 className="text-block-7">{t('home.hero.subheading')}</h1>
                   <div className="uui-space-small"></div>
                   <div className="uui-space-small"></div>
                   <div className="uui-max-width-large align-center">
@@ -364,6 +381,8 @@ export function Home() {
         className={`uui-section_layout38 slide-${SLIDER_SLIDES[currentSlide].id}`}
         onMouseEnter={handleSliderMouseEnter}
         onMouseLeave={handleSliderMouseLeave}
+        onTouchStart={handleSliderTouchStart}
+        onTouchEnd={handleSliderTouchEnd}
         style={{
           height: isSliderFullscreen ? '95vh' : '82vh',
           minHeight: isSliderFullscreen ? '95vh' : '520px',
@@ -552,6 +571,7 @@ export function Home() {
                     </div>
                     {slide.id !== 'asc' && (
                       <div
+                        className="slider-slide-image"
                         style={{
                           maxWidth: slide.id === 'gossip' ? '280px' : 'min(500px, 55%)',
                           maxHeight: slide.id === 'deweb' ? '55vh' : '45vh',
@@ -595,6 +615,7 @@ export function Home() {
 
           {/* Navigation: flèches + dots — centrée comme le contenu (max-width 1200px) */}
           <div
+            className="slider-nav-root"
             style={{
               position: 'absolute',
               bottom: '1.25rem',
@@ -615,6 +636,7 @@ export function Home() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
             <button
               type="button"
+              className="slider-nav-btn slider-nav-btn--prev"
               aria-label={t('a11y.slidePrev')}
               onClick={goPrev}
               style={{
@@ -658,6 +680,7 @@ export function Home() {
             </div>
             <button
               type="button"
+              className="slider-nav-btn slider-nav-btn--next"
               aria-label={t('a11y.slideNext')}
               onClick={goNext}
               style={{
