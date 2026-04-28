@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { useBlogPosts } from '../hooks/useContentData'
 import { SEO } from '../components/SEO'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -24,8 +24,8 @@ const SLIDER_SLIDES = [
   },
 ] as const
 
-const DEWEB_BG_LOGOS = Array.from({ length: 20 }, (_, i) => `/images/logo_${i + 1}.svg`)
-const GOSSIP_BG_HEADS = Array.from({ length: 42 }, (_, index) => ({
+const DEWEB_BG_LOGOS = Array.from({ length: 12 }, (_, i) => `/images/logo_${i + 1}.svg`)
+const GOSSIP_BG_HEADS = Array.from({ length: 18 }, (_, index) => ({
   src: `/images/Head${(index % 4) + 1}.svg`,
   x: (index * 17 + (index % 3) * 7) % 100,
   y: (index * 29 + (index % 5) * 11) % 100,
@@ -49,7 +49,7 @@ const halton = (index: number, base: number) => {
   return result
 }
 
-const ASC_BG_ICONS = Array.from({ length: 44 }, (_, index) => {
+const ASC_BG_ICONS = Array.from({ length: 20 }, (_, index) => {
   const sources = [
     '/images/deweb.svg',
     '/images/ASC.svg',
@@ -76,7 +76,7 @@ const ASC_BG_ICONS = Array.from({ length: 44 }, (_, index) => {
   }
 })
 
-const DEWEB_BG_ICONS = Array.from({ length: 58 }, (_, index) => {
+const DEWEB_BG_ICONS = Array.from({ length: 24 }, (_, index) => {
   const hX = halton(index + 1, 2)
   const hY = halton(index + 1, 3)
   return {
@@ -100,83 +100,72 @@ type FloatingVarsStyle = CSSProperties & {
   '--float-delay': string
 }
 
-const renderDewebWebIcon = (variant: number) => {
-  switch (variant) {
-    case 0:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M3 12h18M12 3c2.6 2.1 4 5.4 4 9s-1.4 6.9-4 9c-2.6-2.1-4-5.4-4-9s1.4-6.9 4-9Z" stroke="currentColor" strokeWidth="1.7" />
-        </svg>
-      )
-    case 1:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M12 3.5v17M4.5 12h15M6.5 7.5c1.6 1 3.4 1.5 5.5 1.5s3.9-.5 5.5-1.5M6.5 16.5c1.6-1 3.4-1.5 5.5-1.5s3.9.5 5.5 1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-        </svg>
-      )
-    case 2:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="2.2" fill="currentColor" />
-          <circle cx="5" cy="7" r="1.5" fill="currentColor" />
-          <circle cx="19" cy="8" r="1.5" fill="currentColor" />
-          <circle cx="6.5" cy="17.5" r="1.5" fill="currentColor" />
-          <circle cx="17.5" cy="17.5" r="1.5" fill="currentColor" />
-          <path d="M12 12 5 7M12 12l7-4M12 12l-5.5 5.5M12 12l5.5 5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-        </svg>
-      )
-    case 3:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect x="3.5" y="5" width="17" height="12.5" rx="2.2" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M7 20h10M9 17.5v2.5m6-2.5v2.5M6.5 9.5h11M9.5 7.5v4M14.5 7.5v4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-        </svg>
-      )
-    case 4:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M4 12.5 8 8l3 3 5-5 4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M3.5 18.5h17" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-          <circle cx="8" cy="8" r="1.3" fill="currentColor" />
-          <circle cx="11" cy="11" r="1.3" fill="currentColor" />
-          <circle cx="16" cy="6" r="1.3" fill="currentColor" />
-          <circle cx="20" cy="10" r="1.3" fill="currentColor" />
-        </svg>
-      )
-    case 5:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 3.2 20.2 7.9v8.2L12 20.8 3.8 16.1V7.9L12 3.2Z" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M12 3.2v17.6M3.8 7.9 12 12l8.2-4.1" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )
-    case 6:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" strokeWidth="2" />
-          <path d="M3 12h18M12 3v18M7 7.5h10M7 16.5h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
-        </svg>
-      )
-    case 7:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.4" stroke="currentColor" strokeWidth="1.8" strokeDasharray="1.2 2.1" strokeLinecap="round" />
-          <path d="M3.8 12h16.4M12 3.8v16.4M6.8 8.2c1.4.7 3.1 1 5.2 1 2.1 0 3.8-.3 5.2-1M6.8 15.8c1.4-.7 3.1-1 5.2-1 2.1 0 3.8.3 5.2 1" stroke="currentColor" strokeWidth="1.4" strokeDasharray="0.8 2" strokeLinecap="round" />
-        </svg>
-      )
-    default:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.8" stroke="currentColor" strokeWidth="1.7" />
-          <circle cx="7.2" cy="10.2" r="0.9" fill="currentColor" />
-          <circle cx="13.5" cy="7.2" r="0.9" fill="currentColor" />
-          <circle cx="16.8" cy="13.8" r="0.9" fill="currentColor" />
-          <path d="M7.2 10.2 13.5 7.2 16.8 13.8 10.1 16.5 7.2 10.2Z" stroke="currentColor" strokeWidth="1.2" />
-        </svg>
-      )
-  }
+const DEWEB_WEB_ICONS: Record<number, ReactNode> = {
+  0: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M3 12h18M12 3c2.6 2.1 4 5.4 4 9s-1.4 6.9-4 9c-2.6-2.1-4-5.4-4-9s1.4-6.9 4-9Z" stroke="currentColor" strokeWidth="1.7" />
+    </svg>
+  ),
+  1: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M12 3.5v17M4.5 12h15M6.5 7.5c1.6 1 3.4 1.5 5.5 1.5s3.9-.5 5.5-1.5M6.5 16.5c1.6-1 3.4-1.5 5.5-1.5s3.9.5 5.5 1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  ),
+  2: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="2.2" fill="currentColor" />
+      <circle cx="5" cy="7" r="1.5" fill="currentColor" />
+      <circle cx="19" cy="8" r="1.5" fill="currentColor" />
+      <circle cx="6.5" cy="17.5" r="1.5" fill="currentColor" />
+      <circle cx="17.5" cy="17.5" r="1.5" fill="currentColor" />
+      <path d="M12 12 5 7M12 12l7-4M12 12l-5.5 5.5M12 12l5.5 5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  ),
+  3: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3.5" y="5" width="17" height="12.5" rx="2.2" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M7 20h10M9 17.5v2.5m6-2.5v2.5M6.5 9.5h11M9.5 7.5v4M14.5 7.5v4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  ),
+  4: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 12.5 8 8l3 3 5-5 4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3.5 18.5h17" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+      <circle cx="8" cy="8" r="1.3" fill="currentColor" />
+      <circle cx="11" cy="11" r="1.3" fill="currentColor" />
+      <circle cx="16" cy="6" r="1.3" fill="currentColor" />
+      <circle cx="20" cy="10" r="1.3" fill="currentColor" />
+    </svg>
+  ),
+  5: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3.2 20.2 7.9v8.2L12 20.8 3.8 16.1V7.9L12 3.2Z" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M12 3.2v17.6M3.8 7.9 12 12l8.2-4.1" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  6: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" strokeWidth="2" />
+      <path d="M3 12h18M12 3v18M7 7.5h10M7 16.5h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
+    </svg>
+  ),
+  7: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.4" stroke="currentColor" strokeWidth="1.8" strokeDasharray="1.2 2.1" strokeLinecap="round" />
+      <path d="M3.8 12h16.4M12 3.8v16.4M6.8 8.2c1.4.7 3.1 1 5.2 1 2.1 0 3.8-.3 5.2-1M6.8 15.8c1.4-.7 3.1-1 5.2-1 2.1 0 3.8.3 5.2 1" stroke="currentColor" strokeWidth="1.4" strokeDasharray="0.8 2" strokeLinecap="round" />
+    </svg>
+  ),
+  8: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.8" stroke="currentColor" strokeWidth="1.7" />
+      <circle cx="7.2" cy="10.2" r="0.9" fill="currentColor" />
+      <circle cx="13.5" cy="7.2" r="0.9" fill="currentColor" />
+      <circle cx="16.8" cy="13.8" r="0.9" fill="currentColor" />
+      <path d="M7.2 10.2 13.5 7.2 16.8 13.8 10.1 16.5 7.2 10.2Z" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  ),
 }
 
 /** Cards "The Internet is Not Free" — clés i18n : home.internet.<icon>.title / .text */
@@ -243,6 +232,24 @@ export function Home() {
     return () => {
       if (hoverEnterTimerRef.current) window.clearTimeout(hoverEnterTimerRef.current)
       if (hoverLeaveTimerRef.current) window.clearTimeout(hoverLeaveTimerRef.current)
+    }
+  }, [])
+
+  useEffect(() => {
+    let scrollTimer: number | null = null
+    const handleScroll = () => {
+      document.body.classList.add('is-scrolling')
+      if (scrollTimer) window.clearTimeout(scrollTimer)
+      scrollTimer = window.setTimeout(() => {
+        document.body.classList.remove('is-scrolling')
+        scrollTimer = null
+      }, 150)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (scrollTimer) window.clearTimeout(scrollTimer)
+      document.body.classList.remove('is-scrolling')
     }
   }, [])
 
@@ -394,6 +401,7 @@ export function Home() {
           color: themeForeground[activeTheme],
           position: 'relative',
           overflow: 'hidden',
+          contain: 'layout paint',
         }}
       >
         {SLIDER_SLIDES[currentSlide].id === 'gossip' && (
@@ -462,7 +470,7 @@ export function Home() {
                   opacity: icon.alpha,
                 } as FloatingVarsStyle}
               >
-                {renderDewebWebIcon(icon.variant)}
+                {DEWEB_WEB_ICONS[icon.variant] ?? DEWEB_WEB_ICONS[8]}
               </span>
             ))}
           </div>
