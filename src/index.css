@@ -610,6 +610,8 @@ input[type="reset"]:focus,
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  will-change: transform;
+  contain: layout paint;
 }
 
 .home-gossip-floating-head {
@@ -619,11 +621,20 @@ input[type="reset"]:focus,
   animation: gossip-float var(--float-duration, 18s) ease-in-out var(--float-delay, 0s) infinite alternate;
 }
 
+.is-scrolling .home-gossip-floating-head,
+.is-scrolling .home-asc-floating-icon,
+.is-scrolling .home-deweb-floating-icon,
+.is-scrolling .deweb-hero-floating-icon {
+  animation-play-state: paused;
+}
+
 .home-asc-floating-icons {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  will-change: transform;
+  contain: layout paint;
 }
 
 .home-asc-floating-icon {
@@ -640,6 +651,8 @@ input[type="reset"]:focus,
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  will-change: transform;
+  contain: layout paint;
 }
 
 .home-deweb-floating-icon,
@@ -4099,8 +4112,8 @@ body.page-home-theme.page-home-hover-asc .section-follow-journey .follow-journey
 
 /* Grants & Bounties bichromie */
 body.page-grants-theme {
-  --grants-bg: #2d000d;
-  --grants-fg: #ff003d;
+  --grants-bg: #000000;
+  --grants-fg: #ffffff;
   background-color: var(--grants-bg) !important;
 }
 
@@ -4181,7 +4194,7 @@ body.page-grants-theme .uui-navbar07_icon-wrapper img,
 body.page-grants-theme .uui-navbar07_component .div-block-25 img,
 body.page-grants-theme .uui-navbar07_component .link-block img,
 body.page-grants-theme .uui-navbar07_component .link-block-2 img {
-  filter: brightness(0) saturate(100%) invert(16%) sepia(98%) saturate(6608%) hue-rotate(340deg) brightness(113%) contrast(125%) !important; /* #FF003D */
+  filter: brightness(0) invert(1) !important; /* #ffffff */
   opacity: 1 !important;
   transition: filter 240ms ease, opacity 240ms ease;
 }
@@ -4217,7 +4230,7 @@ body.page-grants-theme .section-5 .uui-footer05_link-copy:hover {
 body.page-grants-theme .section-5 .uui-footer05_logo-link img,
 body.page-grants-theme .section-5 .uui-footer05_social-icons img,
 body.page-grants-theme .section-5 .flex-block-5 img {
-  filter: brightness(0) saturate(100%) invert(16%) sepia(98%) saturate(6608%) hue-rotate(340deg) brightness(113%) contrast(125%) !important; /* #FF003D */
+  filter: brightness(0) invert(1) !important; /* #ffffff */
 }
 
 body.page-grants-theme .section-5 .uui-footer05_bottom-wrapper {
@@ -4304,6 +4317,32 @@ body.page-grants-theme .section-14.section-14-open > * {
 body.page-grants-theme .section-14.section-14-open .bounties-open {
   background-color: transparent !important;
   color: var(--grants-bg) !important;
+}
+
+body.page-grants-theme .section-14.section-14-open .heading-4-copy,
+body.page-grants-theme .section-14.section-14-open h2,
+body.page-grants-theme .section-14.section-14-open h3,
+body.page-grants-theme .section-14.section-14-open p,
+body.page-grants-theme .section-14.section-14-open .uui-text-size-large-description,
+body.page-grants-theme .section-14.section-14-open .uui-text-size-large-status,
+body.page-grants-theme .section-14.section-14-open .uui-text-size-large-amount {
+  color: var(--grants-bg) !important;
+}
+
+body.page-grants-theme .section-14.section-14-open .collection-item-4 {
+  border-color: rgba(0,0,0,0.15) !important;
+}
+
+body.page-grants-theme .section-14.section-14-open .button.w-button {
+  color: var(--grants-fg) !important;
+  background-color: var(--grants-bg) !important;
+  border-color: var(--grants-bg) !important;
+}
+
+body.page-grants-theme .section-14.section-14-open .button.w-button:hover {
+  color: var(--grants-bg) !important;
+  background-color: transparent !important;
+  border-color: var(--grants-bg) !important;
 }
 
 /* Completed bounties section (separate block, inverted colors, no SVG bg) */

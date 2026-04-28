@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef, type ReactNode } from 'react'
+import { useState, useEffect, useRef, memo, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { LANGUAGES, type LocaleCode } from '../i18n/localeMeta'
 import { useLanguage } from '../i18n/LanguageContext'
 
-export function Navbar() {
+export const Navbar = memo(function Navbar() {
   const { locale, setLocale, t } = useLanguage()
   const [langMenuOpen, setLangMenuOpen] = useState(false)
   const langMenuRef = useRef<HTMLDivElement>(null)
@@ -261,7 +261,6 @@ export function Navbar() {
       label: t('nav.community'),
       items: [
         { title: t('nav.item.forum.title'), desc: t('nav.item.forum.desc'), iconSrc: '/images/Forum.svg', href: 'https://forum.massa.community/', external: true },
-        { title: t('nav.item.ambassador.title'), desc: t('nav.item.ambassador.desc'), iconSrc: '/images/Ambassador.svg', to: '/ambassador' },
       ],
     },
     {
@@ -460,13 +459,6 @@ export function Navbar() {
                         <div className="uui-text-size-small">{t('nav.item.forum.desc')}</div>
                       </div>
                     </a>
-                    <Link to="/ambassador" className="uui-navbar07_dropdown-link w-inline-block" onClick={handleLinkClick}>
-                      <div className="uui-navbar07_icon-wrapper"><img src="/images/Ambassador.svg" loading="lazy" alt="" /></div>
-                      <div className="uui-navbar07_item-right">
-                        <div className="uui-navbar07_item-heading">{t('nav.item.ambassador.title')}</div>
-                        <div className="uui-text-size-small">{t('nav.item.ambassador.desc')}</div>
-                      </div>
-                    </Link>
                   </div>
                 </div>
               </nav>
@@ -556,6 +548,6 @@ export function Navbar() {
       </div>
     </div>
   )
-}
+})
 
 export default Navbar
