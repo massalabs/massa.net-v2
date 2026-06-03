@@ -226,7 +226,7 @@ export function GrantsBounty() {
         <div className="w-layout-blockcontainer container-2-copy w-container">
           <h2 className="heading-4-copy">Any questions</h2>
           <div className="uui-space-large"></div>
-          <a href="http://t.me/morosandaniel" target="_blank" rel="noreferrer" className="button w-button">
+          <a href="mailto:kevin@massa.foundation" className="button w-button">
             Contact us
           </a>
         </div>
