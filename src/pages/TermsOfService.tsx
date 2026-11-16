@@ -1,18 +1,18 @@
 export function TermsOfService() {
   return (
-    <div className="rich-text-block-2 w-richtext">
-      <h1 className="heading-4-center-black">Terms of service</h1>
-      <h4>
+    <div className="legal">
+      <h1>Terms of service</h1>
+      <p className="legal-meta">
         <em>Last updated: September 02, 2021</em>
-      </h4>
-      <h4>Please read these terms and conditions carefully before using Our Service.</h4>
-      <h4>Interpretation and Definitions</h4>
-      <h4>Interpretation</h4>
-      <h4>
+      </p>
+      <p>Please read these terms and conditions carefully before using Our Service.</p>
+      <h2>Interpretation and Definitions</h2>
+      <h2>Interpretation</h2>
+      <p>
         The words of which the initial letter is capitalized have meanings defined under the following conditions. The same meaning applies
         whether they appear in singular or plural.
-      </h4>
-      <h4>Definitions</h4>
+      </p>
+      <h2>Definitions</h2>
       <ul role="list" className="list">
         <li>
           <strong>Affiliate</strong> means an entity under common control (ownership of 50%+ voting securities).
@@ -44,56 +44,56 @@ export function TermsOfService() {
           <strong>You</strong> means the individual using the Service, or the company/other legal entity they represent.
         </li>
       </ul>
-      <h4>Acknowledgment</h4>
-      <h4>
+      <h2>Acknowledgment</h2>
+      <p>
         These Terms govern the Service and constitute the agreement between You and the Company. Your access/use is conditioned on your
         acceptance of and compliance with these Terms and our Privacy Policy. You must be at least 18 years old.
-      </h4>
-      <h4>Links to Other Websites</h4>
-      <h4>
+      </p>
+      <h2>Links to Other Websites</h2>
+      <p>
         We may link to third-party sites/services not owned or controlled by the Company. We assume no responsibility for their policies and
         recommend reviewing each site&apos;s terms.
-      </h4>
-      <h4>Termination</h4>
-      <h4>
+      </p>
+      <h2>Termination</h2>
+      <p>
         We may suspend or terminate access immediately, without notice, for any reason including breach of these Terms. Upon termination,
         your right to use the Service ceases immediately.
-      </h4>
-      <h4>Limitation of Liability</h4>
-      <h4>
+      </p>
+      <h2>Limitation of Liability</h2>
+      <p>
         The Company&apos;s total liability shall not exceed the amount paid through the Service or 100 USD if nothing was purchased. To the
         maximum extent permissible, we are not liable for indirect, special, incidental or consequential damages.
-      </h4>
-      <h4>&quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer</h4>
-      <h4>
+      </p>
+      <h2>&quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer</h2>
+      <p>
         The Service is provided without warranties of any kind. We do not warrant uninterrupted or error-free operation, nor that content is
         accurate or free of harmful components.
-      </h4>
-      <h4>Governing Law</h4>
-      <h4>The laws of France govern these Terms and your use of the Service.</h4>
-      <h4>Disputes Resolution</h4>
-      <h4>If you have a concern or dispute, you agree to first attempt to resolve it informally by contacting the Company.</h4>
-      <h4>For European Union (EU) Users</h4>
-      <h4>EU consumers benefit from any mandatory provisions of the law of the country in which they reside.</h4>
-      <h4>United States Legal Compliance</h4>
-      <h4>
+      </p>
+      <h2>Governing Law</h2>
+      <p>The laws of France govern these Terms and your use of the Service.</p>
+      <h2>Disputes Resolution</h2>
+      <p>If you have a concern or dispute, you agree to first attempt to resolve it informally by contacting the Company.</p>
+      <h2>For European Union (EU) Users</h2>
+      <p>EU consumers benefit from any mandatory provisions of the law of the country in which they reside.</p>
+      <h2>United States Legal Compliance</h2>
+      <p>
         You represent that you are not located in a country subject to U.S. embargo or listed as a terrorist-supporting country, and you are
         not on any U.S. government prohibited list.
-      </h4>
-      <h4>Severability and Waiver</h4>
-      <h4>
+      </p>
+      <h2>Severability and Waiver</h2>
+      <p>
         If any provision is unenforceable, it will be interpreted to accomplish its objective to the fullest extent possible; the rest remain
         in effect. Failure to enforce a right is not a waiver of future enforcement.
-      </h4>
-      <h4>Translation Interpretation</h4>
-      <h4>The original English text prevails in case of dispute.</h4>
-      <h4>Changes to These Terms and Conditions</h4>
-      <h4>
+      </p>
+      <h2>Translation Interpretation</h2>
+      <p>The original English text prevails in case of dispute.</p>
+      <h2>Changes to These Terms and Conditions</h2>
+      <p>
         We may modify these Terms at any time. Material changes will be announced at least 30 days prior when possible. Continued use implies
         acceptance of the revised Terms.
-      </h4>
-      <h4>Contact Us</h4>
-      <h4>If you have any questions about these Terms and Conditions, email info@massa.net.</h4>
+      </p>
+      <h2>Contact Us</h2>
+      <p>If you have any questions about these Terms and Conditions, email info@massa.net.</p>
     </div>
   )
 }

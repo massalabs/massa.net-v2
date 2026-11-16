@@ -52,7 +52,7 @@ export const team = [
     id: "jean-francois-morcillo",
     name: "Jean-François Morcillo",
     role: "Rust Blockchain Developer",
-    image: "/images/6924765161a016cc151edc2b_JF (1)-p-500.png",
+    image: "/images/team-jean-francois-morcillo.jpg",
     linkedin: "https://www.linkedin.com/in/jean-fran%C3%A7ois-morcillo-55606833/"
   },
   {

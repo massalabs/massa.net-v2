@@ -9,6 +9,9 @@ export const en: Record<string, string> = {
   'nav.community': 'Community',
   'nav.about': 'About',
   'nav.getStarted': 'Get started',
+  'nav.language': 'Language',
+  'nav.openMenu': 'Open menu',
+  'nav.closeMenu': 'Close menu',
 
   'nav.item.deweb.title': 'DeWeb',
   'nav.item.deweb.desc': 'The web as you know, 100% decentralized',
@@ -25,7 +28,7 @@ export const en: Record<string, string> = {
   'nav.item.ecosystem.title': 'Ecosystem',
   'nav.item.ecosystem.desc': 'Explore the Massa ecosystem',
   'nav.item.buyMas.title': 'Buy $MAS',
-  'nav.item.buyMas.desc': 'Available options to get $MAS',
+  'nav.item.buyMas.desc': 'Swap for $MAS on Dusa',
   'nav.item.forum.title': 'Forum',
   'nav.item.forum.desc': 'Community forum for constructive discussions',
   'nav.item.ambassador.title': 'Ambassador',
@@ -73,6 +76,10 @@ export const en: Record<string, string> = {
 
   'home.hero.heading': 'The Internet that Belongs to You ',
   'home.hero.headingAccent': 'Forever',
+  'home.hero.stat1.label': 'Transactions per second',
+  'home.hero.stat2.label': 'Nakamoto coefficient',
+  'home.hero.stat3.label': 'Parallel block threads',
+  'home.hero.liveOn': 'Live on Massa',
   'home.hero.subheading': 'The first decentralized cloud network',
   'home.hero.body':
     'Stop relying on fragile servers and big tech. Massa hosts your apps and data directly on a global network that no one can shut down, censor, or control.',
@@ -145,6 +152,9 @@ export const fr: Record<string, string> = {
   'nav.community': 'Communauté',
   'nav.about': 'À propos',
   'nav.getStarted': 'Commencer',
+  'nav.language': 'Langue',
+  'nav.openMenu': 'Ouvrir le menu',
+  'nav.closeMenu': 'Fermer le menu',
 
   'nav.item.deweb.title': 'DeWeb',
   'nav.item.deweb.desc': 'Le web tel que vous le connaissez, 100 % décentralisé',
@@ -161,7 +171,7 @@ export const fr: Record<string, string> = {
   'nav.item.ecosystem.title': 'Écosystème',
   'nav.item.ecosystem.desc': 'Explorez l’écosystème Massa',
   'nav.item.buyMas.title': 'Acheter des $MAS',
-  'nav.item.buyMas.desc': 'Options pour obtenir des $MAS',
+  'nav.item.buyMas.desc': 'Échangez des $MAS sur Dusa',
   'nav.item.forum.title': 'Forum',
   'nav.item.forum.desc': 'Forum communautaire pour des échanges constructifs',
   'nav.item.ambassador.title': 'Ambassadeur',
@@ -207,7 +217,12 @@ export const fr: Record<string, string> = {
   'home.seo.description':
     'Massa est une blockchain layer 1 et le premier réseau cloud décentralisé, qui apporte une vraie décentralisation là où elle est nécessaire grâce à sa technologie.',
 
-  'home.hero.heading': 'Internet vous appartient, pour toujours.',
+  'home.hero.heading': 'L’Internet qui vous appartient, ',
+  'home.hero.headingAccent': 'pour toujours',
+  'home.hero.stat1.label': 'Transactions par seconde',
+  'home.hero.stat2.label': 'Coefficient de Nakamoto',
+  'home.hero.stat3.label': 'Fils de blocs parallèles',
+  'home.hero.liveOn': 'Déjà sur Massa',
   'home.hero.subheading': 'Le premier réseau cloud décentralisé',
   'home.hero.body':
     'Ne dépendez plus de serveurs fragiles et des géants du web. Massa héberge vos apps et vos données sur un réseau mondial que personne ne peut éteindre, censurer ou contrôler.',

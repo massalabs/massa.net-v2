@@ -1,6 +1,6 @@
 import './App.css'
-import { lazy, Suspense } from 'react'
-import { Routes, Route, Outlet } from 'react-router-dom'
+import { lazy, Suspense, useEffect } from 'react'
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import { LanguageProvider } from './i18n/LanguageContext'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
@@ -23,7 +23,28 @@ const TermsOfService = lazy(() => import('./pages/TermsOfService').then(m => ({ 
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })))
 const AmbassadorComingSoon = lazy(() => import('./pages/Ambassador'))
 
+// One colour theme per route; drives navbar, footer and page tokens (see styles/system.css)
+const ROUTE_THEMES: Array<[RegExp, string]> = [
+  [/^\/$/, 'home'],
+  [/^\/deweb/, 'deweb'],
+  [/^\/asc/, 'asc'],
+  [/^\/technology/, 'tech'],
+  [/^\/gossip/, 'gossip'],
+  [/^\/(team|ecosystem|get-mas|start|blog\/?$|grants-bounty|ambassador)/, 'dark'],
+]
+
+function useRouteTheme() {
+  const { pathname } = useLocation()
+  const theme = ROUTE_THEMES.find(([re]) => re.test(pathname))?.[1] ?? 'light'
+  useEffect(() => {
+    const cls = `theme-${theme}`
+    document.body.classList.add(cls)
+    return () => document.body.classList.remove(cls)
+  }, [theme])
+}
+
 function Layout() {
+  useRouteTheme()
   return (
     <>
       <Navbar />

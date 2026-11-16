@@ -1,186 +1,166 @@
-import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { SEO } from '../components/SEO'
+
+const ArrowRight = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)
+
+const STATS = [
+  { value: '7K+', label: 'Nodes on our testnet' },
+  { value: '10K', label: 'Transactions per second' },
+  { value: '1000+', label: 'Nakamoto coefficient' },
+]
+
+const PILLARS = [
+  { img: '/images/tx.svg', text: 'Transactions and smart contracts with low fees.' },
+  { img: '/images/Low.svg', text: 'Proof-of-Stake. Low energy.' },
+  { img: '/images/rewards.svg', text: 'Low hardware requirements. Anyone can participate and earn rewards.' },
+  { img: '/images/distrib.svg', text: 'Balanced distribution. Truly decentralized.' },
+]
+
+const INNOVATIONS = [
+  {
+    title: 'Parallel block architecture',
+    body: 'Blocks are produced in parallel threads, achieving unprecedented scalability.',
+  },
+  {
+    title: 'Transaction sharding',
+    body: 'Eliminates duplicate transactions and risks like double spending across parallel blocks.',
+  },
+  {
+    title: 'Autonomous Smart Contracts',
+    body: 'Remove the need for external centralized bots, revolutionizing DeFi and enabling truly autonomous operations.',
+  },
+  {
+    title: 'On-chain web hosting',
+    body: 'dApp frontends get the same level of decentralization as smart contracts. Browse dApps with no centralized intermediaries.',
+  },
+]
 
 export function Technology() {
-  useEffect(() => {
-    document.body.classList.add('page-technology-theme')
-    return () => {
-      document.body.classList.remove('page-technology-theme')
-    }
-  }, [])
-
   return (
-    <div className="page-technology">
-      <header className="uui-section_heroheader14 home-section-bg home-section-bg--deweb-slide-flat">
-        <div className="uui-page-padding">
-          <div className="uui-container-large">
-            <div className="uui-space"></div>
-            <div className="uui-heroheader14_component">
-              <div className="uui-text-align-center">
-                <div className="uui-max-width-xlarge">
-                  <h1 className="uui-heading-xlarge">Scalability With Uncompromising Security</h1>
-                  <div className="uui-space-small"></div>
-                  <div className="uui-max-width-large align-center">
-                    <div className="uui-text-size-xlarge">
-                      Massa is the first and only layer 1 blockchain that tackles the trilemma of scalability, decentralization, and security
-                      without compromise.
-                      <br />
-                      Achieving over 10,000 transactions per second with thousands of nodes, our parallel block architecture and unique
-                      Autonomous Smart Contracts (ASCs) are setting new standards in DeFi and web3.
-                    </div>
-                  </div>
-                  <div className="uui-space-large"></div>
-                  <div className="uui-button-row button-row-center is-reverse-mobile-landscape">
-                    <a href="/documents/Whitepaper.pdf" target="_blank" rel="noreferrer" className="button w-button">
-                      Whitepaper
-                    </a>
-                    <a href="https://explorer.massa.net/mainnet" target="_blank" rel="noreferrer" className="button w-button">
-                      Explorer
-                    </a>
-                  </div>
-                  <div className="uui-space-large"></div>
-                </div>
-              </div>
-            </div>
+    <div className="pg pg-tech">
+      <SEO
+        title="Technology — Massa"
+        description="Massa's parallel block graph reaches 10,000 transactions per second across thousands of nodes, without compromising decentralization or security."
+      />
+
+      <header className="pg-hero">
+        <div className="pg-container">
+          <span className="pg-eyebrow">Technology</span>
+          <h1 className="pg-h1">Scalability with uncompromising security</h1>
+          <p className="pg-lede">
+            Massa is the first layer 1 blockchain to tackle the trilemma of scalability, decentralization and security without
+            compromise: over 10,000 transactions per second across thousands of nodes.
+          </p>
+          <div className="pg-actions">
+            <a href="/documents/Whitepaper.pdf" target="_blank" rel="noreferrer" className="pg-btn pg-btn--solid">
+              Read the whitepaper <ArrowRight />
+            </a>
+            <a href="https://explorer.massa.net/mainnet" target="_blank" rel="noreferrer" className="pg-btn">
+              Open the explorer
+            </a>
           </div>
         </div>
-        <section>
-          <img src="/images/Bigpixel-orange.svg" loading="lazy" width="Auto" alt="" className="image-39" />
-        </section>
+        <span className="pg-edge pg-edge--to-b" aria-hidden="true" />
       </header>
 
-      <section className="section-4 home-section-bg home-section-bg--follow-internet">
-        <div className="div-block-15-copy-copy">
-          <div className="card-copy-rose">
-            <div className="text-block-13">7K+</div>
-            <div className="uui-text-size-large-r">Nodes on our testnet</div>
-          </div>
-          <div className="card-copy-orange">
-            <div className="text-block-13-copy">10K</div>
-            <div className="uui-text-size-large-v">Transactions/second</div>
-          </div>
-          <div className="card-green">
-            <div className="text-block-13-red">1000+</div>
-            <div className="uui-text-size-large-red">Nakamoto coefficient</div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-8 home-section-bg home-section-bg--blog-flat">
-        <div className="w-layout-blockcontainer container-2 w-container">
-          <h2 className="heading-4-copy">
-            Current blockchains are limited : for instance, Bitcoin can only process 5 transactions per second.
-          </h2>
-          <div className="uui-space-xsmall"></div>
-          <div className="uui-text-size-xlarge-deweb-copy">
-            This is due to the sequential structure of the blockchain, forcing nodes to receive the previous block before creating the next
-            one, which in a decentralized p2p network takes time.
-          </div>
-        </div>
-      </section>
-
-      <section className="section-7 home-section-bg home-section-bg--internet-flat">
-        <div className="uui-container-large-2-copy">
-          <div className="uui-cta11_component-copy">
-            <div className="div-block-18">
-              <img src="/images/schemamulti.svg" loading="lazy" width="228" alt="" />
-              <div className="uui-text-size-xlarge">
-                Massa uses a multithreaded block graph allowing nodes to create blocks in parallel and process 10,000 transactions per
-                second.With this parallel block structure, Massa is the first blockchain technology to solve the trilemma.
+      <section className="pg-section pg-section--tight pg-inv">
+        <div className="pg-container">
+          <div className="pg-grid">
+            {STATS.map((s) => (
+              <div key={s.label} className="pg-card pg-card--bare pg-stat">
+                <span className="pg-stat-value">{s.value}</span>
+                <span className="pg-stat-label">{s.label}</span>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="section-8 home-section-bg home-section-bg--gossip-flat">
-        <div className="w-layout-blockcontainer container-2-copy w-container">
-          <h2 className="heading-4-copy">It's scaled, decentralized and secure at the same time.</h2>
-          <div className="uui-space-large"></div>
-          <a href="/documents/Whitepaper.pdf" className="button w-button" target="_blank" rel="noreferrer">
-            Read the Whitepaper
-          </a>
-          <div className="uui-space-large"></div>
-          <div className="uui-space-large"></div>
-          <div className="div-block-20">
-            <div className="div-block-19-1">
-              <img src="/images/tx.svg" loading="lazy" width="48" alt="" />
-              <div className="text-block-14-1">Tx and smart contracts with low fees.</div>
-            </div>
-            <div className="div-block-19-2">
-              <img src="/images/Low.svg" loading="lazy" width="67" alt="" />
-              <div className="text-block-14-2">Proof-of-Stake. Low energy.</div>
-            </div>
-            <div className="div-block-19-3">
-              <img src="/images/rewards.svg" loading="lazy" width="48" alt="" />
-              <div className="text-block-14-3">Low hardware requirements. Anyone can participate and earn rewards.</div>
-            </div>
-            <div className="div-block-19-4">
-              <img src="/images/distrib.svg" loading="lazy" width="65" alt="" />
-              <div className="text-block-14-4">Balanced distribution. Truly decentralized.</div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section-9 home-section-bg home-section-bg--follow-flat">
-        <div className="uui-padding-vertical-xhuge-copy">
-          <div className="uui-layout39_component">
-            <div className="uui-text-align-center-2">
-              <div className="uui-max-width-large-2">
-                <h2 className="heading-4-center">Groundbreaking Innovation</h2>
-                <div className="uui-space-xsmall"></div>
-                <h2 className="uui-heading-medium">
-                  Massa&apos;s technological advances enable an unprecedented combination of scale and decentralization.
-                </h2>
-                <div className="uui-space-xsmall"></div>
-                <div className="text-block-9">
-                  Our parallel block architecture allows blocks to be produced in parallel threads, achieving unprecedented scalability.
-                  <br />
-                  <br />
-                  Transaction sharding eliminates duplicate transactions and risks like double spending across these parallel blocks.
-                  <br />
-                  <br />
-                  Massa&apos;s unique Autonomous Smart Contracts (ASCs) remove the need for external centralized bots, revolutionizing DeFi
-                  and enabling truly autonomous operations.
-                  <br />
-                  <br />
-                  Our pioneering on-chain web hosting provides dApp frontends with the same level of decentralization as smart contracts,
-                  enhancing security. Browse dApps directly, with no need for centralized intermediaries!
-                </div>
-                <div className="uui-space-xsmall"></div>
+      <section className="pg-section">
+        <div className="pg-container pg-split">
+          <div className="pg-stack">
+            <span className="pg-eyebrow">The bottleneck</span>
+            <h2 className="pg-h2">Current blockchains are limited</h2>
+            <p className="pg-lede">
+              Bitcoin, for instance, can only process about 5 transactions per second. Its sequential structure forces nodes to
+              receive the previous block before creating the next one, which takes time in a decentralized peer-to-peer network.
+            </p>
+            <p className="pg-lede">
+              <strong>Massa uses a multithreaded block graph</strong> that lets nodes create blocks in parallel and process
+              10,000 transactions per second, making it the first blockchain to solve the trilemma.
+            </p>
+          </div>
+          <figure className="pg-card tech-diagram">
+            <img src="/images/schemamulti.svg" alt="Diagram of Massa's multithreaded block graph" loading="lazy" />
+            <figcaption className="pg-body">Parallel threads of blocks, linked into a single graph.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="pg-section pg-inv">
+        <div className="pg-container">
+          <div className="pg-header pg-center pg-narrow">
+            <h2 className="pg-h2">Scaled, decentralized and secure at the same time.</h2>
+          </div>
+          <div className="pg-grid pg-grid--2">
+            {PILLARS.map((p) => (
+              <div key={p.text} className="pg-card pg-card--bare tech-pillar">
+                <span className="tech-pillar-art">
+                  <img src={p.img} alt="" loading="lazy" />
+                </span>
+                <p className="pg-h3">{p.text}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section-10 home-section-bg home-section-bg--blog">
-        <div className="uui-container-large-2">
-          <div className="uui-padding-vertical-xhuge">
-            <div className="uui-cta11_component">
-              <div className="uui-text-align-center-2">
-                <h3 className="heading">Autonomous Smart Contracts</h3>
-                <div className="uui-space-xsmall"></div>
-                <div className="uui-text-size-xlarge">
-                  Massa's ASCs activate based on predefined conditions, eliminating external triggers. These ASCs enable:
-                  <br />
-                  <br />
-                  Automated strategies on DEXs like limit orders
-                  <br />
-                  Loan payments and collateral liquidations
-                  <br />
-                  Evolving NFTs and gaming environments
-                  <br />
-                  <br />
-                  By embedding automation into smart contracts, ASCs unlock decentralized finance without centralized intermediaries.
-                </div>
-                <div className="uui-space-xsmall">
-                  <div className="uui-space-large"></div>
-                </div>
-                <a href="/asc" className="button w-button">
-                  Learn more
-                </a>
-                  </div>
+      <section className="pg-section">
+        <div className="pg-container">
+          <div className="pg-header pg-narrow">
+            <span className="pg-eyebrow">Groundbreaking innovation</span>
+            <h2 className="pg-h2" style={{ marginTop: '1.25rem' }}>
+              An unprecedented combination of scale and decentralization
+            </h2>
+          </div>
+          <div className="pg-grid pg-grid--2">
+            {INNOVATIONS.map((item, i) => (
+              <article key={item.title} className="pg-card">
+                <span className="pg-card-index">0{i + 1}</span>
+                <h3 className="pg-h3">{item.title}</h3>
+                <p className="pg-body">{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pg-section pg-inv">
+        <div className="pg-container pg-split" style={{ alignItems: 'start' }}>
+          <div className="pg-stack">
+            <span className="pg-eyebrow">Autonomous Smart Contracts</span>
+            <h2 className="pg-h2">Smart contracts that run themselves</h2>
+            <p className="pg-lede">
+              Massa's ASCs activate based on predefined conditions, eliminating external triggers. By embedding automation into
+              smart contracts, ASCs unlock decentralized finance without centralized intermediaries.
+            </p>
+            <div className="pg-actions" style={{ marginTop: '2rem' }}>
+              <Link to="/asc" className="pg-btn pg-btn--solid">
+                Learn more about ASCs <ArrowRight />
+              </Link>
             </div>
+          </div>
+          <div className="pg-card pg-card--bare">
+            <p className="pg-card-index">ASCs enable</p>
+            <ul className="pg-list">
+              <li>Automated strategies on DEXs, like limit orders</li>
+              <li>Loan payments and collateral liquidations</li>
+              <li>Evolving NFTs and gaming environments</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -189,4 +169,3 @@ export function Technology() {
 }
 
 export default Technology
-

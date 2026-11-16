@@ -1,28 +1,28 @@
 export function PrivacyPolicy() {
   return (
-    <div className="rich-text-block-2 w-richtext">
-      <h1 className="heading-4-center-black">Privacy Policy</h1>
-      <h4>Last updated: December 12, 2023</h4>
-      <h4>
+    <div className="legal">
+      <h1>Privacy Policy</h1>
+      <p className="legal-meta">Last updated: December 12, 2023</p>
+      <p>
         This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the
         Service and tells You about Your privacy rights and how the law protects You.
-      </h4>
-      <h4>
+      </p>
+      <p>
         We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of
         information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the{' '}
         <a href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/" target="_blank" rel="noreferrer">
           Free Privacy Policy Generator
         </a>
         .
-      </h4>
-      <h4>Interpretation and Definitions</h4>
-      <h4>Interpretation</h4>
-      <h4>
+      </p>
+      <h2>Interpretation and Definitions</h2>
+      <h2>Interpretation</h2>
+      <p>
         The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions
         shall have the same meaning regardless of whether they appear in singular or in plural.
-      </h4>
-      <h4>Definitions</h4>
-      <h4>For the purposes of this Privacy Policy:</h4>
+      </p>
+      <h2>Definitions</h2>
+      <p>For the purposes of this Privacy Policy:</p>
       <ul role="list" className="list">
         <li>
           <strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.
@@ -74,35 +74,35 @@ export function PrivacyPolicy() {
           such individual is accessing or using the Service, as applicable.
         </li>
       </ul>
-      <h4>Collecting and Using Your Personal Data</h4>
-      <h4>Types of Data Collected</h4>
-      <h4>Personal Data</h4>
-      <h4>While using Our Service, We may ask You to provide Us with certain personally identifiable information:</h4>
+      <h2>Collecting and Using Your Personal Data</h2>
+      <h2>Types of Data Collected</h2>
+      <h2>Personal Data</h2>
+      <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information:</p>
       <ul role="list" className="list">
         <li>Email address</li>
         <li>Usage Data</li>
       </ul>
-      <h4>Usage Data</h4>
-      <h4>Usage Data is collected automatically when using the Service.</h4>
-      <h4>
+      <h2>Usage Data</h2>
+      <p>Usage Data is collected automatically when using the Service.</p>
+      <p>
         Usage Data may include information such as Your Device&apos;s IP address, browser type/version, the pages visited, time and date of
         visit, time spent, unique device identifiers and other diagnostic data. When accessing via mobile, we may collect device type, unique
         ID, IP address, OS, browser type, etc.
-      </h4>
-      <h4>Information from Third-Party Social Media Services</h4>
-      <h4>The Company allows You to create an account and log in through the following Third-party Social Media Services:</h4>
+      </p>
+      <h2>Information from Third-Party Social Media Services</h2>
+      <p>The Company allows You to create an account and log in through the following Third-party Social Media Services:</p>
       <ul role="list" className="list">
         <li>Discord</li>
       </ul>
-      <h4>
+      <p>
         If You register via these services, We may collect information already associated with that account (name, email, activities, contact
         list). You may choose to share additional data; by doing so you permit us to use, share, and store it per this policy.
-      </h4>
-      <h4>Tracking Technologies and Cookies</h4>
-      <h4>
+      </p>
+      <h2>Tracking Technologies and Cookies</h2>
+      <p>
         We use Cookies and similar tracking technologies (beacons, tags, scripts) to track activity and store information. Technologies may
         include:
-      </h4>
+      </p>
       <ul role="list">
         <li>
           <strong>Cookies or Browser Cookies.</strong> You can refuse Cookies via browser settings, but some services may fail without them.
@@ -111,10 +111,10 @@ export function PrivacyPolicy() {
           <strong>Web Beacons.</strong> Small electronic files that allow us to count users, verify system integrity, etc.
         </li>
       </ul>
-      <h4>
+      <p>
         Cookies can be &quot;Persistent&quot; or &quot;Session&quot;. Persistent remain after going offline; Session are deleted when the
         browser closes. We use both types for purposes detailed below:
-      </h4>
+      </p>
       <ul role="list" className="list-2">
         <li>
           <strong>Necessary / Essential Cookies</strong> (Session) – enable core functionality.
@@ -126,8 +126,8 @@ export function PrivacyPolicy() {
           <strong>Functionality Cookies</strong> (Persistent) – remember preferences for a personalized experience.
         </li>
       </ul>
-      <h4>Use of Your Personal Data</h4>
-      <h4>The Company may use Personal Data for the following purposes:</h4>
+      <h2>Use of Your Personal Data</h2>
+      <p>The Company may use Personal Data for the following purposes:</p>
       <ul role="list" className="list">
         <li>
           <strong>To provide and maintain our Service,</strong> including usage monitoring.
@@ -154,7 +154,7 @@ export function PrivacyPolicy() {
           <strong>For other purposes:</strong> data analysis, usage trends, campaign effectiveness, improve Service/products/marketing.
         </li>
       </ul>
-      <h4>We may share Your personal information in these situations:</h4>
+      <p>We may share Your personal information in these situations:</p>
       <ul role="list">
         <li>
           <strong>With Service Providers:</strong> to monitor/analyze usage, to contact You.
@@ -175,23 +175,23 @@ export function PrivacyPolicy() {
           <strong>With Your consent:</strong> for any other purpose.
         </li>
       </ul>
-      <h4>Retention of Your Personal Data</h4>
-      <h4>
+      <h2>Retention of Your Personal Data</h2>
+      <p>
         We retain Personal Data as long as necessary for the purposes outlined, including legal obligations, dispute resolution, and policy
         enforcement.
-      </h4>
-      <h4>Transfer of Your Personal Data</h4>
-      <h4>
+      </p>
+      <h2>Transfer of Your Personal Data</h2>
+      <p>
         Data may be transferred to and maintained on computers outside your jurisdiction. We ensure adequate controls are in place before any
         transfer occurs.
-      </h4>
-      <h4>Delete Your Personal Data</h4>
-      <h4>
+      </p>
+      <h2>Delete Your Personal Data</h2>
+      <p>
         You can request deletion of Personal Data. Some information may be required for legal obligations. You may manage your info via
         account settings or by contacting us.
-      </h4>
-      <h4>Disclosure of Your Personal Data</h4>
-      <h4>Business Transactions &amp; Legal Requirements</h4>
+      </p>
+      <h2>Disclosure of Your Personal Data</h2>
+      <h2>Business Transactions &amp; Legal Requirements</h2>
       <ul role="list" className="list">
         <li>Comply with legal obligations</li>
         <li>Protect Company rights/property</li>
@@ -199,27 +199,27 @@ export function PrivacyPolicy() {
         <li>Protect personal safety</li>
         <li>Protect against legal liability</li>
       </ul>
-      <h4>Security of Your Personal Data</h4>
-      <h4>
+      <h2>Security of Your Personal Data</h2>
+      <p>
         We use commercially acceptable means to protect Personal Data but cannot guarantee absolute security due to limitations of the
         internet/storage.
-      </h4>
-      <h4>Children&apos;s Privacy</h4>
-      <h4>
+      </p>
+      <h2>Children&apos;s Privacy</h2>
+      <p>
         We do not knowingly collect data from anyone under 13. If you believe a child provided data, contact us; we will remove it where
         required.
-      </h4>
-      <h4>Links to Other Websites</h4>
-      <h4>
+      </p>
+      <h2>Links to Other Websites</h2>
+      <p>
         Our Service may contain links to third-party sites. We are not responsible for their policies; review each site&apos;s privacy
         policy.
-      </h4>
-      <h4>Changes to this Privacy Policy</h4>
-      <h4>
+      </p>
+      <h2>Changes to this Privacy Policy</h2>
+      <p>
         We may update this policy from time to time and will post the new version with an updated &quot;Last updated&quot; date.
-      </h4>
-      <h4>Contact Us</h4>
-      <h4>If you have any questions about this Privacy Policy, contact us:</h4>
+      </p>
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, contact us:</p>
       <ul role="list" className="list">
         <li>By email: info@massa.foundation</li>
       </ul>
