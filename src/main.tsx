@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
 import { init } from '@plausible-analytics/tracker'
 import './index.css'
+import './styles/system.css'
 import App from './App.tsx'
 
 // Initialize Plausible Analytics
